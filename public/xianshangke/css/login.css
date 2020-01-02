@@ -1,0 +1,67 @@
+*{
+    margin: 0;padding: 0;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(to right, #434FA0 , #3569B3);
+}
+
+form{
+    width: 320px;
+    height: 400px;  
+    margin: 0  auto;
+    position: fixed;
+    top: calc((100vh - 400px) / 2);
+    left: calc((100vw - 320px) / 2) ;
+}
+form h2{
+    color: white;
+    font-size: 24px;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+form>input,button{
+    width:100%;
+    height: 40px;
+    outline: none;
+    text-align: center;
+    margin: 10px 0;
+    border: none;
+    border-radius: 2px;
+    font-size: 14px;
+}
+form div{
+    text-align: center  ;
+    margin: 10px 0;
+}
+form div span{
+    font-size: 12px;
+    margin-left: 10px;
+    color: white;
+    position: relative;
+    top: -4px;
+}
+input[type=checkbox]{
+    width: 16px;
+    height: 16px;
+    display: inline-block !important;
+    outline: none;
+    border: 0;
+}
+button{
+    background: #CCD4FF;
+    font-size: 16px !important;
+    color: #6B92D0;
+}
+p{
+    width: 100%;
+    font-size: 14px;
+    letter-spacing: 3px;
+    color:#6272B3;
+    position: absolute;
+    text-align: center;
+    top: calc(100vh - 50px);
+    
+}

@@ -1,0 +1,150 @@
+*{
+    padding: 0;
+    margin: 0;   
+}
+body{
+    width: 100%;
+    background:#F2F2F2 ;
+}
+.layout{
+    width: 100%;
+    display: flex;
+}
+.left{
+    width: 126px;
+    height: 100vh;
+    background: #24303c;
+    display: inline-block;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+.right{
+    width: calc(100% - 126px); 
+}
+.left p{
+    color:#666;
+    font-size: 14px;
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
+}
+.left h1{
+    color: white;
+    letter-spacing: 6px;
+    /* margin: 0 0 15px 0; */
+    font-size: 18px;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+}
+.list li img{
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+}
+.list li a{
+    color: white;
+    text-decoration: none;
+}
+.list li:hover{
+    border-left: 5px solid #0084FF;
+    background: #19222e;
+}
+.list li{
+    height: 58px;
+    color: white;
+    text-align: center;
+    letter-spacing: 3px;
+    line-height: 58px;
+    cursor: pointer;
+    font-size: 15px;
+    user-select: none;
+    /* padding: 0 10px; */
+}
+.li_border_left{
+    border-left: 5px solid #0084FF;
+    background: #19222e;
+}
+.head{
+    width: calc(100% - 126px);
+    height: 60px;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 126px;
+    z-index: 999;
+}
+.head  ul li a{
+    text-decoration: none;
+    color: #000;
+}
+.head ul{
+    width: 18%;
+    height: 60px;
+    display: flex;
+    list-style: none;
+    position: absolute;
+    right: 20px;
+    text-align: right;
+}
+.head ul li{
+    width: 33%;
+    font-size: 15px;
+    line-height: 60px;
+    text-align: right;
+    cursor: pointer;
+}
+.left_two{
+    margin-top: 2px;
+    width: 110px;
+    height: calc(100vh - 61px);
+    background: white;
+    box-sizing: border-box;
+    position: fixed;
+    top: 60px;
+    left: 126px;
+}
+.left_two ul{
+    list-style: none;
+    display: none;
+}
+.left_two>.block{
+    display: block;
+}
+.left_two>li{
+    list-style: none;
+    width: 100%;
+    height: 57px;
+    line-height: 58px;
+    font-size: 14px;
+    text-align: center;
+    user-select: none;
+}
+.left_two ul li{
+    width: 100%;
+    height: 57px;
+    line-height: 58px;
+    font-size: 14px;
+    text-align: center;
+    user-select: none;
+}
+.main{
+    width: calc(100vw - 126px);
+    display: flex;
+    flex-wrap: wrap;
+}
+.content{
+    width: calc(100% - 130px);
+    /* border: 1px solid; */
+    position: relative;
+    top: 60px;
+    left: 236px;
+}
+.active{
+    /* color: white; */
+    background:#f7f7f7;
+}

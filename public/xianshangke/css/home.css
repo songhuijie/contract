@@ -1,0 +1,92 @@
+
+.content>div{
+    margin: 15px 0 15px 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+.show{
+    width: 16%;
+    height: 130px;
+    position: relative;
+    background: #FFFFFF;
+}
+.show>img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    top: 35px;
+    left: 20px;
+}
+.show>b{
+    font-size: 18px;
+    position: absolute;
+    top: 45px;
+    left: 100px;
+}
+.show>span{
+    font-size: 14px;
+    position: absolute;
+    top: 75px;
+    left: 100px;
+}
+.item{
+    width: 49.5%;
+    height: 300px;
+    /* border: 1px solid; */
+    padding: 5px 10px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+}
+.item h6{
+    padding: 10px 0;
+    font-size: 15px;
+    border-bottom: 1px solid #F0F0F0;
+    display: block;
+}
+.item>div{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.item div p span{
+    font-weight: bold;
+    color: #3B65E4;
+    float: right;
+}
+.item>div>p{
+    width: 30%;
+    height: 50px;
+    font-size: 14px;
+    line-height: 50px;
+    padding: 20px 0;
+    border-bottom: 1px solid #F0F0F0 ;
+}
+.item>div>div{
+    width: 30%;
+    height: 50px;
+    padding: 35px 0;
+    cursor: pointer;
+}
+.item>div>div p{
+    text-align: center;
+    margin:5px 0 15px 0;
+    font-size: 14px;
+}
+.quick>div>div{
+    width: 18%;
+    height: 50px;
+    cursor: pointer;
+}
+.quick>div>div p{
+    text-align: center;
+
+}
+iframe{
+    width: 100%;
+    height: calc(100vh - 60px);
+    position: absolute;
+    top: 60px;
+    /* left: -136px; */
+}
