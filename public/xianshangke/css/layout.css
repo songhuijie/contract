@@ -132,6 +132,10 @@ body{
     text-align: center;
     user-select: none;
 }
+.left_two ul li a{
+    text-decoration: none;
+    color:#000;
+}
 .main{
     width: calc(100vw - 126px);
     display: flex;

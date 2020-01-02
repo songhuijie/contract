@@ -43,7 +43,7 @@ $(function(){
                 html += "</li>";
 
                 $.each(v.children,function(key,value){
-                    html_content += "<li data-url='"+value.href+"'>"+value.title+"</li>";
+                    html_content += "<li><a href='"+value.href+"'>"+value.title+"</a></li>";
                 });
                 html_content += "</ul>";
             });
@@ -54,20 +54,5 @@ $(function(){
 
         }
     });
-    $(document).pjax('a', '#pjax-container');
-    $(document).on("pjax:timeout", function(event) {
-        // 阻止超时导致链接跳转事件发生
-        event.preventDefault()
-    });
 
-    $.pjax({
-        selector: 'a',
-        container: '#container', //内容替换的容器
-        show: 'fade',  //展现的动画，支持默认和fade, 可以自定义动画方式，这里为自定义的function即可。
-        cache: true,  //是否使用缓存
-        storage: true,  //是否使用本地存储
-        titleSuffix: '', //标题后缀
-        filter: function(){},
-        callback: function(){}
-    });
 });

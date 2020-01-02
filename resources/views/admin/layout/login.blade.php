@@ -10,7 +10,7 @@
 </head>
 <body>
 @yield('content')
-<script src="<?php echo asset('/xianshangke/js/jquery-3.4.1.min.js')?>"></script>
+<script src="<?php echo asset('/xianshangke/js/jquery.min.js')?>"></script>
 <script src="<?php echo asset('/xianshangke/layui/layui.js')?>"></script>
 <script src="<?php echo asset('/xianshangke/js/login.js?v=2')?>"></script>
 

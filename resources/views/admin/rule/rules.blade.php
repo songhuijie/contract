@@ -1,8 +1,6 @@
 @extends("admin.layout.main")
 
-@section("css")
-	<link rel="stylesheet" href="/layadmin/extra/treegrid/css/jquery.treegrid.css" media="all" />
-@endsection
+
 
 @section("content")
 	<blockquote class="layui-elem-quote news_search">
@@ -73,8 +71,80 @@
 @endsection
 
 @section("js")
-	<script type="text/javascript" src="/layadmin/modul/common/jquery.min.js"></script>
-	<script type="text/javascript" src="/layadmin/extra/treegrid/js/jquery.treegrid.js"></script>
-	<script type="text/javascript" src="/layadmin/modul/rule/rules.js"></script>
+
+	<script>
+        layui.use(['table','form'], function() {
+            $ = layui.jquery;
+            table = layui.table;
+            tableIns = initTable();
+        });
+        //加载列表
+        function initTable(){
+		// 执行渲染
+            tableIns = table.render({
+                id: 'idTest',
+                elem : '#deviceTable', // 指定原始表格元素选择器（推荐id选择器）
+                size: 'lg',
+                height : 'full-20', // 容器高度
+                url : '/csCloud-admin/deviceController/getDeviceList.do',
+                where: {
+                    'orgId':$("#orgId").val(),
+                    'coldNum':$("#coldNum").val(),
+                    'devType':$("#devType").val(),
+                    'isUsed':$("#isUsedId").val()
+                },
+                method : 'post',
+                cols : [ [ // 标题栏
+                    {
+                        field : 'rownum',
+                        title : '序号',
+                        width : 100,
+                        sort : true
+                    }, {
+                        field : 'devNum',
+                        title : '设备编号',
+                        width : 200
+                    }, {
+                        field : 'devAlias',
+                        title : '设备别名',
+                        width : 100
+                    }, {
+                        field : 'devTypeVal',
+                        title : '设备类型',
+                        width : 100
+                    }, {
+                        field : 'devModel',
+                        title : '设备型号',
+                        width : 100
+                    }, {
+                        field : 'stateVal',
+                        title : '设备状态',
+                        width : 100
+                    }, {
+                        field : 'coldNum',
+                        title : '冷库编号',
+                        width : 100
+                    }, {
+                        field : 'orgName',
+                        title : '所属机构',
+                        width : 300
+                    }, {
+                        field : 'isUsedValue',
+                        title : '状态',
+                        width : 100
+                    }, {
+                        fixed : 'right',
+                        width : 300,
+                        align:'center',
+                        toolbar : '#barDemo'
+                    }
+                ] ], // 设置表头
+                page : true,
+                limits : [ 10,30, 60, 90, 150, 300 ],
+                limit : 10
+            });
+            return tableIns;
+        }
+	</script>
 @endsection
 

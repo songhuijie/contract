@@ -7,6 +7,7 @@
     <title>线上客客户服务器控制台</title>
     <link rel="stylesheet" href="<?php echo asset('/xianshangke/css/layout.css')?>">
     <link rel="stylesheet" href="<?php echo asset('/xianshangke/css/home.css')?>">
+    @yield('css')
 </head>
 <body>
 <div class="layout">
@@ -27,7 +28,7 @@
         <div class="main">
             <div class="left_two">
             </div>
-            <div class="content"  id="pjax-container">
+            <div class="content main-content"  id="pjax-container">
             {{--<div class="content" id="home">--}}
                 @yield('content')
             </div>
@@ -36,7 +37,22 @@
         </div>
     </div>
 </div>
-<script src="<?php echo asset('/xianshangke/js/jquery-3.4.1.min.js')?>"></script>
+
+<script src="<?php echo asset('/xianshangke/js/jquery.min.js')?>"></script>
+<script src="<?php echo asset('/xianshangke/js/bootstrap.min.js')?>"></script>
 <script src="<?php echo asset('/xianshangke/js/home.js?v=2')?>"></script>
+<script src="<?php echo asset('/xianshangke/js/jquery.pjax.js')?>"></script>
+
+@yield('js')
+
+<!-- JavaScripts建议将这些js下载到本地 -->
+<script>
+    $(document).pjax('a', '#pjax-container');
+    $(document).on("pjax:timeout", function(event) {
+        // 阻止超时导致链接跳转事件发生
+        event.preventDefault()
+    });
+</script>
+
 </body>
 </html>

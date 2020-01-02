@@ -5,10 +5,11 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
     Route::post('login', 'LoginController@signIn')->name('admin.login');
     Route::get('logout', 'LoginController@logout');
 
+
     Route::group(['middleware' => 'auth:admin,web'], function () {
         Route::get('/', 'IndexController@index');
         Route::get('index', 'IndexController@index');
-        Route::get('home', 'IndexController@home');
+        Route::get('home', 'IndexController@home');// 加载页面
         Route::get('menu', 'IndexController@getMenu');
         Route::get('forbidden', 'IndexController@forbidden');
         Route::get('main', 'IndexController@main');
