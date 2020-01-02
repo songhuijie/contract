@@ -27,9 +27,9 @@ $(function(){
                     success:function(res){
                         console.log(res);
                         if(res.status!=0){
-                            layer.msg(res.msg,{icon:5});return false;
+                            layer.msg(res.msg);return false;
                         }else{
-                            layer.msg(res.msg,{icon:1});
+                            layer.msg(res.msg);
 
                             setTimeout(function(){
                                 window.location.href = "/admin/index";
