@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="<?php echo asset('/xianshangke/css/layout.css')?>">
     <link rel="stylesheet" href="<?php echo asset('/xianshangke/css/home.css')?>">
 
-    <link href="{{asset('assets/libs/layui/css/layui.css')}}" rel="stylesheet">
-    <link href="{{asset('page/table/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-    <link href="{{asset('page/table/vendor/datatables-plugins/dataTables.bootstrap.css')}}" rel="stylesheet">
-    <link href="{{asset('page/table/vendor/datatables-responsive/dataTables.responsive.css')}}" rel="stylesheet">
-    <link href="{{asset('page/table/vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-    @yield('css')
+    <link href="<?php echo e(asset('assets/libs/layui/css/layui.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('page/table/vendor/bootstrap/css/bootstrap.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('page/table/vendor/datatables-plugins/dataTables.bootstrap.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('page/table/vendor/datatables-responsive/dataTables.responsive.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('page/table/vendor/font-awesome/css/font-awesome.min.css')); ?>" rel="stylesheet" type="text/css">
+    <?php echo $__env->yieldContent('css'); ?>
 </head>
 <body>
 <div class="layout">
@@ -35,8 +35,8 @@
             <div class="left_two">
             </div>
             <div class="content main-content"  id="pjax-container">
-            {{--<div class="content" id="home">--}}
-                @yield('content')
+            
+                <?php echo $__env->yieldContent('content'); ?>
             </div>
 
 
@@ -49,13 +49,13 @@
 <script src="<?php echo asset('/xianshangke/js/home.js?v=2')?>"></script>
 <script src="<?php echo asset('/xianshangke/js/jquery.pjax.js')?>"></script>
 
-<script src="{{asset('page/table/vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('page/table/vendor/datatables-plugins/dataTables.bootstrap.min.js')}}"></script>
-<script src="{{asset('page/table/vendor/datatables-responsive/dataTables.responsive.js')}}"></script>
+<script src="<?php echo e(asset('page/table/vendor/datatables/js/jquery.dataTables.min.js')); ?>"></script>
+<script src="<?php echo e(asset('page/table/vendor/datatables-plugins/dataTables.bootstrap.min.js')); ?>"></script>
+<script src="<?php echo e(asset('page/table/vendor/datatables-responsive/dataTables.responsive.js')); ?>"></script>
 
-<!-- <script src="{{asset('assets/libs/layui/layui.all.js')}}"></script> -->
-<script src="{{asset('assets/libs/layui/layui.js')}}"></script>
-@yield('js')
+<!-- <script src="<?php echo e(asset('assets/libs/layui/layui.all.js')); ?>"></script> -->
+<script src="<?php echo e(asset('assets/libs/layui/layui.js')); ?>"></script>
+<?php echo $__env->yieldContent('js'); ?>
 
 <!-- JavaScripts建议将这些js下载到本地 -->
 <script>
@@ -67,4 +67,4 @@
 </script>
 
 </body>
-</html>
+</html><?php /**PATH D:\phpstudy_pro\WWW\xianshangke\resources\views/admin/layout/main.blade.php ENDPATH**/ ?>

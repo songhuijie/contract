@@ -10,13 +10,13 @@
 	<meta name="author" content="">
 
 	<title></title>
-	<link href="{{asset('assets/libs/layui/css/layui.css')}}" rel="stylesheet">
-	<link href="{{asset('page/table/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-	<link href="{{asset('page/table/vendor/metisMenu/metisMenu.min.css')}}" rel="stylesheet">
-	<link href="{{asset('page/table/vendor/datatables-plugins/dataTables.bootstrap.css')}}" rel="stylesheet">
-	<link href="{{asset('page/table/vendor/datatables-responsive/dataTables.responsive.css')}}" rel="stylesheet">
-	<link href="{{asset('page/table/dist/css/sb-admin-2.css')}}" rel="stylesheet">
-	<link href="{{asset('page/table/vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+	<link href="<?php echo e(asset('assets/libs/layui/css/layui.css')); ?>" rel="stylesheet">
+	<link href="<?php echo e(asset('page/table/vendor/bootstrap/css/bootstrap.min.css')); ?>" rel="stylesheet">
+	<link href="<?php echo e(asset('page/table/vendor/metisMenu/metisMenu.min.css')); ?>" rel="stylesheet">
+	<link href="<?php echo e(asset('page/table/vendor/datatables-plugins/dataTables.bootstrap.css')); ?>" rel="stylesheet">
+	<link href="<?php echo e(asset('page/table/vendor/datatables-responsive/dataTables.responsive.css')); ?>" rel="stylesheet">
+	<link href="<?php echo e(asset('page/table/dist/css/sb-admin-2.css')); ?>" rel="stylesheet">
+	<link href="<?php echo e(asset('page/table/vendor/font-awesome/css/font-awesome.min.css')); ?>" rel="stylesheet" type="text/css">
 
 
 	<style>
@@ -37,9 +37,9 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">用户组</label>
 					<div class="layui-input-block">
-						@foreach($roles as $role)
-							<input type="checkbox" class="user_group" name="role_id[]" title="{{$role->name}}" value="{{$role->id}}">
-						@endforeach
+						<?php $__currentLoopData = $roles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $role): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+							<input type="checkbox" class="user_group" name="role_id[]" title="<?php echo e($role->name); ?>" value="<?php echo e($role->id); ?>">
+						<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 					</div>
 				</div>
 
@@ -92,17 +92,17 @@
 	</div>
 
 
-	<script src="{{asset('page/table/vendor/jquery/jquery.min.js')}}"></script>
-	<!-- <script src="{{asset('assets/libs/layui/lay/modules/jquery.js')}}"></script> -->
-	<script src="{{asset('page/table/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
-	<script src="{{asset('page/table/vendor/metisMenu/metisMenu.min.js')}}"></script>
-	<script src="{{asset('page/table/vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
-	<script src="{{asset('page/table/vendor/datatables-plugins/dataTables.bootstrap.min.js')}}"></script>
-	<script src="{{asset('page/table/vendor/datatables-responsive/dataTables.responsive.js')}}"></script>
-	<script src="{{asset('page/table/dist/js/sb-admin-2.js')}}"></script>
+	<script src="<?php echo e(asset('page/table/vendor/jquery/jquery.min.js')); ?>"></script>
+	<!-- <script src="<?php echo e(asset('assets/libs/layui/lay/modules/jquery.js')); ?>"></script> -->
+	<script src="<?php echo e(asset('page/table/vendor/bootstrap/js/bootstrap.min.js')); ?>"></script>
+	<script src="<?php echo e(asset('page/table/vendor/metisMenu/metisMenu.min.js')); ?>"></script>
+	<script src="<?php echo e(asset('page/table/vendor/datatables/js/jquery.dataTables.min.js')); ?>"></script>
+	<script src="<?php echo e(asset('page/table/vendor/datatables-plugins/dataTables.bootstrap.min.js')); ?>"></script>
+	<script src="<?php echo e(asset('page/table/vendor/datatables-responsive/dataTables.responsive.js')); ?>"></script>
+	<script src="<?php echo e(asset('page/table/dist/js/sb-admin-2.js')); ?>"></script>
 
-	<script src="{{asset('assets/libs/layui/layui.all.js')}}"></script>
-	<!-- <script src="{{asset('assets/libs/layui/layui.js')}}"></script> -->
+	<script src="<?php echo e(asset('assets/libs/layui/layui.all.js')); ?>"></script>
+	<!-- <script src="<?php echo e(asset('assets/libs/layui/layui.js')); ?>"></script> -->
 
 	<script>
         $(document).ready(function() {
@@ -126,7 +126,7 @@
                 elem: '#test2'
                 ,method: 'post'
                 ,multiple: true //是否允许多文件上传。设置 true即可开启。不支持ie8/9
-                ,url: '{{URL("file/img")}}' //上传接口
+                ,url: '<?php echo e(URL("file/img")); ?>' //上传接口
                 ,done: function(index, upload){
                     //获取当前触发上传的元素，一般用于 elem 绑定 class 的情况，注意：此乃 layui 2.1.0 新增
                     if(index.code!=0){
@@ -157,7 +157,7 @@
                     data:date,
                     type:"post",
                     datatype:"json",
-                    url:"{{url('admin/user')}}",
+                    url:"<?php echo e(url('admin/user')); ?>",
                     success:function(res){
                         console.log(res);
                         if(res.code==0){
@@ -187,3 +187,4 @@
 	</html>
 
 
+<?php /**PATH D:\phpstudy_pro\WWW\xianshangke\resources\views/admin/rule/addUser.blade.php ENDPATH**/ ?>

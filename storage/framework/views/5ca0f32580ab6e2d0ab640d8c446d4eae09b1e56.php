@@ -1,8 +1,4 @@
-@extends("admin.layout.main")
-
-
-
-@section("content")
+<?php $__env->startSection("content"); ?>
 	<div id="page-wrapper">
 
 		<div class="row" style="width: 100%">
@@ -38,7 +34,7 @@
 				</script>
 
 				<script type="text/html" id="staDemo">
-					@verbatim
+					
 					{{#  if(d.status ==1){ }}
 					<a class="layui-btn layui-btn-danger layui-btn-xs"  onclick="status({{d.id}})" lay-event="check">禁用</a>
 					{{#  } }}
@@ -46,10 +42,10 @@
 					{{#  if(d.status ==0){ }}
 					<a class="layui-btn layui-btn-xs" onclick="status({{d.id}})" lay-event="check">启用</a>
 					{{#  } }}
-					@endverbatim
+					
 				</script>
 				<script type="text/html" id="typeDemo">
-					@verbatim
+					
 					{{#  if(d.type ==1){ }}
 					<a >会员标签</a>
 					{{#  } }}
@@ -61,13 +57,13 @@
 					{{#  if(d.type ==3){ }}
 					<a >评论标签</a>
 					{{#  } }}
-					@endverbatim
+					
 				</script>
 
 				<script type="text/html" id="good_image">
-					@verbatim
+					
 					<img src="../{{d.good_image}}">
-					@endverbatim
+					
 				</script>
 
 
@@ -104,7 +100,7 @@
             var insTb = table.render({
                 elem: '#demo'
                 ,height: 800
-                ,url: '{{URL("admin/users")}}?type=select' //数据接口
+                ,url: '<?php echo e(URL("admin/users")); ?>?type=select' //数据接口
                 ,title: '标签表'
                 ,page: true //开启分页
                 ,toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
@@ -155,7 +151,7 @@
                             title:"添加",
                             type: 2,
                             area: ['80%', '80%'],
-                            content: '{{url("admin/user/create")}}' //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+                            content: '<?php echo e(url("admin/user/create")); ?>' //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
                         });
                         //layer.msg('添加');
                         break;
@@ -170,7 +166,7 @@
                                 title:"编辑",
                                 type: 2,
                                 area: ['80%', '80%'],
-                                content: '{{url("goods/detail")}}?type=edit&id='+data[0].id
+                                content: '<?php echo e(url("goods/detail")); ?>?type=edit&id='+data[0].id
 
                             });
                         }
@@ -221,7 +217,7 @@
                         title:"编辑",
                         type: 2,
                         area: ['80%', '80%'],
-                        content: '{{url("goods/detail")}}?type=edit&id='+obj.data.id //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+                        content: '<?php echo e(url("goods/detail")); ?>?type=edit&id='+obj.data.id //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
 
                     });
                 }
@@ -242,12 +238,12 @@
                     type:"delete",
                     datatype:"json",
                     data:{'id':id},
-                    url:"{{url('admin/user')}}",
+                    url:"<?php echo e(url('admin/user')); ?>",
                     success:function(res){
                         console.log(res);
-                        if(res.status==0){
+                        if(res.code==1){
                             layer.msg(res.msg);
-
+                            window.location.reload();
                             setTimeout(function(){
                                 window.location.reload();
                             },1000);
@@ -273,7 +269,7 @@
                 data:{'id':id,'type':'edit'},
                 type:'post',
                 datatype:"json",
-                url:"{{url('admin/users')}}",
+                url:"<?php echo e(url('admin/users')); ?>",
                 success:function(res){
                     if(res.code==1){
                         layer.msg(res.msg,{icon:6});
@@ -287,5 +283,7 @@
             })
         }
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
 
+
+<?php echo $__env->make("admin.layout.main", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\phpstudy_pro\WWW\xianshangke\resources\views/admin/rule/users.blade.php ENDPATH**/ ?>

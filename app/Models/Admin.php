@@ -6,6 +6,7 @@ use Illuminate\Foundation\Auth\User;
 
 class Admin extends User
 {
+    public $timestamps = false;
     protected $fillable = ['username', 'password','email', 'tel', 'status'];
     protected $rulesCacheKey = 'rules_cache_v1';
 

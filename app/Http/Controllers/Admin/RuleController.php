@@ -84,7 +84,8 @@ class RuleController extends Controller
     /**
      * 添加角色
      * @param Request $request
-     * @return array|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function addRole(Request $request)
     {
@@ -103,7 +104,8 @@ class RuleController extends Controller
     /**
      * 编辑角色
      * @param Request $request
-     * @return array|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function editRole(Request $request)
     {
@@ -203,7 +205,8 @@ class RuleController extends Controller
     /**
      * 添加后台管理员
      * @param Request $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function addAdmin(Request $request)
     {
@@ -213,6 +216,7 @@ class RuleController extends Controller
                 'password' => 'required',
                 'password_confirmation' => 'required',
             ]);
+
             $adminService = new AdminService();
             $re = $adminService->addAdmin($request->all());
             if (!$re) return ajaxError($adminService->getError(), $adminService->getHttpCode());
@@ -249,7 +253,7 @@ class RuleController extends Controller
                     $role['checked'] = 0;
                 }
             }
-            return view('admin.rule.editUser', ['roles' => $roles, 'admin' => $admin]);
+            return view('admin.rule.addUser', ['roles' => $roles, 'admin' => $admin]);
         }
     }
 
@@ -263,6 +267,11 @@ class RuleController extends Controller
         return ajaxSuccess();
     }
 
+    /**
+     * 删除管理员
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function delAdmin(Request $request)
     {
         $service = new AdminService();
