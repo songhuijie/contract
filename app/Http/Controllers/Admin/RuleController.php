@@ -211,16 +211,29 @@ class RuleController extends Controller
     public function addAdmin(Request $request)
     {
         if ($request->isMethod('post')) {
-            $this->validate($request, [
-                'username' => 'required',
-                'password' => 'required',
-                'password_confirmation' => 'required',
-            ]);
+            $all = $request->all();
+            if($all['type'] == 'edit'){
+                $this->validate($request, [
+                    'username' => 'required'
+                ]);
+                $adminService = new AdminService();
+                $re = $adminService->editAdmin($request->all());
+                if (!$re) return ajaxError($adminService->getError(), $adminService->getHttpCode());
+                return ajaxSuccess([], '', 'success', HttpCode::OK);
+            }else{
 
-            $adminService = new AdminService();
-            $re = $adminService->addAdmin($request->all());
-            if (!$re) return ajaxError($adminService->getError(), $adminService->getHttpCode());
-            return ajaxSuccess([], '', 'success', HttpCode::CREATED);
+                $this->validate($request, [
+                    'username' => 'required',
+                    'password' => 'required',
+                    'password_confirmation' => 'required',
+                ]);
+                $adminService = new AdminService();
+                $re = $adminService->addAdmin($request->all());
+                if (!$re) return ajaxError($adminService->getError(), $adminService->getHttpCode());
+                return ajaxSuccess([], '', 'success', HttpCode::CREATED);
+            }
+
+
         } else {
             $roles = Role::all();
             return view('admin.rule.addUser', ['roles' => $roles]);
@@ -235,15 +248,9 @@ class RuleController extends Controller
     public function editAdmin(Request $request)
     {
         if ($request->isMethod('put')) {
-            $this->validate($request, [
-                'username' => 'required'
-            ]);
-            $adminService = new AdminService();
-            $re = $adminService->editAdmin($request->all());
-            if (!$re) return ajaxError($adminService->getError(), $adminService->getHttpCode());
-            return ajaxSuccess();
+
         } else {
-            $roles = Role::all()->toArray();
+            $roles = Role::all();
             $admin = Admin::with('roles')->find($request->id)->toArray();
             $hasRoles = array_column($admin['roles'], 'id');
             foreach ($roles as &$role) {
@@ -253,6 +260,7 @@ class RuleController extends Controller
                     $role['checked'] = 0;
                 }
             }
+
             return view('admin.rule.addUser', ['roles' => $roles, 'admin' => $admin]);
         }
     }

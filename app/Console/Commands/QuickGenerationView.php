@@ -1,4 +1,59 @@
-@extends("admin.layout.main")
+<?php
+
+namespace App\Console\Commands;
+
+use Illuminate\Console\Command;
+
+class QuickGenerationView extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'quick:view {directory_name}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Command description';
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function handle()
+    {
+        //
+
+        //目录名
+        $directory = $this->argument('directory_name');
+
+        $now_directory = resource_path()."/views/admin/".$directory.'/';
+
+
+        $file_name = $now_directory."index.blade.php";
+
+        if(!is_dir($now_directory)){
+            mkdir($now_directory,0777);
+        }
+
+
+        $data = <<<EOT
+        @extends("admin.layout.main")
 
 @section('js')
 @endsection
@@ -286,6 +341,15 @@
 
     </script>
 @endsection
+EOT;
+
+        file_put_contents($file_name,$data);
+        if(!is_file($file_name)){
+            touch($file_name,0777);
+        }
 
 
 
+        dd('创建成功');
+    }
+}

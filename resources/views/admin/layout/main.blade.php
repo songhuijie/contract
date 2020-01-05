@@ -14,6 +14,7 @@
     <link href="{{asset('page/table/vendor/datatables-responsive/dataTables.responsive.css')}}" rel="stylesheet">
     <link href="{{asset('page/table/vendor/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
     @yield('css')
+    @yield('js')
 </head>
 <body>
 <div class="layout">
@@ -47,7 +48,7 @@
 <script src="<?php echo asset('/xianshangke/js/jquery.min.js')?>"></script>
 <script src="<?php echo asset('/xianshangke/js/bootstrap.min.js')?>"></script>
 <script src="<?php echo asset('/xianshangke/js/home.js?v=2')?>"></script>
-<script src="<?php echo asset('/xianshangke/js/jquery.pjax.js')?>"></script>
+<script src="<?php echo asset('/xianshangke/js/jquery.pjax.js?v=2')?>"></script>
 
 <script src="{{asset('page/table/vendor/datatables/js/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('page/table/vendor/datatables-plugins/dataTables.bootstrap.min.js')}}"></script>
@@ -55,7 +56,7 @@
 
 <!-- <script src="{{asset('assets/libs/layui/layui.all.js')}}"></script> -->
 <script src="{{asset('assets/libs/layui/layui.js')}}"></script>
-@yield('js')
+
 
 <!-- JavaScripts建议将这些js下载到本地 -->
 <script>

@@ -7,7 +7,14 @@
     <title>线上客客户服务器控制台</title>
     <link rel="stylesheet" href="<?php echo asset('/xianshangke/css/layout.css')?>">
     <link rel="stylesheet" href="<?php echo asset('/xianshangke/css/home.css')?>">
+
+    <link href="<?php echo e(asset('assets/libs/layui/css/layui.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('page/table/vendor/bootstrap/css/bootstrap.min.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('page/table/vendor/datatables-plugins/dataTables.bootstrap.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('page/table/vendor/datatables-responsive/dataTables.responsive.css')); ?>" rel="stylesheet">
+    <link href="<?php echo e(asset('page/table/vendor/font-awesome/css/font-awesome.min.css')); ?>" rel="stylesheet" type="text/css">
     <?php echo $__env->yieldContent('css'); ?>
+    <?php echo $__env->yieldContent('js'); ?>
 </head>
 <body>
 <div class="layout">
@@ -41,9 +48,15 @@
 <script src="<?php echo asset('/xianshangke/js/jquery.min.js')?>"></script>
 <script src="<?php echo asset('/xianshangke/js/bootstrap.min.js')?>"></script>
 <script src="<?php echo asset('/xianshangke/js/home.js?v=2')?>"></script>
-<script src="<?php echo asset('/xianshangke/js/jquery.pjax.js')?>"></script>
+<script src="<?php echo asset('/xianshangke/js/jquery.pjax.js?v=2')?>"></script>
 
-<?php echo $__env->yieldContent('js'); ?>
+<script src="<?php echo e(asset('page/table/vendor/datatables/js/jquery.dataTables.min.js')); ?>"></script>
+<script src="<?php echo e(asset('page/table/vendor/datatables-plugins/dataTables.bootstrap.min.js')); ?>"></script>
+<script src="<?php echo e(asset('page/table/vendor/datatables-responsive/dataTables.responsive.js')); ?>"></script>
+
+<!-- <script src="<?php echo e(asset('assets/libs/layui/layui.all.js')); ?>"></script> -->
+<script src="<?php echo e(asset('assets/libs/layui/layui.js')); ?>"></script>
+
 
 <!-- JavaScripts建议将这些js下载到本地 -->
 <script>

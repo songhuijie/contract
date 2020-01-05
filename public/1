@@ -1,0 +1,2 @@
+php artisan make:view admin/test/index --extends=admin.layout.main
+php artisan make:view admin/test/index --sections=content

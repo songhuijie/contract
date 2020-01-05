@@ -1,15 +1,10 @@
-<?php $__env->startSection('css'); ?>
-	<link href="<?php echo e(asset('assets/libs/layui/css/layui.css')); ?>" rel="stylesheet">
-	<link href="<?php echo e(asset('page/table/vendor/bootstrap/css/bootstrap.min.css')); ?>" rel="stylesheet">
-	<link href="<?php echo e(asset('page/table/vendor/datatables-plugins/dataTables.bootstrap.css')); ?>" rel="stylesheet">
-	<link href="<?php echo e(asset('page/table/vendor/datatables-responsive/dataTables.responsive.css')); ?>" rel="stylesheet">
-	<link href="<?php echo e(asset('page/table/vendor/font-awesome/css/font-awesome.min.css')); ?>" rel="stylesheet" type="text/css">
+<?php $__env->startSection('js'); ?>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection("content"); ?>
 	<div id="page-wrapper">
 
-		<div class="row">
+		<div class="row" style="width: 100%">
 			<div class="col-lg-12">
 				<div class="layui-form toolbar">
 					<div class="layui-form-item">
@@ -81,15 +76,14 @@
 		</div>
 
 	</div>
-    <script>
-        $(document).ready(function() {
-            $('#dataTables-example').DataTable({
-                responsive: true
-            });
-        });
-    </script>
 
     <script>
+
+
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+
         layui.config({
             version: '1568076536509' //为了更新 js 缓存，可忽略
         });
@@ -108,7 +102,7 @@
             var insTb = table.render({
                 elem: '#demo'
                 ,height: 800
-                ,url: '<?php echo e(URL("goods/index")); ?>?type=select' //数据接口
+                ,url: '<?php echo e(URL("admin/users")); ?>?type=select' //数据接口
                 ,title: '标签表'
                 ,page: true //开启分页
                 ,toolbar: 'default' //开启工具栏，此处显示默认图标，可以自定义模板，详见文档
@@ -116,44 +110,23 @@
                 ,limit : 5 //这里设置的是每页显示多少条
                 ,cols: [[ //表头
                     {type: 'checkbox', fixed: 'left'}
-                    ,{field: 'id', title: 'ID', width:80, sort: true }
+
+                    ,{field: 'id', title: 'ID', sort: true }
                     // ,{title: '类型', width:100,align:'center',toolbar: '#typeDemo'}
-                    ,{field: 'good_title', title: '标题', width:100,align:'center'}
-                    ,{field: 'good_dsc', title: '副标题', width:100,align:'center'}
-                    ,{field: 'goods_name', title: '商品分类', width:100,align:'center'}
-                    ,{field: 'royalty_price', title: '提成价格', width:100,align:'center'}
-                    ,{field: 'old_price', title: '原价格', width:100,align:'center'}
-                    ,{field: 'new_price', title: '新价格', width:100,align:'center'}
-                    ,{field: 'thumbs_num', title: '点赞次数', width:100,align:'center'}
-                    ,{field: 'stock', title: '库存', width:100,align:'center'}
-                    ,{field: 'browse_num', title: '浏览量', width:100,align:'center'}
-                    ,{field: 'sell_num', title: '销量', width:100,align:'center'}
-                    ,{ title: '商品图片', width:100,align:'center', toolbar: '#good_image'}
-                    ,{field:'freight',title: '运费', width:100,align:'center',templet:function(d){
-                        if(d.freight==0){
-                            return '<a>包邮</a>';
+                    ,{field: 'username', title: '管理员名',align:'center'}
+                    ,{field: 'tel', title: '手机', align:'center'}
+                    ,{field: 'email', title: '邮箱',align:'center'}
+                    ,{field: 'status', title: '状态',align:'center'}
+
+                    ,{field:'status',title: '状态',align:'center',templet:function(d){
+                        if(d.status==1){
+                            return '<a>开启</a>';
                         }else{
-                            return '<a>不包邮</a>';
+                            return '<a>禁用</a>';
                         }
                     }}
-                    ,{field:'goods_status',title: '商品状态', width:100,align:'center',templet:function(d){
-                        if(d.goods_status==1){
-                            return '<a>出售中</a>';
-                        }else{
-                            return '<a>下架</a>';
-                        }
-                    }}
-                    ,{field: 'created_at', title: '创建时间', width:100,align:'center'}
-                    ,{field: 'updated_at', title: '更新时间', width:100,align:'center'}
 
-
-                    // ,{field: 'time', title: '创建时间', width:180,align:'center',
-                    //   templet: function (d) {
-                    //     return layui.util.toDateString(d.time * 1000, "yyyy-MM-dd HH:mm:ss")
-                    //   }
-                    // }
-                    // ,{ title: '分类', width:80,align:'center', toolbar: '#staDemo'}
-                    ,{fixed: 'right',title:'操作', width: 165, align:'center', toolbar: '#barDemo'}
+                    ,{fixed: 'right',title:'操作', align:'center', toolbar: '#barDemo'}
                 ]]
             });
 
@@ -174,7 +147,7 @@
                             title:"添加",
                             type: 2,
                             area: ['80%', '80%'],
-                            content: '<?php echo e(url("goods/detail")); ?>' //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+                            content: '<?php echo e(url("admin/user/create")); ?>' //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
                         });
                         //layer.msg('添加');
                         break;
@@ -236,11 +209,14 @@
                             layer.msg('已取消操作')
                         }});
                 } else if(layEvent === 'edit'){
+
+                    var id = obj.data.id;
+                    var url = "user/"+id+"/edit";
                     layer.open({
                         title:"编辑",
                         type: 2,
                         area: ['80%', '80%'],
-                        content: '<?php echo e(url("goods/detail")); ?>?type=edit&id='+obj.data.id //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+                        content: url
 
                     });
                 }
@@ -258,14 +234,15 @@
                 }
 
                 $.ajax({
-                    type:"post",
+                    type:"delete",
                     datatype:"json",
-                    data:{'id':id,'type':'del'},
-                    url:"<?php echo e(url('goods/status')); ?>",
+                    data:{'id':id},
+                    url:"<?php echo e(url('admin/user')); ?>",
                     success:function(res){
                         console.log(res);
-                        if(res.code==1){
+                        if(res.status==0){
                             layer.msg(res.msg);
+
                             setTimeout(function(){
                                 window.location.reload();
                             },1000);
@@ -291,7 +268,7 @@
                 data:{'id':id,'type':'edit'},
                 type:'post',
                 datatype:"json",
-                url:"<?php echo e(url('goods/index')); ?>",
+                url:"<?php echo e(url('admin/users')); ?>",
                 success:function(res){
                     if(res.code==1){
                         layer.msg(res.msg,{icon:6});
@@ -304,18 +281,11 @@
                 }
             })
         }
+
     </script>
 <?php $__env->stopSection(); ?>
 
-<?php $__env->startSection("js"); ?>
 
-	<script src="<?php echo e(asset('page/table/vendor/datatables/js/jquery.dataTables.min.js')); ?>"></script>
-	<script src="<?php echo e(asset('page/table/vendor/datatables-plugins/dataTables.bootstrap.min.js')); ?>"></script>
-	<script src="<?php echo e(asset('page/table/vendor/datatables-responsive/dataTables.responsive.js')); ?>"></script>
 
-	<!-- <script src="<?php echo e(asset('assets/libs/layui/layui.all.js')); ?>"></script> -->
-	<script src="<?php echo e(asset('assets/libs/layui/layui.js')); ?>"></script>
-
-<?php $__env->stopSection(); ?>
 
 <?php echo $__env->make("admin.layout.main", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\phpstudy\WWW\html\xianshangke\xianshangke\resources\views/admin/rule/users.blade.php ENDPATH**/ ?>
