@@ -1,4 +1,4 @@
-@extends("admin.layout.main")
+@extends("admin.layout.modify")
 
 @section("content")
 	<form class="layui-form layui-form-pane" style="width:60%;">
@@ -36,8 +36,9 @@
 		    </div>
 		</div>
 	</form>
+	<script type="text/javascript" src="{{asset('/xianshangke/modul/rule/editUser.js')}}"></script>
 @endsection
 
 @section("js")
-	<script type="text/javascript" src="/layadmin/modul/rule/editUser.js"></script>
+
 @endsection

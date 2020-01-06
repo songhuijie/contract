@@ -1,11 +1,10 @@
-@extends("admin.layout.main")
+@extends("admin.layout.modify")
 
-@section("css")
-    <link rel="stylesheet" href="/layadmin/extra/zTree/css/zTreeStyle.css" type="text/css">
-    <link rel="stylesheet" href="/layadmin/modul/rule/setRules.css" type="text/css">
-@endsection
+
 
 @section("content")
+    <link rel="stylesheet" href="{{asset('/xianshangke/extra/zTree/css/zTreeStyle.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('/xianshangke/modul/rule/setRules.css')}}" type="text/css">
     <div class="admin-main layui-anim layui-anim-upbit">
         <fieldset class="layui-elem-field">
             <legend>配置权限</legend>
@@ -19,12 +18,9 @@
             </div>
         </fieldset>
     </div>
-@endsection
 
-@section("js")
-    <script type="text/javascript" src="/layadmin/modul/common/jquery.min.js"></script>
-    <script type="text/javascript" src="/layadmin/extra/zTree/js/jquery.ztree.core.min.js"></script>
-    <script type="text/javascript" src="/layadmin/extra/zTree/js/jquery.ztree.excheck.min.js"></script>
+    <script type="text/javascript" src="{{asset('/xianshangke/extra/zTree/js/jquery.ztree.core.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('xianshangke/extra/zTree/js/jquery.ztree.excheck.min.js')}}"></script>
     <script type="text/javascript">
         var setting = {
             check:{enable: true},
@@ -42,14 +38,14 @@
         }
         $.fn.zTree.init($("#treeDemo"), setting, zNodes);
         setCheck();
-        layui.config({base: '/layadmin/modul/common/'}).use(['form', 'dialog', 'his'], function () {
+        layui.config({base: '/xianshangke/modul/common/'}).use(['form', 'dialog', 'his'], function () {
             var form = layui.form, dialog = layui.dialog, his = layui.his;
             form.on('submit(submit)', function () {
                 var loadIndex = dialog.load('数据提交中，请稍候');
                 // 提交到方法 默认为本身
                 var treeObj = $.fn.zTree.getZTreeObj("treeDemo"),
-                        nodes=treeObj.getCheckedNodes(true),
-                        v=[];
+                    nodes=treeObj.getCheckedNodes(true),
+                    v=[];
                 for(var i=0;i<nodes.length;i++){
                     v[i]=nodes[i].id;
                 }
@@ -76,4 +72,8 @@
             })
         });
     </script>
+@endsection
+
+@section("js")
+
 @endsection

@@ -1,4 +1,4 @@
-@extends("admin.layout.main")
+@extends("admin.layout.modify")
 
 @section("content")
 	<form class="layui-form layui-form-pane" style="width:80%;">
@@ -13,6 +13,8 @@
 				</select>
 			</div>
 		</div>
+
+
 		<div class="layui-form-item">
 			<label class="layui-form-label">权限名称</label>
 			<div class="layui-input-block">
@@ -45,8 +47,9 @@
 		    </div>
 		</div>
 	</form>
+	<script type="text/javascript" src="{{asset('/xianshangke/modul/rule/addRule.js')}}"></script>
 @endsection
 
 @section("js")
-	<script type="text/javascript" src="/layadmin/modul/rule/addRule.js"></script>
+
 @endsection

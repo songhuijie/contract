@@ -36,7 +36,16 @@ class RuleController extends Controller
                 'title' => 'required',
             ]);
             $ruleService = new RuleService();
-            $re = $ruleService->addRule($request->all());
+
+            try{
+                $re = $ruleService->addRule($request->all());
+                dd($re);
+            }catch (\Exception  $e){
+                dd($e->getMessage());
+            }
+
+
+
             if (!$re) return ajaxError($ruleService->getError(), $ruleService->getHttpCode());
             return ajaxSuccess([], '', 'success', HttpCode::CREATED);
 
@@ -97,6 +106,7 @@ class RuleController extends Controller
             if (!$role) return ajaxError('添加失败', HttpCode::BAD_REQUEST);
             return ajaxSuccess();
         } else {
+
             return view('admin.rule.addRole');
         }
     }

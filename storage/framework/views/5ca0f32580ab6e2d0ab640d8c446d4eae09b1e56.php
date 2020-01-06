@@ -1,3 +1,6 @@
+<?php $__env->startSection('js'); ?>
+<?php $__env->stopSection(); ?>
+
 <?php $__env->startSection("content"); ?>
 	<div id="page-wrapper">
 
@@ -73,15 +76,14 @@
 		</div>
 
 	</div>
-    <script>
-        $(document).ready(function() {
-            $('#dataTables-example').DataTable({
-                responsive: true
-            });
-        });
-    </script>
 
     <script>
+
+
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+
         layui.config({
             version: '1568076536509' //为了更新 js 缓存，可忽略
         });
@@ -124,12 +126,6 @@
                         }
                     }}
 
-                    // ,{field: 'time', title: '创建时间', width:180,align:'center',
-                    //   templet: function (d) {
-                    //     return layui.util.toDateString(d.time * 1000, "yyyy-MM-dd HH:mm:ss")
-                    //   }
-                    // }
-                    // ,{ title: '分类', width:80,align:'center', toolbar: '#staDemo'}
                     ,{fixed: 'right',title:'操作', align:'center', toolbar: '#barDemo'}
                 ]]
             });
@@ -181,7 +177,8 @@
                                 ,anim: 1 //动画类型
                                 ,btn: ['确定','取消'] //按钮
                                 ,icon: 6    // icon
-                                ,yes:function(){
+                                ,yes:function(res){
+                                    console.log(res);
                                     del(data);
                                 }
                                 ,btn2:function(){
@@ -213,11 +210,14 @@
                             layer.msg('已取消操作')
                         }});
                 } else if(layEvent === 'edit'){
+
+                    var id = obj.data.id;
+                    var url = "user/"+id+"/edit";
                     layer.open({
                         title:"编辑",
                         type: 2,
                         area: ['80%', '80%'],
-                        content: '<?php echo e(url("goods/detail")); ?>?type=edit&id='+obj.data.id //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+                        content: url
 
                     });
                 }
@@ -241,9 +241,9 @@
                     url:"<?php echo e(url('admin/user')); ?>",
                     success:function(res){
                         console.log(res);
-                        if(res.code==1){
+                        if(res.status==0){
                             layer.msg(res.msg);
-                            window.location.reload();
+
                             setTimeout(function(){
                                 window.location.reload();
                             },1000);
@@ -282,8 +282,11 @@
                 }
             })
         }
+
     </script>
 <?php $__env->stopSection(); ?>
+
+
 
 
 <?php echo $__env->make("admin.layout.main", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\phpstudy_pro\WWW\xianshangke\resources\views/admin/rule/users.blade.php ENDPATH**/ ?>

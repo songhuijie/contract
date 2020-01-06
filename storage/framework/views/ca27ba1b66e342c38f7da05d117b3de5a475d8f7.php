@@ -28,15 +28,15 @@
 					<td><?php echo e($role->created_at); ?></td>
 					<td>
 						<a data-id="<?php echo e($role->id); ?>" class="layui-btn layui-btn-xs role_edit">
-							<i class="layui-icon">&#xe642;</i>
+							
 							编辑
 						</a>
 						<a data-id="<?php echo e($role->id); ?>" class="layui-btn layui-btn-warm layui-btn-xs rule_set">
-							<i class="layui-icon"></i>
+							
 							权限配置
 						</a>
 						<a data-id="<?php echo e($role->id); ?>" class="layui-btn layui-btn-danger layui-btn-xs role_del">
-							<i class="layui-icon"></i>
+							
 							删除
 						</a>
 					</td>
@@ -45,10 +45,11 @@
 			</tbody>
 		</table>
 	</div>
+	<script type="text/javascript" src="<?php echo e(asset('/xianshangke/modul/rule/roles.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection("js"); ?>
-	<script type="text/javascript" src="/layadmin/modul/rule/roles.js"></script>
+
 <?php $__env->stopSection(); ?>
 
 

@@ -33,4 +33,4 @@
         </div>
     </div>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('admin.layout.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\phpstudy\WWW\html\xianshangke\xianshangke\resources\views/admin/index/home.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('admin.layout.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\phpstudy_pro\WWW\xianshangke\resources\views/admin/index/home.blade.php ENDPATH**/ ?>

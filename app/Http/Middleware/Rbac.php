@@ -15,17 +15,19 @@ class Rbac
 
     /**
      * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param $request
+     * @param Closure $next
      * @return mixed
+     * @throws RbacException
      */
     public function handle($request, Closure $next)
     {
         $currentRule = $this->getCurrentRule();
         $rules = $this->getRules();
+
+
         if (!in_array($currentRule, $rules))
-            throw new RbacException(RbacException::NOT_RULE);
+            abort(403);
         return $next($request);
     }
 

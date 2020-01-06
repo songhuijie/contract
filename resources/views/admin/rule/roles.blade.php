@@ -30,15 +30,15 @@
 					<td>{{ $role->created_at }}</td>
 					<td>
 						<a data-id="{{$role->id}}" class="layui-btn layui-btn-xs role_edit">
-							<i class="layui-icon">&#xe642;</i>
+							{{--<i class="layui-icon">&#xe642;</i>--}}
 							编辑
 						</a>
 						<a data-id="{{$role->id}}" class="layui-btn layui-btn-warm layui-btn-xs rule_set">
-							<i class="layui-icon"></i>
+							{{--<i class="layui-icon"></i>--}}
 							权限配置
 						</a>
 						<a data-id="{{$role->id}}" class="layui-btn layui-btn-danger layui-btn-xs role_del">
-							<i class="layui-icon"></i>
+							{{--<i class="layui-icon"></i>--}}
 							删除
 						</a>
 					</td>
@@ -47,9 +47,10 @@
 			</tbody>
 		</table>
 	</div>
+	<script type="text/javascript" src="{{asset('/xianshangke/modul/rule/roles.js')}}"></script>
 @endsection
 
 @section("js")
-	<script type="text/javascript" src="/layadmin/modul/rule/roles.js"></script>
+
 @endsection
 

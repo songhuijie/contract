@@ -1,35 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-	<title></title>
-	<link href="<?php echo e(asset('assets/libs/layui/css/layui.css')); ?>" rel="stylesheet">
-	<link href="<?php echo e(asset('page/table/vendor/bootstrap/css/bootstrap.min.css')); ?>" rel="stylesheet">
-	<link href="<?php echo e(asset('page/table/vendor/metisMenu/metisMenu.min.css')); ?>" rel="stylesheet">
-	<link href="<?php echo e(asset('page/table/vendor/datatables-plugins/dataTables.bootstrap.css')); ?>" rel="stylesheet">
-	<link href="<?php echo e(asset('page/table/vendor/datatables-responsive/dataTables.responsive.css')); ?>" rel="stylesheet">
-	<link href="<?php echo e(asset('page/table/dist/css/sb-admin-2.css')); ?>" rel="stylesheet">
-	<link href="<?php echo e(asset('page/table/vendor/font-awesome/css/font-awesome.min.css')); ?>" rel="stylesheet" type="text/css">
-
-
-	<style>
-		.page-header{
-			border-bottom: none !important;
-		}
-		#page-wrapper{
-			border-left: none !important;
-		}
-	</style>
-</head>
-
-<body>
+<?php $__env->startSection("content"); ?>
 	<div id="wrapper" style="margin-top:20px;">
 		<div id="page-wrapper">
 			<form class="layui-form" >
@@ -38,7 +7,7 @@
 					<label class="layui-form-label">用户组</label>
 					<div class="layui-input-block">
 						<?php $__currentLoopData = $roles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $role): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-							<input type="checkbox" class="user_group" name="role_id[]" title="<?php echo e($role->name); ?>" value="<?php echo e($role->id); ?>">
+							<input type="checkbox" class="user_group" name="role_id[]" title="<?php echo e($role->name); ?>" value="<?php echo e($role->id); ?>" <?php if($role && $role->checked == 1): ?><?php echo e('checked'); ?> <?php endif; ?>>
 						<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 					</div>
 				</div>
@@ -46,36 +15,43 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">用户名</label>
 					<div class="layui-input-block">
-						<input type="text" name="username" required  lay-verify="required"  placeholder="请输入用户名" autocomplete="off" class="layui-input">
+						<input type="text" name="username" required  lay-verify="required"  placeholder="请输入用户名" autocomplete="off" class="layui-input" value="<?php if(!empty($admin)): ?><?php echo e($admin['username']); ?><?php endif; ?>">
 					</div>
 				</div>
+
 
 				<div class="layui-form-item">
 					<label class="layui-form-label">密码</label>
 					<div class="layui-input-block">
-						<input type="password" name="password" required  lay-verify="required"  placeholder="请输入密码" autocomplete="off" class="layui-input">
+						<input type="password" name="password" required  lay-verify="required"  placeholder="请输入密码" autocomplete="off" class="layui-input" value="<?php if(!empty($admin)): ?><?php echo e($admin['password']); ?><?php endif; ?>" readonly>
 					</div>
 				</div>
 
 				<div class="layui-form-item">
 					<label class="layui-form-label">确认密码</label>
 					<div class="layui-input-block">
-						<input type="password" name="password_confirmation" required  lay-verify="required"  placeholder="请输入确认密码" autocomplete="off" class="layui-input">
+						<input type="password" name="password_confirmation" required  lay-verify="required"  placeholder="请输入确认密码" autocomplete="off" class="layui-input" value="<?php if(!empty($admin)): ?><?php echo e($admin['password']); ?> <?php endif; ?>" readonly >
 					</div>
 				</div>
 
 				<div class="layui-form-item">
 					<label class="layui-form-label">邮箱</label>
 					<div class="layui-input-block">
-						<input type="text" class="layui-input" name="email" lay-verify="email" placeholder="请输入邮箱">
+						<input type="text" class="layui-input" name="email" lay-verify="email" placeholder="请输入邮箱" value="<?php if(!empty($admin)): ?><?php echo e($admin['email']); ?><?php endif; ?>" readonly>
 					</div>
 				</div>
 				<div class="layui-form-item">
 					<label class="layui-form-label">手机号</label>
 					<div class="layui-input-block">
-						<input type="text" class="layui-input" name="tel" lay-verify="required" placeholder="请输入手机号">
+						<input type="text" class="layui-input" name="tel" lay-verify="required" placeholder="请输入手机号" value="<?php if(!empty($admin)): ?><?php echo e($admin['tel']); ?><?php endif; ?>" readonly>
 					</div>
 				</div>
+
+
+				<?php if(!empty($admin)): ?>
+					<input type="text" id="mold" hidden  value="edit" >
+					<input type="text" id="id" hidden value="<?php echo e($admin['id']); ?>" >
+				<?php endif; ?>
 
 				<div class="layui-form-item">
 					<div class="layui-input-block">
@@ -90,20 +66,8 @@
 
 
 	</div>
-
-
-	<script src="<?php echo e(asset('page/table/vendor/jquery/jquery.min.js')); ?>"></script>
-	<!-- <script src="<?php echo e(asset('assets/libs/layui/lay/modules/jquery.js')); ?>"></script> -->
-	<script src="<?php echo e(asset('page/table/vendor/bootstrap/js/bootstrap.min.js')); ?>"></script>
-	<script src="<?php echo e(asset('page/table/vendor/metisMenu/metisMenu.min.js')); ?>"></script>
-	<script src="<?php echo e(asset('page/table/vendor/datatables/js/jquery.dataTables.min.js')); ?>"></script>
-	<script src="<?php echo e(asset('page/table/vendor/datatables-plugins/dataTables.bootstrap.min.js')); ?>"></script>
-	<script src="<?php echo e(asset('page/table/vendor/datatables-responsive/dataTables.responsive.js')); ?>"></script>
-	<script src="<?php echo e(asset('page/table/dist/js/sb-admin-2.js')); ?>"></script>
-
-	<script src="<?php echo e(asset('assets/libs/layui/layui.all.js')); ?>"></script>
-	<!-- <script src="<?php echo e(asset('assets/libs/layui/layui.js')); ?>"></script> -->
-
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection("js"); ?>
 	<script>
         $(document).ready(function() {
             $('#dataTables-example').DataTable({
@@ -162,12 +126,12 @@
                         console.log(res);
                         if(res.code==0){
                             parent.layer.msg(res.msg);
-                        }else{
-                            parent.layer.msg(res.msg);
                             setTimeout(function(){
                                 parent.layer.closeAll();
                                 parent.location.reload();
                             },1000)
+                        }else{
+                            parent.layer.msg(res.msg);
                         }
 
                     }
@@ -181,10 +145,11 @@
             // .removeClass('layui-hide');
         });
 	</script>
-
-	</body>
-
-	</html>
+<?php $__env->stopSection(); ?>
 
 
-<?php /**PATH D:\phpstudy_pro\WWW\xianshangke\resources\views/admin/rule/addUser.blade.php ENDPATH**/ ?>
+
+
+
+
+<?php echo $__env->make("admin.layout.modify", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\phpstudy_pro\WWW\xianshangke\resources\views/admin/rule/addUser.blade.php ENDPATH**/ ?>

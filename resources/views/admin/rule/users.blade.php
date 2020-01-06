@@ -179,7 +179,8 @@
                                 ,anim: 1 //动画类型
                                 ,btn: ['确定','取消'] //按钮
                                 ,icon: 6    // icon
-                                ,yes:function(){
+                                ,yes:function(res){
+                                    console.log(res);
                                     del(data);
                                 }
                                 ,btn2:function(){
