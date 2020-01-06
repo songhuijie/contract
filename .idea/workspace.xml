@@ -1,46 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33dae8e9-96d1-4c1a-9dc8-f1dd7e1d0d76" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/layout/modify.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/xianshangke.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/xianshangke.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/QuickGenerationView.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/QuickGenerationView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/RuleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/RuleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Rbac.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Rbac.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/rule/addRole.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/rule/addRole.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/rule/addRule.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/rule/addRule.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/rule/addUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/rule/addUser.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/rule/editRole.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/rule/editRole.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/rule/editRule.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/rule/editRule.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/rule/editUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/rule/editUser.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/rule/roles.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/rule/roles.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/rule/rules.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/rule/rules.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/rule/setRules.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/rule/setRules.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/rule/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/rule/users.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/3c580f9d67ac6eb458338363c7a7636bcb8bb1d5.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/3c580f9d67ac6eb458338363c7a7636bcb8bb1d5.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/419851a32c52b021a0279293a7c39bab6405df7c.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/449d5494bacb590750c9cf0c6d051cea5fa82527.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/5ca0f32580ab6e2d0ab640d8c446d4eae09b1e56.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/5ca0f32580ab6e2d0ab640d8c446d4eae09b1e56.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/6172a7221770cf08bffc84a50d2ac72c1c062b90.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/734b4c62b22e90b74c19920109c658d67df9af10.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/734b4c62b22e90b74c19920109c658d67df9af10.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/73b72ecfc9f20d5bdd3fba93e392acc3f049114e.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/81661c7316cd7c4f4e808e96320bc47f50123b88.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/875a763d02289b5197cd877071735ec2f9c68f89.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/8cae242846fcb2b10555be8db1c831b51a4e6334.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/a6b1f46786750c04dbef4e331fd63f68d456f299.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/baff03284ad263227792c21963aec5d479ee55df.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/be3d059779206859e67cacf3ef290f4f3bd33e25.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/ca27ba1b66e342c38f7da05d117b3de5a475d8f7.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/ca27ba1b66e342c38f7da05d117b3de5a475d8f7.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/f0ca1646da4d6687d4d3f81ac333fa8cd95b3c60.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/f0ca1646da4d6687d4d3f81ac333fa8cd95b3c60.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/f596a8713654444b27f2f1cb75d0f01cb08edaab.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/f70080ada864eed52fbfa648aa27867f3a06dbd3.php" beforeDir="false" />
-    </list>
+    <list default="true" id="33dae8e9-96d1-4c1a-9dc8-f1dd7e1d0d76" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
