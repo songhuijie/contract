@@ -8,16 +8,16 @@ layui.config({base: '/xianshangke/modul/common/'}).use(['table', 'dialog', 'his'
         elem: '#users'
         ,url: '/admin/users' //数据接口
         ,method: 'get'
-        ,page: true //开启分页
+        ,page: false //开启分页
         ,limit: 10
         ,limits: [10, 20]
         ,cols: [[ //表头
-            {field: 'id', title: 'ID', width:80, sort: true, fixed: 'left', align: 'left'}
+            {field: 'id', title: 'ID', sort: true, fixed: 'left', align: 'left'}
             ,{field: 'username', title: '用户名'}
             ,{field: 'email', title: '邮箱'}
             ,{field: 'tel', title: '手机号'}
-            ,{field: 'status', title: '是否启用', width: 80, templet: '#active'}
-            ,{title: '操作', width: 160, toolbar: '#op'}
+            ,{field: 'status', title: '是否启用', templet: '#active'}
+            ,{title: '操作', toolbar: '#op'}
         ]]
         ,response: {
             statusName: 'code'
@@ -60,7 +60,14 @@ layui.config({base: '/xianshangke/modul/common/'}).use(['table', 'dialog', 'his'
                 });
             });
         } else if (layEvent == 'edit') {
-            dialog.open('编辑管理员', '/admin/user/'+data.id+'/edit');
+            // dialog.open('编辑管理员', '/admin/user/'+data.id+'/edit');
+            var url = '/admin/user/'+data.id+'/edit';
+            layer.open({
+                title:"编辑管理员",
+                type: 2,
+                area: ['80%', '80%'],
+                content: url //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+            });
 
         } else if (layEvent == 'del') {
             dialog.confirm('确认删除改用户么', function () {
@@ -117,7 +124,15 @@ layui.config({base: '/xianshangke/modul/common/'}).use(['table', 'dialog', 'his'
 
     // 添加管理员
     $('.add_btn').click(function () {
-        dialog.open('添加管理员', '/admin/user/create');
+        // dialog.open('添加管理员', '/admin/user/create');
+
+        var url = '/admin/user/create';
+        layer.open({
+            title:"添加管理员",
+            type: 2,
+            area: ['80%', '80%'],
+            content: url //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+        });
     });
 
 });

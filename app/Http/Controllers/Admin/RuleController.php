@@ -27,7 +27,8 @@ class RuleController extends Controller
     /**
      * 添加权限
      * @param Request $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function addRule(Request $request)
     {
@@ -37,16 +38,11 @@ class RuleController extends Controller
             ]);
             $ruleService = new RuleService();
 
-            try{
-                $re = $ruleService->addRule($request->all());
-                dd($re);
-            }catch (\Exception  $e){
-                dd($e->getMessage());
-            }
+            $re = $ruleService->addRule($request->all());
 
 
 
-            if (!$re) return ajaxError($ruleService->getError(), $ruleService->getHttpCode());
+            if (!$re) return ajaxError($ruleService->getError(), 200);
             return ajaxSuccess([], '', 'success', HttpCode::CREATED);
 
         } else {

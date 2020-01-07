@@ -2,12 +2,13 @@
 
 
 $(".list").on("click","li",function(e){
+    console.log($(this));
     $(".list > li").removeClass("li_border_left")
     $(this).addClass("li_border_left")
     var int = $(this).data('id');
     $(".left_two").find("ul").removeClass("block");
     $('.left_two ul').each(function(i,v){
-        console.log(i);
+
         if(i == int){
             $(v).addClass('block');
         }

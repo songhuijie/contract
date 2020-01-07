@@ -25,6 +25,7 @@ class RuleService extends BaseService
     {
         if ($param['rule']) {
             $has = Rule::where('rule', $param['rule'])->count();
+
             if ($has > 0) {
                 $this->error = '该权限已存在';
                 $this->httpCode = HttpCode::CONFLICT;

@@ -1,7 +1,7 @@
 @extends("admin.layout.main")
 
 @section("content")
-	<blockquote class="layui-elem-quote news_search">
+	<blockquote class="layui-elem news_search">
 		<div class="layui-inline">
 			<a class="layui-btn role_add" style="background-color:#5FB878">添加用户组</a>
 		</div>
@@ -33,7 +33,7 @@
 							{{--<i class="layui-icon">&#xe642;</i>--}}
 							编辑
 						</a>
-						<a data-id="{{$role->id}}" class="layui-btn layui-btn-warm layui-btn-xs rule_set">
+						<a data-id="{{$role->id}}" class="layui-btn layui-btn-normal layui-btn-xs rule_set">
 							{{--<i class="layui-icon"></i>--}}
 							权限配置
 						</a>

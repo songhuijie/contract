@@ -10,6 +10,7 @@
 				<input type="text" class="layui-input" name="name" lay-verify="required" placeholder="请输入用户组名称">
 			</div>
 		</div>
+
 		<div class="layui-form-item">
 			<div class="layui-input-block">
 				<button class="layui-btn" lay-submit type="button" lay-filter="addRole">立即提交</button>

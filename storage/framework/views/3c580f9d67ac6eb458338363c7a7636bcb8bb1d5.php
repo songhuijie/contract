@@ -1,6 +1,9 @@
+<?php $__env->startSection('css'); ?>
+<?php $__env->stopSection(); ?>
+
 <?php $__env->startSection("content"); ?>
     <link rel="stylesheet" href="<?php echo e(asset('/xianshangke/extra/treegrid/css/jquery.treegrid.css')); ?>" media="all" />
-	<blockquote class="layui-elem-quote news_search">
+	<blockquote class="layui-elem news_search">
 		<div class="layui-inline">
 			<a class="layui-btn ruleAdd_btn" style="background-color:#5FB878">添加权限</a>
 		</div>
@@ -65,6 +68,7 @@
 			</tbody>
 		</table>
 	</div>
+
 
     <script type="text/javascript" src="<?php echo e(asset('/xianshangke/extra/treegrid/js/jquery.treegrid.js')); ?>"></script>
     <script type="text/javascript" src="<?php echo e(asset('/xianshangke/modul/rule/rules.js')); ?>"></script>

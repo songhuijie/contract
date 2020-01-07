@@ -14,10 +14,11 @@
 		    </div>
 		</div>
 	</form>
+	<script type="text/javascript" src="<?php echo e(asset('/xianshangke/modul/rule/editRole.js')); ?>"></script>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection("js"); ?>
-	<script type="text/javascript" src="<?php echo e(asset('/xianshangke/modul/rule/editRole.js')); ?>"></script>
+
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make("admin.layout.modify", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\phpstudy_pro\WWW\xianshangke\resources\views/admin/rule/editRole.blade.php ENDPATH**/ ?>
