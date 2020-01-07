@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Schema;
 
 class QuickGeneration extends Command
 {
@@ -38,11 +39,12 @@ class QuickGeneration extends Command
     public function handle()
     {
         //
-
         //目录名
 
 
+
         $directory = $this->argument('directory_name');
+
         $str = preg_replace_callback("/_+([a-z])/",function($matches){
             print_r($matches); //Array ( [0] => _b [1] => b )
             return strtoupper($matches[1]);
@@ -50,7 +52,10 @@ class QuickGeneration extends Command
 
         $sentence = ucfirst($str);
 
+
+
         try{
+
             //生成模型
             $this->GenerationModel($sentence);
             //生成控制器
@@ -58,7 +63,6 @@ class QuickGeneration extends Command
 
             //生成视图
             $this->GenerationView($directory);
-
 
             dd('success');
         }catch (\Exception $e){
@@ -68,7 +72,9 @@ class QuickGeneration extends Command
     }
 
     public function GenerationModel($sentence){
+
         exec("php artisan make:model Models\\$sentence");
+
     }
 
     public function GenerationController($sentence){

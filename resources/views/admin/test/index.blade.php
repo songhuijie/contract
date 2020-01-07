@@ -1,4 +1,4 @@
-@extends("admin.layout.main")
+        @extends("admin.layout.main")
 
 @section("content")
     <blockquote class="layui-elem news_search">
