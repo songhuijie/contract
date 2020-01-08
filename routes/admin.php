@@ -44,6 +44,18 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             // 权限配置
             Route::get('role/{role_id}/rules', 'RuleController@setRules');
             Route::put('role/{role_id}/rules', 'RuleController@storeRules');
+
+            //基本配置
+            Route::resource('config', 'ConfigController');
+            Route::post('config/list','ConfigController@list');
+
+            //会员
+            Route::resource('member', 'MemberController');
+            Route::post('member/list','MemberController@list');
+
+            //失信
+            Route::resource('breach', 'BreachController');
+            Route::post('breach/list','BreachController@list');
         });
     });
 

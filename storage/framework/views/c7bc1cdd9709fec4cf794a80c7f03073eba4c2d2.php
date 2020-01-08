@@ -1,6 +1,6 @@
-        @extends("admin.layout.main")
+        
 
-@section("content")
+<?php $__env->startSection("content"); ?>
     <blockquote class="layui-elem news_search">
         <div class="layui-inline">
             <div class="layui-input-inline">
@@ -15,7 +15,7 @@
             <div class="layui-form-mid layui-word-aux"></div>
         </div>
     </blockquote>
-    <table id="users" lay-filter="usertab"></table>
+    <table id="config" lay-filter="usertab"></table>
 
     
     <script type="text/html" id="op">
@@ -28,5 +28,6 @@
             删除
         </a>
     </script>
-    <script type="text/javascript" src="{{'/xianshangke/modul/rule/test.js'}}"></script>
-@endsection
+    <script type="text/javascript" src="<?php echo e('/xianshangke/modul/rule/config.js'); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make("admin.layout.main", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\phpstudy_pro\WWW\contract\resources\views/admin/config/index.blade.php ENDPATH**/ ?>

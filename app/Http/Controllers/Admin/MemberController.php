@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Test;
+use App\Model\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class TestController extends Controller
+class MemberController extends Controller
 {
+
+    public $user;
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,6 +22,7 @@ class TestController extends Controller
     public function index()
     {
         //
+        return view('admin.member.index');
     }
 
     /**
@@ -26,6 +33,20 @@ class TestController extends Controller
     public function create()
     {
         //
+
+    }
+
+    /**
+     * ajax 请求列表数据
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function list(Request $request){
+
+        $param = $request->all();
+
+        $user = $this->user->getUserByWhere($param);
+        return ajaxSuccess($user['data'], $user['count']);
     }
 
     /**
@@ -42,10 +63,10 @@ class TestController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Test  $test
+     * @param  \App\Models\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function show(Test $test)
+    public function show(User $member)
     {
         //
     }
@@ -53,10 +74,10 @@ class TestController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Test  $test
+     * @param  \App\Models\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function edit(Test $test)
+    public function edit(User $member)
     {
         //
     }
@@ -65,10 +86,10 @@ class TestController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Test  $test
+     * @param  \App\Models\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Test $test)
+    public function update(Request $request, User $member)
     {
         //
     }
@@ -76,10 +97,10 @@ class TestController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Test  $test
+     * @param  \App\Models\Member  $member
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Test $test)
+    public function destroy(User $member)
     {
         //
     }

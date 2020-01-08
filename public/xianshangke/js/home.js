@@ -11,6 +11,8 @@ $(".list").on("click","li",function(e){
 
         if(i == int){
             $(v).addClass('block');
+            $(v).find('li:first').addClass('active');
+            $(v).find('li:first').find('a').trigger("click");;
         }
     })
 });
@@ -50,15 +52,18 @@ $(function(){
                     html_content += "<ul >";
                 }
 
-
-
                 html += "<img src=\"../xianshangke/"+v.icon+"\" alt=\"\"";
                 html += "<a href=\"javascript:void()\">"+v.title+"</a>";
                 html += "</li>";
 
                 $.each(v.children,function(key,value){
 
-                    html_content += "<li><a href='"+value.href+"'>"+value.title+"</a></li>";
+                    if(key == 0){
+                        html_content += "<li class=\"active\"><a href='"+value.href+"'>"+value.title+"</a></li>";
+                    }else{
+                        html_content += "<li><a href='"+value.href+"'>"+value.title+"</a></li>";
+                    }
+
                 });
                 html_content += "</ul>";
             });

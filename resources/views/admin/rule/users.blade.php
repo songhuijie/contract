@@ -327,7 +327,7 @@
             删除
         </a>
     </script>
-    <script type="text/javascript" src="{{'/xianshangke/modul/rule/users.js'}}"></script>
+    <script type="text/javascript" src="{{'/xianshangke/modul/rule/user.js'}}"></script>
 @endsection
 
 

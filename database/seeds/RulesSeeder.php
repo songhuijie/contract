@@ -13,7 +13,7 @@ class RulesSeeder extends Seeder
     {
         //
         DB::table('rules')->insert([
-            ['title' => '权限管理', 'href' => null, 'rule' => null, 'pid' => 0, 'check' => 1, 'status' => 1, 'level' => 1, 'icon' => '&#xe614;', 'sort' => 0],
+            ['title' => '权限', 'href' => null, 'rule' => null, 'pid' => 0, 'check' => 1, 'status' => 1, 'level' => 1, 'icon' => '&#xe614;', 'sort' => 10],
             ['title' => '权限列表', 'href' => '/admin/rules', 'rule' => null, 'pid' => 1, 'check' => 1, 'status' => 1, 'level' => 2, 'icon' => null, 'sort' => 0],
             ['title' => '用户组列表', 'href' => '/admin/roles', 'rule' => null, 'pid' => 1, 'check' => 1, 'status' => 1, 'level' => 2, 'icon' => null, 'sort' => 0],
             ['title' => '管理员列表', 'href' => '/admin/usersList', 'rule' => null, 'pid' => 1, 'check' => 1, 'status' => 1, 'level' => 2, 'icon' => null, 'sort' => 0],
@@ -34,8 +34,8 @@ class RulesSeeder extends Seeder
             ['title' => '编辑管理员', 'href' => '/admin/user/{id}/edit', 'rule' => 'rulecontroller@editadmin', 'pid' => 4, 'check' => 1, 'status' => 0, 'level' => 3, 'icon' => null, 'sort' => 0],
             ['title' => '启用管理员', 'href' => '/admin/user', 'rule' => 'rulecontroller@activeadmin', 'pid' => 4, 'check' => 1, 'status' => 0, 'level' => 3, 'icon' => null, 'sort' => 0],
             ['title' => '删除管理员', 'href' => '/admin/user', 'rule' => 'rulecontroller@deladmin', 'pid' => 4, 'check' => 1, 'status' => 0, 'level' => 3, 'icon' => null, 'sort' => 0],
-            ['title' => '修改密码', 'href' => '', 'rule' => '', 'pid' => 0, 'check' => 0, 'status' => 1, 'level' => 1, 'icon' => 'img/home.png', 'sort' => 1],
-            ['title' => '首页', 'href' => '/admin/user/password/edit', 'rule' => 'indexcontroller@editpassword', 'pid' => 0, 'check' => 0, 'status' => 0, 'level' => 1, 'icon' => null, 'sort' => 0],
+            ['title' => '修改密码', 'href' => '', 'rule' => '', 'pid' => 0, 'check' => 0, 'status' => 0, 'level' => 1, 'icon' => 'img/home.png', 'sort' => 1],
+            ['title' => '首页', 'href' => '/admin/user/password/edit', 'rule' => 'indexcontroller@editpassword', 'pid' => 0, 'check' => 0, 'status' => 1, 'level' => 1, 'icon' => null, 'sort' => 0],
             ['title' => '数据展示', 'href' => '/admin/index', 'rule' => '', 'pid' => 23, 'check' => 1, 'status' => 1, 'level' => 2, 'icon' => null, 'sort' => 0],
         ]);
 

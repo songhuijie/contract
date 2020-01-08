@@ -15,3 +15,4 @@ require 'admin.php';
 Route::get('/', function () {
     return redirect('/admin/index');
 });
+Route::get('/test','TestController@test');

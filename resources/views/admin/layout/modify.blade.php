@@ -11,7 +11,7 @@
 
     <title></title>
     <link href="{{asset('assets/libs/layui/css/layui.css')}}" rel="stylesheet">
-    <link href="{{asset('page/table/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    {{--<link href="{{asset('page/table/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">--}}
     <link href="{{asset('page/table/vendor/metisMenu/metisMenu.min.css')}}" rel="stylesheet">
     <link href="{{asset('page/table/vendor/datatables-plugins/dataTables.bootstrap.css')}}" rel="stylesheet">
     <link href="{{asset('page/table/vendor/datatables-responsive/dataTables.responsive.css')}}" rel="stylesheet">
@@ -30,8 +30,8 @@
     <script src="{{asset('page/table/dist/js/sb-admin-2.js')}}"></script>
 
 
-    <script src="{{asset('assets/libs/layui/layui.all.js')}}"></script>
-<!-- <script src="{{asset('assets/libs/layui/layui.js')}}"></script> -->
+    {{--<script src="{{asset('assets/libs/layui/layui.all.js')}}"></script>--}}
+ <script src="{{asset('assets/libs/layui/layui.js')}}"></script>
 
     @yield('js')
     <style>
@@ -41,16 +41,16 @@
         #page-wrapper{
             border-left: none !important;
         }
-        .layui-form input[type=checkbox], .layui-form input[type=radio], .layui-form select{
-            display: block;
-            appearance: none;
-            -moz-appearance: none;
-            -webkit-appearance: none;
-            color: #337ab7;
-            width: 100%;
-            border-color: #e6e6e6;
-            height: 38px;
-        }
+        /*.layui-form input[type=checkbox], .layui-form input[type=radio], .layui-form select{*/
+            /*display: block;*/
+            /*appearance: none;*/
+            /*-moz-appearance: none;*/
+            /*-webkit-appearance: none;*/
+            /*color: #337ab7;*/
+            /*width: 100%;*/
+            /*border-color: #e6e6e6;*/
+            /*height: 38px;*/
+        /*}*/
     </style>
 </head>
 

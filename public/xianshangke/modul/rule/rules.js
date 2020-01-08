@@ -14,7 +14,10 @@ layui.config({base: '/xianshangke/modul/common/'}).use(['form','dialog', 'his'],
             title:"添加权限",
             type: 2,
             area: ['80%', '80%'],
-            content: url //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+            content: url, //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+            success:function(layer,index){
+                // alert(1);
+            }
         });
     });
 
@@ -28,7 +31,9 @@ layui.config({base: '/xianshangke/modul/common/'}).use(['form','dialog', 'his'],
             title:"编辑权限",
             type: 2,
             area: ['80%', '80%'],
-            content: url //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+            content: url, //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+            success:function(layer,index){
+            }
         });
     })
 

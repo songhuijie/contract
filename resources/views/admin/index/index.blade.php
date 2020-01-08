@@ -2,7 +2,12 @@
 
 <!-- 加载内容 -->
 @section('content')
-<div>
+    <style>
+        .content>div{
+            display: flex !important
+        }
+    </style>
+<div style="">
     <div class="show">
         <img src="<?php echo asset("xianshangke/img/1-1.png") ?>" alt="">
         <b>0</b>

@@ -25,6 +25,7 @@ class Rbac
         $currentRule = $this->getCurrentRule();
         $rules = $this->getRules();
 
+//        dd($currentRule,$rules,in_array($currentRule, $rules));
 
         if (!in_array($currentRule, $rules))
             abort(403);

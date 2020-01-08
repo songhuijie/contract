@@ -1,6 +1,7 @@
 @extends("admin.layout.modify")
 
 @section("content")
+
 	<div id="wrapper" style="margin-top:20px;">
 		<div id="page-wrapper">
 			<form class="layui-form" >
@@ -8,9 +9,9 @@
 				<div class="layui-form-item">
 					<label class="layui-form-label">用户组</label>
 					<div class="layui-input-block">
-						@foreach($roles as $role)
-							<input type="checkbox" class="user_group" name="role_id[]" title="{{$role->name}}" value="{{$role->id}}" @if($role && $role->checked == 1){{'checked'}} @endif>
-						@endforeach
+                        @foreach($roles as $role)
+                            <input type="checkbox" class="user_group" name="role_id[]" title="{{$role->name}}" value="{{$role->id}}" @if($role && $role->checked == 1){{'checked'}} @endif>
+                        @endforeach
 					</div>
 				</div>
 

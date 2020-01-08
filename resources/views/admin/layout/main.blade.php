@@ -29,6 +29,9 @@
         body {
             background: #F2F2F2 !important;
         }
+        .content>div{
+            display: block !important;
+        }
     </style>
     @yield('css')
     @yield('js')
