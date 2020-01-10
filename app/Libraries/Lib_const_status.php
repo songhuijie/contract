@@ -25,6 +25,8 @@ class Lib_const_status{
     const NOTIFICATION_DOES_NOT_EXIST = 10012;
     //合同不能发送给自己
     const CANNOT_SEND_TO_YOURSELF = 10013;
+    //合同不存在或已被签署
+    const CONTRACT_CANNOT = 10015;
 
     //用户已认证
     const USER_ALREADY_CERTIFICATION = 20000;

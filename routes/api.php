@@ -50,6 +50,9 @@ $api->version('v1', function ($api) {
             $api->post('/contract/creation','ContractController@ContractCreation');
             //获取合同信息根据条件
             $api->post('/contract/list','ContractController@getContract');
+            //签署合同
+            $api->post('/contract/sign','ContractController@sign');
+
             //获取所有用户
             $api->post('/contract/distribute/user','ContractController@userList');
 

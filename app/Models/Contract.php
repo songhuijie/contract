@@ -16,7 +16,7 @@ class Contract extends Model
 
     protected $primaryKey = 'id';
 
-    protected $fillable = ['status'];
+    protected $fillable = ['is_sign','status'];
 
     /**
      * 获取列表数据  后台获取
@@ -53,34 +53,35 @@ class Contract extends Model
         $order = $param['order'] ?? 'desc';
         $offset = ($page - 1) * $limit;
 
-        //`user_id` int(11) NOT NULL COMMENT '用户ID',
-        //  `specific_user_id` int(11) NOT NULL DEFAULT '0' COMMENT '指定用户ID',
-        //  `template_id` int(11) NOT NULL DEFAULT '0' COMMENT '模板ID',
-        //  `template_content` text COLLATE utf8mb4_unicode_ci COMMENT '模板编辑后内容',
-        //  `contract_title` text COLLATE utf8mb4_unicode_ci COMMENT '合同名称',
-        //  `contract_demand` text COLLATE utf8mb4_unicode_ci COMMENT '需求描述',
-        //  `is_sign` int(11) NOT NULL DEFAULT '0' COMMENT '是否签署 0 未签署  1签署',
-        //  `contract_type` int(11) NOT NULL DEFAULT '1' COMMENT '合同类型 1系统模板 2律师代写',
-        //  `status` int(11) NOT NULL DEFAULT '0' COMMENT '0 待支付 1 支付成功',
-        //  `create_time` int(11) NOT NULL DEFAULT '0' COMMENT '合同创建时间',
-
-        //0 获取合同(未签署)  1 获取合同(签署)  2等待他人签署的  3 我创建的系统模板  4 指向我签署的 系统模板  5 律师代写
         $contract = $this;
         switch ($param['status']){
             case 0:
-                $contract =  $contract->where(['user_id'=>$param['user_id'],'contract_type'=>1,'is_sign'=>0]);
+                //0 全部合同(未签署)
+                $contract =  $contract->where(['user_id'=>$param['user_id'],'is_sign'=>0])->orWhere(['specific_user_id'=>$param['user_id'],'is_sign'=>0]);
                 break;
             case 1:
-                $contract =  $contract->where(['user_id'=>$param['user_id'],'contract_type'=>1,'is_sign'=>1]);
+                //1 全部合同(签署)
+                $contract =  $contract->where(['user_id'=>$param['user_id'],'is_sign'=>1])->orWhere(['specific_user_id'=>$param['user_id'],'is_sign'=>1]);
                 break;
             case 2:
-                $contract =  $contract->where(['specific_user_id'=>$param['user_id'],'contract_type'=>1,'is_sign'=>0]);
+                //2等待他人签署的
+                $contract =  $contract->where(['user_id'=>$param['user_id'],'contract_type'=>1,'is_sign'=>0]);
                 break;
             case 3:
+                //3需要我签名的
+                $contract =  $contract->where(['specific_user_id'=>$param['user_id'],'contract_type'=>1,'is_sign'=>0]);
                 break;
             case 4:
+                //4 我创建
+                $contract =  $contract->where(['user_id'=>$param['user_id'],'contract_type'=>1]);
                 break;
             case 5:
+                //5 指向我签署
+                $contract =  $contract->where(['specific_user_id'=>$param['user_id'],'contract_type'=>1]);
+                break;
+            case 6:
+                //6 律师代写
+                $contract =  $contract->where(['user_id'=>$param['user_id'],'contract_type'=>2]);
                 break;
             default:
                 break;
@@ -89,5 +90,16 @@ class Contract extends Model
         $contract_data = $contract->select($this->select)
             ->offset($offset)->limit($limit)->orderBy($sortfield, $order)->get()->toArray();
         return $contract_data;
+    }
+
+
+    /**
+     * 根据合同ID 和用户ID  获取
+     * @param $contract_id
+     * @param $user_id
+     * @return mixed
+     */
+    public function getByUserAndID($contract_id,$user_id){
+        return $this->where(['id'=>$contract_id,'specific_user_id'=>$user_id,'contract_type'=>'1','is_sign'=>0])->first();
     }
 }

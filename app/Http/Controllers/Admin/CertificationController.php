@@ -96,7 +96,7 @@ class CertificationController extends Controller
         //
         $all = $request->all();
 
-        $int = $this->certification->where('user_id',$certification->user_id)->update($all);
+        $int = $certification->update($all);
         if (!$int) return ajaxError('更新失败' );
         return ajaxSuccess();
     }

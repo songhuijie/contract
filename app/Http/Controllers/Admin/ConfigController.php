@@ -100,16 +100,16 @@ class ConfigController extends Controller
         //
         $all = $request->all();
 
-        $int = $this->config->where('id',$config->id)->update($all);
+        $int = $config->update($all);
         if (!$int) return ajaxError('添加失败' );
         return ajaxSuccess();
     }
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Config  $config
-     * @return \Illuminate\Http\Response
+     * @param Config $config
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Exception
      */
     public function destroy(Config $config)
     {

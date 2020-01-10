@@ -114,7 +114,7 @@ class ContractController extends Controller {
     public function getContract(Request $request){
         $param = $request->all();
         $fromErr = $this->validatorFrom([
-            'status'=>'required|in:0,1,2,3,4,5',//0 获取合同(未签署)  1 获取合同(签署)  2等待他人签署的  3 我创建的系统模板  4 指向我签署的 系统模板  5 律师代写
+            'status'=>'required|in:0,1,2,3,4,5,6',//0 合同(未签署)  1 合同(签署)  2等待他人签署的 3需要我签名的  4 我创建  5 指向我签署  6 律师代写
         ],[
             'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
             'in'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
@@ -129,11 +129,45 @@ class ContractController extends Controller {
         $response_json = $this->initResponse();
 
         $param['user_id'] = $user_id;
+        $param['page']  = isset($param['page'])?$param['page']:Lib_config::PAGE;
+        $param['limit'] = isset($param['limit'])?$param['limit']:Lib_config::LIMIT;
         $data = $this->contract->getContractFromApi($param);
         $response_json->status = Lib_const_status::SUCCESS;
         $response_json->data = $data;
         return $this->response($response_json);
 
+    }
+
+
+    /**
+     * 签署
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function sign(Request $request){
+        $param = $request->all();
+        $fromErr = $this->validatorFrom([
+            'contract_id'=>'required',//0 合同(未签署)  1 合同(签署)  2等待他人签署的 3需要我签名的  4 我创建  5 指向我签署  6 律师代写
+        ],[
+            'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
+            'in'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
+        ]);
+
+        if($fromErr){//输出表单验证错误信息
+            return $this->response($fromErr);
+        }
+        $access_entity = AccessEntity::getInstance();
+        $user_id = $access_entity->user_id;
+        $response_json = $this->initResponse();
+
+        $contract = $this->contract->getByUserAndID($param['contract_id'],$user_id);
+        if($contract){
+            $contract->update(['is_sign'=>1]);
+            $response_json->status = Lib_const_status::SUCCESS;
+        }else{
+            $response_json->status = Lib_const_status::CONTRACT_CANNOT;
+        }
+        return $this->response($response_json);
     }
 
     /**

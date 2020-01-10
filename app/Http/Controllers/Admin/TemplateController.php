@@ -101,7 +101,7 @@ class TemplateController extends Controller
 
         $all = $request->all();
         unset($all['file']);
-        $int = $this->template->where('id',$template->id)->update($all);
+        $int = $template->update($all);
         if (!$int) return ajaxError('更新失败' );
         return ajaxSuccess();
     }

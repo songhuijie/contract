@@ -103,7 +103,7 @@ class BreachController extends Controller
 
         $all['register_time'] = strtotime($all['register_time']);
         $all['release_time'] = strtotime($all['release_time']);
-        $int = $this->breach->where('id',$breach->id)->update($all);
+        $int = $breach->update($all);
         if (!$int) return ajaxError('添加失败' );
         return ajaxSuccess();
     }
