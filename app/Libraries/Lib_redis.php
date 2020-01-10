@@ -10,6 +10,8 @@ class Lib_redis{
 
 
     const CONFIG = ':config';
+    const USER_LIST = ':user:list';
+    const SEARCH_HISTORY = ':search:history';
 
 
     public static function SplicingKey($key){

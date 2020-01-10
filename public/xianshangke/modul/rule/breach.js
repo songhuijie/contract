@@ -27,12 +27,14 @@
             ,{field: 'executor_court', title: '执行法院'}
             ,{field: 'case_number', title: '案号'}
             ,{field: 'register_time', title: '立案时间'}
-            ,{field: 'symbol_number', title: '执行依据文号'}
-            ,{field: 'execution_unit', title: '做出执行依据单位'}
-            ,{field: 'performance', title: '生效法律文书确定的义务'}
-            ,{field: 'circumstances', title: '失信执行人行为具体情况'}
-            ,{field: 'release_time', title: '发布时间'}
+            // ,{field: 'symbol_number', title: '执行依据文号'}
+            // ,{field: 'execution_unit', title: '做出执行依据单位'}
+            // ,{field: 'performance', title: '生效法律文书确定的义务'}
+            // ,{field: 'circumstances', title: '失信执行人行为具体情况'}
+            // ,{field: 'release_time', title: '发布时间'}
             ,{title: '操作', width:200,toolbar: '#op'}
+
+
         ]]
         ,response: {
             statusName: 'code'

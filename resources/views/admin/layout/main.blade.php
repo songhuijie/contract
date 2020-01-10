@@ -32,6 +32,9 @@
         .content>div{
             display: block !important;
         }
+        .layui-table-body {
+            overflow: hidden;
+        }
     </style>
     @yield('css')
     @yield('js')

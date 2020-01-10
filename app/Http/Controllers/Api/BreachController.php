@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Jobs\SearchHistory;
 use App\Libraries\Lib_config;
 use App\Libraries\Lib_const_status;
+use App\Libraries\Lib_make;
 use App\Models\Breach;
 use App\Models\Query;
 use App\Services\AccessEntity;
@@ -51,7 +53,11 @@ class BreachController extends Controller
 
 
         $data = $this->breach->getBreach($all);
-        
+
+        $array = (array) $data['data'];
+        $ids = array_column($array,'id');
+        //异步执行 保存历史
+        SearchHistory::dispatch($user_id,$ids);
 
         $response_json->status = Lib_const_status::SUCCESS;
         $response_json->data = $data['data'];
@@ -99,7 +105,10 @@ class BreachController extends Controller
 
         $access_entity = AccessEntity::getInstance();
         $user_id = $access_entity->user_id;
-        $data = $this->query->getByUserId($user_id);
+
+        $array = Lib_make::getSearchHistory($user_id);
+
+        $data = $this->breach->getByIds($array);
 
         $response_json->status = Lib_const_status::SUCCESS;
         $response_json->data = $data;

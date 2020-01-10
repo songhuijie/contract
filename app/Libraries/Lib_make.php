@@ -7,11 +7,16 @@
  */
 namespace App\Libraries;
 
+use App\Model\User;
 use App\Models\Config;
 use Illuminate\Support\Facades\Redis;
 
 class Lib_make{
 
+    /**
+     * 生成处理 配置信息
+     * @return array|mixed
+     */
     public static function getConfig(){
 
         $config = Redis::get(Lib_redis::SplicingKey(Lib_redis::CONFIG));
@@ -31,6 +36,94 @@ class Lib_make{
         }
     }
 
+
+    /**
+     * 根据用户ID获取 搜索历史
+     * @param $user_id
+     * @return array
+     */
+    public static function getSearchHistory($user_id){
+
+        $empty_data = [];
+        $history_search = Lib_redis::SplicingKey(Lib_redis::SEARCH_HISTORY);
+        $history_data = Redis::get($history_search);
+
+        if($history_data){
+            $history_data = json_decode($history_data,true);
+            if(isset($history_data[$user_id])){
+                return $history_data[$user_id];
+            }else{
+                return $empty_data;
+            }
+        }
+        return $empty_data;
+    }
+
+    /**
+     * 处理用户历史搜索
+     * @param $user_id
+     * @param $ids
+     */
+    public static function HandleSearchHistory($user_id,$ids){
+
+        $history_search = Lib_redis::SplicingKey(Lib_redis::SEARCH_HISTORY);
+        $history_data = Redis::get($history_search);
+//        $history_data = Redis::del($history_search);
+//        dd(1);
+        if($history_data){
+
+
+            $history_data = json_decode($history_data,true);
+
+            if(isset($history_data[$user_id])){
+                $diff = array_diff($history_data[$user_id],$ids);
+                $history_data[$user_id] = array_merge($ids,$diff);
+                $data = $history_data;
+            }else{
+                $data[$user_id] = $ids;
+            }
+            Redis::set($history_search,json_encode($data));
+
+        }else{
+            $data[$user_id] = $ids;
+            Redis::set($history_search,json_encode($data));
+        }
+
+    }
+
+    /**
+     * 获取用户列表  默认创建数据到redis  当为false 删除并创建
+     * @param bool $bool
+     * @return array|mixed
+     */
+    public static function getUserList($bool = true){
+
+
+        $user_list_key = Lib_redis::SplicingKey(Lib_redis::USER_LIST);
+
+        if($bool == false){
+            Redis::del($user_list_key);
+            self::getUserList();
+        }else{
+
+            $user_list = Redis::get($user_list_key);
+
+            if($user_list){
+                return json_decode($user_list,true);
+            }else{
+                $user = new User();
+
+                $user_list = $user->select('id','name')->get()->toArray();
+
+                $list = array_column($user_list,'name','id');
+                Redis::set($user_list_key,json_encode($list));
+                return $list;
+            }
+        }
+
+
+
+    }
 
 
 }

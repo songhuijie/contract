@@ -15,4 +15,9 @@ require 'admin.php';
 Route::get('/', function () {
     return redirect('/admin/index');
 });
+
+//文件上传
+Route::any('/file/img','File\FileController@img');
+Route::any('layer/upload','File\FileController@LayerUpload');
+
 Route::get('/test','TestController@test');

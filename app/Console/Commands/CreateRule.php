@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 
 class CreateRule extends Command
@@ -38,11 +39,16 @@ class CreateRule extends Command
      */
     public function handle()
     {
-        //
+        //路由名 跟quick 一样 template
+        //示例  php artisan create:rule template 模板
+        //  然后在 加上 对应的路由和对应的控制器 更改model 和controller 即可
+        //            Route::resource('template', 'TemplateController');
+        //            Route::post('template/list','TemplateController@list');
+
         $name = $this->argument('name');
         $describe = $this->argument('d');
         $id = $this->argument('id');
-
+//
         $controller = $name.'controller';
         $data = [
             ['title' => $describe."列表数据", 'href' => "/admin/$name/list", 'rule' => "$controller@list", 'pid' => $id, 'check' => 1, 'status' => 1, 'level' => 3, 'icon' => null, 'sort' => 0],
@@ -56,5 +62,7 @@ class CreateRule extends Command
         ];
         DB::table('rules')->insert($data);
 
+
+        Artisan::call("quick $name --d=$describe");
     }
 }

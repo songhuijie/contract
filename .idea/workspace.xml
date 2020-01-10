@@ -2,43 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33dae8e9-96d1-4c1a-9dc8-f1dd7e1d0d76" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/BreachController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckAccessToken.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Libraries/Lib_config.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Libraries/Lib_const_status.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Libraries/Lib_redis.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Service/AccessEntity.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/xianshangke/modul/rule/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/config/addConfig.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthenticationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/OtherController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/File/FileController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/xianshangke.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/xianshangke.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Common/Helpers/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Common/Helpers/function.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Console/Commands/CreateRule.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/CreateRule.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Commands/QuickGeneration.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/QuickGeneration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TestController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Rbac.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Rbac.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/BreachController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/BreachController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Libraries/Lib_const_status.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Libraries/Lib_const_status.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Libraries/Lib_make.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Libraries/Lib_make.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Libraries/Lib_redis.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Libraries/Lib_redis.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Breach.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Breach.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/RulesSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/RulesSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/xianshangke/js/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/xianshangke/js/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/xianshangke/modul/rule/rules.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/xianshangke/modul/rule/rules.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/xianshangke/modul/rule/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/xianshangke/modul/rule/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/index/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/index/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_31_105732_create_notice.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_31_105732_create_notice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_02_051732_create_contract_charter.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_02_051732_create_contract_charter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/1" beforeDir="false" afterPath="$PROJECT_DIR$/public/1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/xianshangke/modul/rule/breach.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/xianshangke/modul/rule/breach.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/layout/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layout/modify.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout/modify.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/rule/addUser.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/rule/addUser.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/rule/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/rule/users.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/test/index.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/f0567263f260ef60f7388d1e4743bb34b0df1a67.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/f0567263f260ef60f7388d1e4743bb34b0df1a67.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,31 +44,55 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="BreachController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/BreachController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="107" column="29" lean-forward="true" selection-start-line="107" selection-start-column="29" selection-end-line="107" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BreachController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/BreachController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+            <state relative-caret-position="324">
+              <caret line="42" selection-start-line="42" selection-end-line="44" selection-end-column="47" />
               <folding>
-                <element signature="e#44#73#0#PHP" expanded="true" />
+                <element signature="e#44#71#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2019_12_31_105741_create_query_log.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_31_105741_create_query_log.php">
+      <file leaf-file-name="ContractController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+            <state relative-caret-position="463">
+              <caret line="125" lean-forward="true" selection-start-line="125" selection-end-line="125" />
+              <folding>
+                <element signature="e#132#168#0#PHP" expanded="true" />
+                <element signature="e#670#1179#0#PHP" />
+                <element signature="e#1290#2164#0#PHP" />
+                <element signature="e#2246#2528#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CertificationController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CertificationController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-513">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContractController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ContractController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Contract.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Contract.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="640">
+              <caret line="76" column="119" lean-forward="true" selection-start-line="76" selection-start-column="119" selection-end-line="76" selection-end-column="119" />
             </state>
           </provider>
         </entry>
@@ -85,35 +100,33 @@
       <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="625">
-              <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="38" />
+            <state relative-caret-position="355">
+              <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccessEntity.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Service/AccessEntity.php">
+      <file leaf-file-name="Notice.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Notice.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="18" column="19" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="19" />
+            <state relative-caret-position="433">
+              <caret line="30" column="39" lean-forward="true" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Lib_config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_config.php">
+      <file leaf-file-name="Template.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Template.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="21" column="14" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="14" />
-            </state>
+            <state relative-caret-position="-162" />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Query.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Query.php">
+      <file leaf-file-name="Charter.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Charter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="17" column="57" lean-forward="true" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
+            <state relative-caret-position="193">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
@@ -121,24 +134,10 @@
       <file leaf-file-name="Breach.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Breach.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+            <state relative-caret-position="486">
+              <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="61" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="laravel-2020-01-08.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2020-01-08.log">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -152,29 +151,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>storerules</find>
-      <find>type: 'put</find>
-      <find>add</find>
-      <find>admin/config</find>
-      <find>admin/</find>
-      <find>user/</find>
-      <find>users</find>
-      <find>admin/users</find>
-      <find>flushTable</find>
-      <find>Layui hint:</find>
-      <find>Layui</find>
-      <find>his</find>
-      <find>edit</find>
-      <find>li_border_left</find>
-      <find>user_nickname</find>
-      <find>config/list</find>
-      <find>membercontroller</find>
-      <find>create</find>
-      <find>table.reload</find>
-      <find>qaContent</find>
-      <find>$config</find>
-      <find>bootstrap</find>
-      <find>usersList</find>
       <find>adminsPage</find>
       <find>list</find>
       <find>user/create</find>
@@ -182,11 +158,38 @@
       <find>$breach</find>
       <find>executor_court</find>
       <find>layer.js</find>
+      <find>sy</find>
+      <find>update</find>
+      <find>LayerUpload</find>
+      <find>nowUrl</find>
+      <find>layer/upload</find>
+      <find>store</find>
+      <find>status</find>
+      <find>$config</find>
+      <find>admin/certification</find>
+      <find>20000</find>
+      <find>bute</find>
+      <find>usertab</find>
+      <find>imagepng</find>
+      <find>255</find>
+      <find>imagecolorallocate</find>
+      <find>$TextColor</find>
+      <find>USER_ALREADY_CERTIFICATION</find>
+      <find>add</find>
+      <find>add_btn</find>
+      <find>edit</find>
+      <find />
+      <find>10013</find>
+      <find>in:</find>
     </findStrings>
     <replaceStrings>
       <replace>.png&quot;) ?&gt;</replace>
       <replace>xianshangke</replace>
       <replace>$breach</replace>
+      <replace>$config</replace>
+      <replace>$template</replace>
+      <replace>$certification</replace>
+      <replace>，</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\phpstudy_pro\WWW\xianshangke</dir>
@@ -194,11 +197,14 @@
       <dir>D:\phpstudy_pro\WWW\xianshangke\resources\views\admin\rule</dir>
       <dir>D:\phpstudy_pro\WWW\xianshangke\public</dir>
       <dir>D:\phpstudy_pro\WWW\xianshangke\resources\views\admin\layout</dir>
-      <dir>D:\phpstudy_pro\WWW\contract\public\xianshangke\modul\rule</dir>
       <dir>D:\phpstudy_pro\WWW\contract\resources\views\admin</dir>
-      <dir>D:\phpstudy_pro\WWW\contract\public\xianshangke\modul</dir>
       <dir>D:\phpstudy_pro\WWW\contract\resources\views</dir>
       <dir>D:\phpstudy_pro\WWW\contract</dir>
+      <dir>D:\phpstudy_pro\WWW\contract\database\migrations</dir>
+      <dir>D:\phpstudy_pro\WWW\contract\public\xianshangke\modul</dir>
+      <dir>D:\phpstudy_pro\WWW\contract\public\xianshangke\modul\rule</dir>
+      <dir>D:\phpstudy_pro\WWW\contract\app\Models</dir>
+      <dir>D:\phpstudy_pro\WWW\contract\app\Http\Controllers\Api</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -207,57 +213,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.env.example" />
-        <option value="$PROJECT_DIR$/app/Service/AccessEntity.php" />
-        <option value="$PROJECT_DIR$/app/Libraries/Lib_.php" />
-        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Controller.php" />
-        <option value="$PROJECT_DIR$/app/Common/Helpers/function.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2020_01_07_031942_create_config.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/rule/editRole.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/rule/addRule.blade.php" />
-        <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/addRole.js" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
-        <option value="$PROJECT_DIR$/app/Libraries/Lib_redis.php" />
-        <option value="$PROJECT_DIR$/app/Libraries/Lib_make.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/config/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/RuleController.php" />
-        <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/rules.js" />
-        <option value="$PROJECT_DIR$/resources/views/admin/config/addConfig.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/Rbac.php" />
-        <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/config.js" />
-        <option value="$PROJECT_DIR$/resources/views/admin/layout/main.blade.php" />
-        <option value="$PROJECT_DIR$/public/xianshangke/js/home.js" />
-        <option value="$PROJECT_DIR$/resources/views/admin/index/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/CheckAccessToken.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/query/addQuery.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/rule/users.blade.php" />
-        <option value="$PROJECT_DIR$/app/Models/User.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/MemberController.php" />
-        <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/member.js" />
-        <option value="$PROJECT_DIR$/app/Models/Config.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ConfigController.php" />
-        <option value="$PROJECT_DIR$/routes/admin.php" />
-        <option value="$PROJECT_DIR$/app/Console/Commands/QuickGeneration.php" />
-        <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/user.js" />
-        <option value="$PROJECT_DIR$/resources/views/admin/rule/addUser.blade.php" />
-        <option value="$PROJECT_DIR$/app/Console/Commands/CreateRule.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/breach/addBreach.blade.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_12_31_105142_create_breach.php" />
-        <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/breach.js" />
-        <option value="$PROJECT_DIR$/resources/views/admin/layout/modify.blade.php" />
-        <option value="$PROJECT_DIR$/storage/logs/laravel-2020-01-08.log" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/BreachController.php" />
         <option value="$PROJECT_DIR$/app/Libraries/Lib_config.php" />
-        <option value="$PROJECT_DIR$/app/Models/Breach.php" />
         <option value="$PROJECT_DIR$/app/Models/Query.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_12_31_105741_create_query_log.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
+        <option value="$PROJECT_DIR$/storage/logs/laravel-2020-01-08.log" />
+        <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
+        <option value="$PROJECT_DIR$/config/database.php" />
+        <option value="$PROJECT_DIR$/app/Jobs/SearchHistory.php" />
+        <option value="$PROJECT_DIR$/app/Models/Breach.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/BreachController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_01_09_023231_create_template.php" />
+        <option value="$PROJECT_DIR$/app/Console/Commands/QuickGeneration.php" />
+        <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/template.js" />
+        <option value="$PROJECT_DIR$/resources/views/admin/template/addTemplate.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/TemplateController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/layout/main.blade.php" />
+        <option value="$PROJECT_DIR$/app/Models/Template.php" />
+        <option value="$PROJECT_DIR$/app/Common/Helpers/function.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/certification/addCertification.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/CertificationController.php" />
+        <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/breach.js" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_01_09_025033_create_certification.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/resources/views/admin/certification/index.blade.php" />
+        <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/certification.js" />
+        <option value="$PROJECT_DIR$/app/Models/Certification.php" />
+        <option value="$PROJECT_DIR$/app/Models/User.php" />
+        <option value="$PROJECT_DIR$/storage/logs/laravel-2020-01-09.log" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/File/FileController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_01_02_051732_create_contract_charter.php" />
+        <option value="$PROJECT_DIR$/app/Models/Charter.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/AuthenticationController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_12_31_105732_create_notice.php" />
+        <option value="$PROJECT_DIR$/app/Console/Commands/CreateRule.php" />
+        <option value="$PROJECT_DIR$/routes/admin.php" />
+        <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/notice.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/NoticeController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/OtherController.php" />
+        <option value="$PROJECT_DIR$/app/Models/Notice.php" />
+        <option value="$PROJECT_DIR$/app/Libraries/Lib_redis.php" />
+        <option value="$PROJECT_DIR$/app/Libraries/Lib_make.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
+        <option value="$PROJECT_DIR$/public/1" />
+        <option value="$PROJECT_DIR$/app/Libraries/Lib_const_status.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_01_09_023759_create_contract.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" />
+        <option value="$PROJECT_DIR$/app/Models/Contract.php" />
       </list>
     </option>
   </component>
@@ -438,7 +444,21 @@
               <item name="contract" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="File" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="contract" type="b2602c69:ProjectViewProjectNode" />
+              <item name="contract" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
               <item name="Middleware" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="contract" type="b2602c69:ProjectViewProjectNode" />
+              <item name="contract" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Jobs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="contract" type="b2602c69:ProjectViewProjectNode" />
@@ -455,6 +475,12 @@
             <path>
               <item name="contract" type="b2602c69:ProjectViewProjectNode" />
               <item name="contract" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Providers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="contract" type="b2602c69:ProjectViewProjectNode" />
+              <item name="contract" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -466,13 +492,20 @@
             <path>
               <item name="contract" type="b2602c69:ProjectViewProjectNode" />
               <item name="contract" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="contract" type="b2602c69:ProjectViewProjectNode" />
               <item name="contract" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="contract" type="b2602c69:ProjectViewProjectNode" />
+              <item name="contract" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+              <item name="seal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="contract" type="b2602c69:ProjectViewProjectNode" />
@@ -494,11 +527,6 @@
               <item name="xianshangke" type="462c0819:PsiDirectoryNode" />
               <item name="modul" type="462c0819:PsiDirectoryNode" />
               <item name="rule" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="contract" type="b2602c69:ProjectViewProjectNode" />
-              <item name="contract" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="contract" type="b2602c69:ProjectViewProjectNode" />
@@ -579,24 +607,26 @@
       <workItem from="1578273161892" duration="20907000" />
       <workItem from="1578358855526" duration="4375000" />
       <workItem from="1578364843432" duration="7662000" />
-      <workItem from="1578445190920" duration="29259000" />
+      <workItem from="1578445190920" duration="29556000" />
+      <workItem from="1578532669214" duration="27215000" />
+      <workItem from="1578618178798" duration="11349000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103498000" />
+    <option name="totallyTimeSpent" value="142359000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50373137" side_tool="true" weight="0.33006537" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5042644" side_tool="true" weight="0.33006537" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49626866" weight="0.33006537" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26439232" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49573562" weight="0.33006537" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26972282" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32897604" />
@@ -619,415 +649,316 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/xianshangke/js/home.js">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/certification/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="459">
+          <caret line="17" column="49" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="49" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/CheckAccessToken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="e#39#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/config/addConfig.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="150" selection-end-line="150" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/xianshangke/modul/rule/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="23" selection-end-line="135" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/xianshangke/modul/rule/query.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2646">
-          <caret line="98" column="30" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/query/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/query/addQuery.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/RulesSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="38" column="157" selection-start-line="32" selection-start-column="12" selection-end-line="38" selection-end-column="157" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Users.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="81" column="7" lean-forward="true" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
-          <folding>
-            <element signature="e#46#65#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/users/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-434" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/xianshangke/modul/rule/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="41" column="54" lean-forward="true" selection-start-line="41" selection-start-column="54" selection-end-line="41" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Member.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="84" column="66" lean-forward="true" selection-start-line="84" selection-start-column="66" selection-end-line="84" selection-end-column="66" />
+        <state relative-caret-position="625">
+          <caret line="97" column="33" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="33" />
           <folding>
-            <element signature="e#29#68#0#PHP" expanded="true" />
+            <element signature="e#29#58#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/member/addMember.blade.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/member/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CharterController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/xianshangke/modul/rule/member.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="89" column="20" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/MemberController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="e#46#65#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/QueryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding>
-            <element signature="e#46#67#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_31_105732_create_notice.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_02_051732_create_contract_charter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="26" column="36" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/index/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
+        <state relative-caret-position="-189">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Rbac.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="27" column="65" selection-start-line="27" selection-start-column="65" selection-end-line="27" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/test2.png" />
+    <entry file="file://$PROJECT_DIR$/public/images/test/test2.png" />
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2020-01-09.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret column="171" selection-start-column="163" selection-end-column="171" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/test/1578557085.png" />
+    <entry file="file://$PROJECT_DIR$/public/images/test/1578557156.png" />
+    <entry file="file://$PROJECT_DIR$/public/images/test/1578557246.png" />
+    <entry file="file://$PROJECT_DIR$/public/images/test/1578557255.png" />
+    <entry file="file://$PROJECT_DIR$/public/images/test/1578557265.png" />
+    <entry file="file://$PROJECT_DIR$/public/images/test/1578557274.png" />
+    <entry file="file://$PROJECT_DIR$/public/images/test/1578557376.png" />
+    <entry file="file://$PROJECT_DIR$/public/images/1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/test/1578557363.png" />
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/File/FileController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Certification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="25" column="58" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_02_051732_create_contract_charter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_31_105732_create_notice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Common/Enum/HttpCode.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Config.php">
+    <entry file="file://$PROJECT_DIR$/app/Common/Helpers/function.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="17" lean-forward="true" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        <state relative-caret-position="513">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Commands/QuickGeneration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2110">
-          <caret line="296" column="13" selection-start-line="296" selection-start-column="13" selection-end-line="296" selection-end-column="13" />
-          <folding>
-            <element signature="e#9901#13634#0#PHP" />
-          </folding>
+        <state relative-caret-position="108">
+          <caret line="15" column="57" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/Config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/layout/main.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="33" column="9" lean-forward="true" selection-start-line="28" selection-start-column="8" selection-end-line="33" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RuleController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="195" column="37" selection-start-line="195" selection-start-column="32" selection-end-line="195" selection-end-column="37" />
-          <folding>
-            <element signature="e#312#408#0#PHP" />
-            <element signature="e#413#584#0#PHP" />
-            <element signature="e#590#804#0#PHP" />
-            <element signature="e#809#1434#0#PHP" />
-            <element signature="e#865#1428#0#PHP" />
-            <element signature="e#911#992#0#PHP" />
-            <element signature="e#937#991#0#PHP" />
-            <element signature="e#1254#1428#0#PHP" />
-            <element signature="e#1440#1572#0#PHP" />
-            <element signature="e#1577#2217#0#PHP" />
-            <element signature="e#1634#2211#0#PHP" />
-            <element signature="e#1679#1760#0#PHP" />
-            <element signature="e#1705#1759#0#PHP" />
-            <element signature="e#2008#2211#0#PHP" />
-            <element signature="e#2223#2298#0#PHP" />
-            <element signature="e#2303#2560#0#PHP" />
-            <element signature="e#2566#2780#0#PHP" />
-            <element signature="e#3213#3427#0#PHP" />
-            <element signature="e#3432#3953#0#PHP" />
-            <element signature="e#3489#3947#0#PHP" />
-            <element signature="e#3534#3614#0#PHP" />
-            <element signature="e#3560#3613#0#PHP" />
-            <element signature="e#3818#3947#0#PHP" />
-            <element signature="e#3959#4073#0#PHP" />
-            <element signature="e#4078#4335#0#PHP" />
-            <element signature="e#4341#4436#0#PHP" />
-            <element signature="e#4441#4568#0#PHP" />
-            <element signature="e#4574#4729#0#PHP" />
-            <element signature="e#4734#4965#0#PHP" />
-            <element signature="e#4972#5049#0#PHP" />
-            <element signature="e#5285#5372#0#PHP" />
-            <element signature="e#5377#5623#0#PHP" />
-            <element signature="e#5629#5727#0#PHP" />
-            <element signature="e#5819#5951#0#PHP" />
-            <element signature="e#6139#6356#0#PHP" />
-            <element signature="e#6361#7600#0#PHP" />
-            <element signature="e#6418#7594#0#PHP" />
-            <element signature="e#6500#7463#0#PHP" />
-            <element signature="e#6544#6635#0#PHP" />
-            <element signature="e#6570#6634#0#PHP" />
-            <element signature="e#6937#7463#0#PHP" />
-            <element signature="e#6960#7157#0#PHP" />
-            <element signature="e#6986#7156#0#PHP" />
-            <element signature="e#7476#7594#0#PHP" />
-            <element signature="e#7606#7741#0#PHP" />
-            <element signature="e#7746#8365#0#PHP" />
-            <element signature="e#7804#8359#0#PHP" />
-            <element signature="e#7848#8359#0#PHP" />
-            <element signature="e#8036#8261#0#PHP" />
-            <element signature="e#8081#8247#0#PHP" />
-            <element signature="e#8181#8247#0#PHP" />
-            <element signature="e#8371#8397#0#PHP" />
-            <element signature="e#8402#8644#0#PHP" />
-            <element signature="e#8650#8750#0#PHP" />
-            <element signature="e#8755#9009#0#PHP" />
-          </folding>
+        <state relative-caret-position="625">
+          <caret line="35" column="10" lean-forward="true" selection-start-line="21" selection-start-column="7" selection-end-line="35" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="35" />
+        <state relative-caret-position="706">
+          <caret line="68" column="16" lean-forward="true" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/welcome.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/xianshangke/modul/rule/template.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/rule/users.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/xianshangke/modul/rule/certification.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="329" column="71" selection-start-line="329" selection-start-column="67" selection-end-line="329" selection-end-column="71" />
+        <state relative-caret-position="333">
+          <caret line="115" column="8" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/xianshangke/modul/rule/notice.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="55" column="18" lean-forward="true" selection-start-line="49" selection-start-column="11" selection-end-line="55" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/TemplateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="571">
+          <caret line="117" column="8" selection-start-line="117" selection-start-column="8" selection-end-line="119" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/NoticeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2538">
+          <caret line="96" column="51" selection-start-line="96" selection-start-column="51" selection-end-line="96" selection-end-column="51" />
           <folding>
-            <element signature="n#!!doc" />
+            <element signature="e#46#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/xianshangke/modul/rule/user.js">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/OtherController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
+        <state relative-caret-position="1836">
+          <caret line="79" column="56" selection-start-line="79" selection-start-column="56" selection-end-line="79" selection-end-column="56" />
+          <folding>
+            <element signature="e#131#167#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/rule/addUser.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_redis.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="189">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
           <folding>
-            <element signature="e#412#436#0#HTML" expanded="true" />
+            <element signature="e#128#155#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AuthenticationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1674">
+          <caret line="79" column="7" selection-start-line="79" selection-start-column="7" selection-end-line="79" selection-end-column="7" />
+          <folding>
+            <element signature="e#132#168#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Commands/CreateRule.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="48" column="191" lean-forward="true" selection-start-line="48" selection-start-column="191" selection-end-line="48" selection-end-column="191" />
+        <state relative-caret-position="352">
+          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/1">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="60" lean-forward="true" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_make.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="98" column="27" selection-start-line="98" selection-start-column="27" selection-end-line="98" selection-end-column="27" />
           <folding>
-            <element signature="e#40#71#0#PHP" expanded="true" />
+            <element signature="e#114#133#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_31_105142_create_breach.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="23" column="62" lean-forward="true" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/breach/addBreach.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="232" column="54" lean-forward="true" selection-start-line="232" selection-start-column="54" selection-end-line="232" selection-end-column="54" />
-          <folding>
-            <element signature="e#65#2045#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ConfigController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="118" column="29" lean-forward="true" selection-start-line="116" selection-start-column="8" selection-end-line="118" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/xianshangke/modul/rule/breach.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/layout/modify.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="33" column="64" lean-forward="true" selection-start-line="33" selection-start-column="64" selection-end-line="33" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2020-01-08.log">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="35" />
+        <state relative-caret-position="787">
+          <caret line="97" column="45" lean-forward="true" selection-start-line="97" selection-start-column="45" selection-end-line="97" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_config.php">
+    <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_const_status.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="21" column="14" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="14" />
+        <state relative-caret-position="279">
+          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Breach.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_09_023759_create_contract.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+        <state relative-caret-position="270">
+          <caret line="19" column="79" lean-forward="true" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Service/AccessEntity.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/ContractController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/BreachController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="107" column="29" lean-forward="true" selection-start-line="107" selection-start-column="29" selection-end-line="107" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Query.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="17" column="57" lean-forward="true" selection-start-line="17" selection-start-column="57" selection-end-line="17" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_12_31_105741_create_query_log.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="19" column="31" lean-forward="true" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="625">
-          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="38" />
+        <state relative-caret-position="324">
+          <caret line="14" column="7" lean-forward="true" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/BreachController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+        <state relative-caret-position="324">
+          <caret line="42" selection-start-line="42" selection-end-line="44" selection-end-column="47" />
           <folding>
-            <element signature="e#44#73#0#PHP" expanded="true" />
+            <element signature="e#44#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="51" column="24" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Notice.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="30" column="39" lean-forward="true" selection-start-line="30" selection-start-column="39" selection-end-line="30" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Charter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Breach.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CertificationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-513">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Contract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="640">
+          <caret line="76" column="119" lean-forward="true" selection-start-line="76" selection-start-column="119" selection-end-line="76" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="463">
+          <caret line="125" lean-forward="true" selection-start-line="125" selection-end-line="125" />
+          <folding>
+            <element signature="e#132#168#0#PHP" expanded="true" />
+            <element signature="e#670#1179#0#PHP" />
+            <element signature="e#1290#2164#0#PHP" />
+            <element signature="e#2246#2528#0#PHP" />
           </folding>
         </state>
       </provider>

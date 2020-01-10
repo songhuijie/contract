@@ -94,6 +94,9 @@ class UserController extends Controller
                 ];
 
                 $result = $this->user->insert($data);
+                //重载用户列表
+                Lib_make::getUserList(false);
+
                 $id = $request->input('id',0);
 
                 $response_json->status = Lib_const_status::SUCCESS;
@@ -121,6 +124,8 @@ class UserController extends Controller
         $user_info = $this->user->getUserinfo($user_id);
 
 
+        $user_info->certification;
+        $user_info->certification_status = $user_info->certification->status;
         $response_json = $this->initResponse();
         $response_json->code = Lib_const_status::CORRECT;
         $response_json->status = Lib_const_status::SUCCESS;

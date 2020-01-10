@@ -56,6 +56,19 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             //失信
             Route::resource('breach', 'BreachController');
             Route::post('breach/list','BreachController@list');
+
+
+            //合同模板
+            Route::resource('template', 'TemplateController');
+            Route::post('template/list','TemplateController@list');
+
+            //实名认证
+            Route::resource('certification', 'CertificationController');
+            Route::post('certification/list','CertificationController@list');
+
+            //通知
+            Route::resource('notice', 'NoticeController');
+            Route::post('notice/list','NoticeController@list');
         });
     });
 

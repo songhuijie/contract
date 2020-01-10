@@ -21,5 +21,7 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         //
         '/admin/*',
+        '/layer/*',
+        '/file/img',
     ];
 }

@@ -35,6 +35,13 @@ return [
 
     'connections' => [
 
+        'database'=>[
+            'driver'=>'database',
+            'table'=>'jobs',
+            'queue'=>'default',
+            'retry_after'=>10
+        ],
+
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),

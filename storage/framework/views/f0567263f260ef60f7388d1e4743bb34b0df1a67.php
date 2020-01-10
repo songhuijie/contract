@@ -32,6 +32,9 @@
         .content>div{
             display: block !important;
         }
+        .layui-table-body {
+            overflow: hidden;
+        }
     </style>
     <?php echo $__env->yieldContent('css'); ?>
     <?php echo $__env->yieldContent('js'); ?>

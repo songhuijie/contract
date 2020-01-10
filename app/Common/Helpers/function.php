@@ -1,4 +1,30 @@
 <?php
+/**
+ * @return bool
+ * 主动判断是否HTTPS
+ */
+function isHTTPS()
+{
+    if (defined('HTTPS') && HTTPS) return true;
+    if (!isset($_SERVER)) return FALSE;
+    if (!isset($_SERVER['HTTPS'])) return FALSE;
+    if ($_SERVER['HTTPS'] === 1) {  //Apache
+        return TRUE;
+    } elseif ($_SERVER['HTTPS'] === 'on') { //IIS
+        return TRUE;
+    } elseif ($_SERVER['SERVER_PORT'] == 443) { //其他
+        return TRUE;
+    }
+    return FALSE;
+}
+
+/**
+ * 返回当前域名
+ */
+function nowUrl(){
+    $host = (isHTTPS() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST']; //获取域名
+    return $host;
+}
 
 function ajaxSuccess(array $data = [], $meta = '', string $msg = 'success', int $httpCode = 200)
 {

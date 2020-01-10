@@ -41,6 +41,7 @@ class QuickGeneration extends Command
     {
         //
         //目录名
+        //示例   php artisan quick template --d=模板
 
         $directory = $this->argument('directory_name');
         $describe = $this->option('d');

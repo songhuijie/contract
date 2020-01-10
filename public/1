@@ -1,2 +1,2 @@
-php artisan make:view admin/test/index --extends=admin.layout.main
-php artisan make:view admin/test/index --sections=content
+UPDATE `ser_good` SET `ser_good`.`is_self` =0 where mind_id in (96,118,119,123,126,127,134,53,54,56,57,66,84)
+UPDATE `ser_good` SET `ser_good`.`is_self` =1 where mind_id in (15,16,19,20,21,22,23,24,25,74,83,99,112,113,114,115,121,129,131,132,133)

@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\Models\Certification;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 class User extends Model
@@ -89,5 +90,12 @@ class User extends Model
             'count' => $count,
             'data' => $admins
         ];
+    }
+
+    /**
+     * 建立认证表关系
+     */
+    public function certification(){
+        return $this->hasOne(Certification::class,'user_id','id');
     }
 }

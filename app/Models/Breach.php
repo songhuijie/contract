@@ -71,5 +71,14 @@ class Breach extends Model
     }
 
 
+    /**
+     * 根据ID 数组获取信息
+     * @param $ids
+     * @return mixed
+     */
+    public function getByIds($ids){
+            return $this->select($this->select)->whereIn('id',$ids)->get();
+    }
+
 
 }
