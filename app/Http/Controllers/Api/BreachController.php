@@ -8,7 +8,7 @@ use App\Libraries\Lib_const_status;
 use App\Libraries\Lib_make;
 use App\Models\Breach;
 use App\Models\Query;
-use App\Services\AccessEntity;
+use App\Service\AccessEntity;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 

@@ -102,4 +102,14 @@ class Contract extends Model
     public function getByUserAndID($contract_id,$user_id){
         return $this->where(['id'=>$contract_id,'specific_user_id'=>$user_id,'contract_type'=>'1','is_sign'=>0])->first();
     }
+
+    /**
+     * 签署订单
+     * @param $contract_id
+     * @param $sign
+     * @return mixed
+     */
+    public function updateSign($contract_id,$sign){
+        return $this->where(['id'=>$contract_id])->update(['is_sign'=>$sign]);
+    }
 }

@@ -9,7 +9,7 @@ use App\Model\Agent;
 use App\Model\Asset;
 use App\Model\Config;
 use App\Model\Friend;
-use App\Services\AccessEntity;
+use App\Service\AccessEntity;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;

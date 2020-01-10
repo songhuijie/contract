@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use App\Libraries\Lib_const_status;
 use App\Model\User;
-use App\Services\AccessEntity;
+use App\Service\AccessEntity;
 use Closure;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;

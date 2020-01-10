@@ -12,7 +12,7 @@ use App\Libraries\Lib_config;
 use App\Libraries\Lib_const_status;
 use App\Libraries\Lib_make;
 use App\Models\Notice;
-use App\Services\AccessEntity;
+use App\Service\AccessEntity;
 use Illuminate\Http\Request;
 
 class OtherController extends Controller{

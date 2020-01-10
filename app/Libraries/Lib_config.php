@@ -11,12 +11,8 @@ class Lib_config{
     const SEARCH_LIMIT = 10;
 
 
-    //商品库存添加
-    const GOODS_ADD = 1;
-    //商品库存失去
-    const GOODS_DEL = 2;
-
-
+    //签署 合同
+    const SIGN = 1;
 
 
     const PAGE = 1;

@@ -20,6 +20,8 @@ class Lib_const_status{
     const USER_TOKEN_FAILURE = 10001;
     //用户不存在
     const USER_NOT_EXISTENT = 10002;
+    //身份证信息错误
+    const ID_CARD_INFORMATION_ERROR = 10003;
 
     //通知不存在
     const NOTIFICATION_DOES_NOT_EXIST = 10012;

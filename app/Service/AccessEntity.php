@@ -5,7 +5,7 @@
  * Date: 2019/8/5
  * Time: 5:38 PM
  */
-namespace App\Services;
+namespace App\Service;
 
 use Illuminate\Support\Facades\Request;
 

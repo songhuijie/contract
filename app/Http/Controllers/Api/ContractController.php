@@ -13,7 +13,7 @@ use App\Libraries\Lib_const_status;
 use App\Libraries\Lib_make;
 use App\Models\Contract;
 use App\Models\Template;
-use App\Services\AccessEntity;
+use App\Service\AccessEntity;
 use Illuminate\Http\Request;
 
 class ContractController extends Controller {
@@ -162,7 +162,7 @@ class ContractController extends Controller {
 
         $contract = $this->contract->getByUserAndID($param['contract_id'],$user_id);
         if($contract){
-            $contract->update(['is_sign'=>1]);
+            $this->contract->updateSign($param['contract_id'],Lib_config::SIGN);
             $response_json->status = Lib_const_status::SUCCESS;
         }else{
             $response_json->status = Lib_const_status::CONTRACT_CANNOT;

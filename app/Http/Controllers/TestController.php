@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Libraries\Lib_make;
 use App\Libraries\Lib_redis;
+use App\Service\IdentityService;
 use Illuminate\Support\Facades\Redis;
 
 class TestController extends Controller{
@@ -18,7 +19,9 @@ class TestController extends Controller{
     public function test(){
 
 
-
+        $card = '51012519950626631';
+        $bool = IdentityService::MatchIdentityInformation($card);
+        dd($bool);
 
         dd(1);
         $content="杰大哥印章";

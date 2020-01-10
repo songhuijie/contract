@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller;
 use App\Libraries\Lib_const_status;
 use App\Models\Certification;
 use App\Models\Charter;
-use App\Services\AccessEntity;
+use App\Service\AccessEntity;
 use Illuminate\Http\Request;
 
 class AuthenticationController extends Controller{
@@ -35,13 +35,14 @@ class AuthenticationController extends Controller{
         $all = $request->all();
         $fromErr = $this->validatorFrom([
             'name'=>'required',
-            'ID_card'=>'required',
+            'ID_card'=>'required|identity',
             'identity_card_positive'=>'required',
             'identity_card_back'=>'required',
             'status'=>'in:1,2',
         ],[
             'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
             'in'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
+            'identity'=>Lib_const_status::ID_CARD_INFORMATION_ERROR,
         ]);
 
 
@@ -90,7 +91,7 @@ class AuthenticationController extends Controller{
         if($all['charter_type'] == 2){
             $fromErr = $this->validatorFrom([
                 'name'=>'required',
-                'ID_card'=>'required',
+                'ID_card'=>'required|identity',
                 'company_name'=>'required',
                 'certificate_number'=>'required',
                 'official_seal_number'=>'required',
@@ -100,6 +101,7 @@ class AuthenticationController extends Controller{
             ],[
                 'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
                 'in'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
+                'identity'=>Lib_const_status::ID_CARD_INFORMATION_ERROR,
             ]);
             if($fromErr){//输出表单验证错误信息
                 return $this->response($fromErr);
@@ -107,12 +109,13 @@ class AuthenticationController extends Controller{
         }else{
             $fromErr = $this->validatorFrom([
                 'name'=>'required',
-                'ID_card'=>'required',
+                'ID_card'=>'required|identity',
                 'charter_pic'=>'required',
                 'charter_type'=>'in:1,2',
             ],[
                 'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
                 'in'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
+                'identity'=>Lib_const_status::ID_CARD_INFORMATION_ERROR,
             ]);
             if($fromErr){//输出表单验证错误信息
                 return $this->response($fromErr);

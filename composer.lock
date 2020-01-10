@@ -4,8 +4,63 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5906b103b68b4806e2fdf2c9ded71ea7",
+    "content-hash": "1eb6e85a4159eb02a102d1dc9b5415cc",
     "packages": [
+        {
+            "name": "alicfeng/identity-card",
+            "version": "v3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alicfeng/IdentityCard.git",
+                "reference": "b46c1209ce13a99805c1849db7020ec4ed737e04"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alicfeng/IdentityCard/zipball/b46c1209ce13a99805c1849db7020ec4ed737e04",
+                "reference": "b46c1209ce13a99805c1849db7020ec4ed737e04",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "ext-gd": "*",
+                "ext-iconv": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "AlicFeng\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "AlicFeng",
+                    "email": "a@samego.com"
+                }
+            ],
+            "description": "IdentityCard Library",
+            "keywords": [
+                "China",
+                "IdentityCard",
+                "alicfeng",
+                "id",
+                "idcard",
+                "identify",
+                "samego"
+            ],
+            "time": "2019-11-27T15:02:25+00:00"
+        },
         {
             "name": "dingo/api",
             "version": "v2.4.5",
