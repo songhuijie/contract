@@ -1,5 +1,5 @@
 <?php $__env->startSection("content"); ?>
-   
+
 	<div id="wrapper" style="margin-top:20px;">
 		<div id="page-wrapper">
 			<form class="layui-form" >

@@ -16,6 +16,7 @@ class CharterController extends Controller
     public function index()
     {
         //
+        return view('admin.charter.index');
     }
 
     /**

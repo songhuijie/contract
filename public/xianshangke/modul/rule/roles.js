@@ -38,6 +38,12 @@ layui.config({base: '/xianshangke/modul/common/'}).use(['dialog','his'],function
             type: 2,
             area: ['80%', '80%'],
             content: url //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+            ,yes: function(index, layero){
+                //这里怎么获取到弹出框到表单内容？？
+            }
+            ,btn2: function(){
+                layer.closeAll();
+            }
         });
     });
 

@@ -66,6 +66,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             Route::resource('certification', 'CertificationController');
             Route::post('certification/list','CertificationController@list');
 
+            //实名认证
+            Route::resource('charter', 'CharterController');
+            Route::post('charter/list','CharterController@list');
+
             //通知
             Route::resource('notice', 'NoticeController');
             Route::post('notice/list','NoticeController@list');
