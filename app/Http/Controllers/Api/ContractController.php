@@ -153,19 +153,25 @@ class ContractController extends Controller {
         $response_json = $this->initResponse();
         $contract = $this->contract->find($param['contract_id']);
         if($contract && $contract->contract_type == 2){
-            $openid = $this->user->find($user_id);
-            $money = $contract->price;
-            $order_number =  $contract->order_number;
-            $openid = $openid->user_openid;
-            $appid       = $config['appid'];
-            $mch_id      = $config['mch_id'];
-            $mch_secret       = $config['mch_secret'];
-            $notify_url  = url('api/v1/notify');//回调地址
-            $body        = "小程序下单";
-            $attach      = "用户下单";
-            $data = initiatingPayment($money,$order_number,$openid,$appid,$mch_id,$mch_secret,$notify_url,$body,$attach);
-            Log::channel('pay')->info(json_encode($data));
-            $response_json->status = Lib_const_status::SUCCESS;
+            //待支付
+            if($contract->status == 2){
+                $openid = $this->user->find($user_id);
+                $money = $contract->price;
+                $order_number =  $contract->order_number;
+                $openid = $openid->user_openid;
+                $appid       = $config['appid'];
+                $mch_id      = $config['mch_id'];
+                $mch_secret       = $config['mch_secret'];
+                $notify_url  = url('api/v1/notify');//回调地址
+                $body        = "小程序下单";
+                $attach      = "用户下单";
+                $data = initiatingPayment($money,$order_number,$openid,$appid,$mch_id,$mch_secret,$notify_url,$body,$attach);
+                Log::channel('pay')->info(json_encode($data));
+                $response_json->status = Lib_const_status::SUCCESS;
+            }else{
+                $response_json->status = Lib_const_status::ORDER_NOT_CONFIRMED;
+            }
+
         }else{
             $response_json->status = Lib_const_status::SUCCESS;
         }

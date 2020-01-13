@@ -28,7 +28,7 @@ class CreateContract extends Migration
             $table->integer('contract_type')->default(1)->comment('合同类型 1系统模板 2律师代写');
             $table->decimal('price',8,2)->default(0)->comment('律师代写价格');
             $table->string('order_number')->nullable()->comment('支付订单号');
-            $table->integer('status')->default(0)->comment('0 待支付 1 支付成功');
+            $table->integer('status')->default(0)->comment('0编写中 1待确认 2待支付 3支付成功');
             $table->integer('create_time')->default(0)->comment('合同创建时间');
             $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
             $table->comment = '合同表';

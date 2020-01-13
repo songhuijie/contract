@@ -128,6 +128,6 @@ class Contract extends Model
      * @return mixed
      */
     public function updateStatus($order_number){
-        return $this->where(['order_number'=>$order_number])->update(['status'=>1]);
+        return $this->where(['order_number'=>$order_number])->update(['status'=>3]);
     }
 }

@@ -26,6 +26,8 @@ class Lib_const_status{
     const NO_REAL_NAME_AUTHENTICATION_YET = 10004;
     //需要创建个人印章或公司印章
     const NOT_YET_SEALED = 10005;
+    //订单没有确认 或 已支付
+    const ORDER_NOT_CONFIRMED = 10006;
 
     //通知不存在
     const NOTIFICATION_DOES_NOT_EXIST = 10012;
