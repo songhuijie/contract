@@ -99,6 +99,13 @@ return [
             'permission'=>0777,
             'days' => 14,
         ],
+        'pay' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/pay.log'),
+            'level' => 'debug',
+            'permission'=>0777,
+            'days' => 14,
+        ],
 
     ],
 
