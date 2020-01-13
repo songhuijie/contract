@@ -15,27 +15,33 @@ class Lib_make{
 
     /**
      * 生成处理 配置信息
+     * @param bool $bool
      * @return array|mixed
      */
-    public static function getConfig(){
-
+    public static function getConfig($bool = true){
         $config = Redis::get(Lib_redis::SplicingKey(Lib_redis::CONFIG));
-
-        dump($config);
-        if($config){
-            return json_decode($config,true);
+        if($bool == false){
+            Redis::del(Lib_redis::SplicingKey(Lib_redis::CONFIG));
+            self::getConfig();
         }else{
-            $config_model = new Config();
-            $config_all = $config_model->all();
 
-            $config = [];
-            foreach($config_all as $k=>$v){
-                $config[$v->key] = $v->value;
+
+
+            if($config){
+                return json_decode($config,true);
+            }else{
+                $config_model = new Config();
+                $config_all = $config_model->all();
+
+                $config = [];
+                foreach($config_all as $k=>$v){
+                    $config[$v->key] = $v->value;
+                }
+                Redis::setex(Lib_redis::SplicingKey(Lib_redis::CONFIG),78200,json_encode($config));
+                return $config;
             }
-            dd($config_all,$config);
-            Redis::setex(Lib_redis::SplicingKey(Lib_redis::CONFIG),78200,json_encode($config));
-            return $config;
         }
+
     }
 
 
