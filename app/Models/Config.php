@@ -18,6 +18,8 @@ class Config extends Model
 
     public $select = ['id', 'key', 'describe', 'value'];
 
+    public $fillable = ['key', 'describe', 'value'];
+
     public  function getConfig($param){
         $page = $param['page'];
         $limit = $param['limit'];

@@ -11,7 +11,7 @@ class Template extends Model
     public $timestamps = false;
     protected $dateFormat = 'U';//使用时间戳方式添加
     public $select = ['id', 'title', 'sort', 'content'];
-
+    public $fillable = ['title', 'sort', 'content'];
     public  function getTemplate($param){
         $page = $param['page'];
         $limit = $param['limit'];

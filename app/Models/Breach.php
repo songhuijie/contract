@@ -21,7 +21,7 @@ class Breach extends Model
 
     public $select = ['id','executor_name','sex','age','ID_card','province','executor_court','case_number','register_time'];
 
-
+    public $fillable = ['executor_name','sex','age','ID_card','province','executor_court','case_number','register_time','symbol_number','execution_unit','obligation','performance','circumstances','release_time'];
     public function getRegisterTimeAttribute($value){
         return date('Y-m-d H:i:s',$value);
     }

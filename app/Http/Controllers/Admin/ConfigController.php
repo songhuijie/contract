@@ -100,6 +100,7 @@ class ConfigController extends Controller
         //
         $all = $request->all();
 
+
         $int = $config->update($all);
         if (!$int) return ajaxError('添加失败' );
         return ajaxSuccess();

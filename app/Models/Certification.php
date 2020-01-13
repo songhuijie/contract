@@ -14,7 +14,7 @@ class Certification extends Model
     public $select = ['user_id', 'name', 'ID_card', 'identity_card_positive','identity_card_back','status','updated_at'];
 
 
-    protected $fillable = ['name','ID_card', 'identity_card_positive','identity_card_back'];
+    protected $fillable = ['name','ID_card', 'identity_card_positive','identity_card_back','status'];
 
     public function getIdentityCardPositiveAttribute($value){
 

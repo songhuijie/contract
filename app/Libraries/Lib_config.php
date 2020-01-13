@@ -19,6 +19,7 @@ class Lib_config{
     const LIMIT = 10;
 
 
+    const LAWYER_WRITES_THE_PRICE = 100;
 
 
 }

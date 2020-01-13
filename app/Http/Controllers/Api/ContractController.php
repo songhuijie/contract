@@ -7,6 +7,7 @@
  */
 namespace  App\Http\Controllers\Api;
 
+use App\Events\Notice;
 use App\Http\Controllers\Controller;
 use App\Libraries\Lib_config;
 use App\Libraries\Lib_const_status;
@@ -94,6 +95,9 @@ class ContractController extends Controller {
             if($fromErr){//输出表单验证错误信息
                 return $this->response($fromErr);
             }
+
+            $config = Lib_make::getConfig();
+            $param['price'] = isset($config['price'])?$config['price']:Lib_config::LAWYER_WRITES_THE_PRICE;
         }
 
         $param['user_id'] = $user_id;
@@ -105,6 +109,23 @@ class ContractController extends Controller {
         return $this->response($response_json);
     }
 
+
+    /**
+     * 结算  合同订单
+     */
+    public function PayOrder(Request $request){
+        $param = $request->all();
+        $fromErr = $this->validatorFrom([
+            'contract_id'=>'required',//合同ID
+        ],[
+            'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
+        ]);
+
+
+
+
+
+    }
 
     /**
      * 根据条件获取 合同信息
@@ -150,7 +171,6 @@ class ContractController extends Controller {
             'contract_id'=>'required',//0 合同(未签署)  1 合同(签署)  2等待他人签署的 3需要我签名的  4 我创建  5 指向我签署  6 律师代写
         ],[
             'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
-            'in'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
         ]);
 
         if($fromErr){//输出表单验证错误信息
@@ -163,6 +183,10 @@ class ContractController extends Controller {
         $contract = $this->contract->getByUserAndID($param['contract_id'],$user_id);
         if($contract){
             $this->contract->updateSign($param['contract_id'],Lib_config::SIGN);
+            //签署成功 通知
+
+            $message = '于2019年12月1日同XX企业拟定的合同甲方已签字 发送至您的邮箱，请注意查收 及时回复！';
+            event(new Notice($contract->user_id,$message));
             $response_json->status = Lib_const_status::SUCCESS;
         }else{
             $response_json->status = Lib_const_status::CONTRACT_CANNOT;
