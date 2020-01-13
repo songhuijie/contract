@@ -100,9 +100,25 @@ class ContractController extends Controller {
             $param['price'] = isset($config['price'])?$config['price']:Lib_config::LAWYER_WRITES_THE_PRICE;
         }
 
+        $draft_information = $access_entity->company_or_individual;
         $param['user_id'] = $user_id;
         $param['create_time'] = time();
+        $param['draft_information'] = $draft_information;
         $contract_id = $this->contract->insertGetId($param);
+        if($param['contract_type'] == 1){
+            /**
+             * 发送合同签署通知  创建合同甲方默认签署
+             */
+            $date = date('Y-m-d');
+            $enterprise = $draft_information;
+            $signatory = Lib_config::PARTY_A;
+            $message = [
+                'date'=>$date,
+                'enterprise'=>$enterprise,
+                'signatory'=>$signatory,
+            ];
+            event(new Notice($param['specific_user_id'],$message));
+        }
 
         $response_json->status = Lib_const_status::SUCCESS;
         $response_json->data->id = $contract_id;
@@ -185,9 +201,9 @@ class ContractController extends Controller {
             $this->contract->updateSign($param['contract_id'],Lib_config::SIGN);
             //签署成功 通知
 
-            $date = date('Y-m-d');
-            $enterprise = '企业';
-            $signatory = '乙方';
+            $date = date('Y-m-d',$contract->create_time);
+            $enterprise = $contract->draft_information;
+            $signatory = Lib_config::PARTY_B;;
             $message = [
                 'date'=>$date,
                 'enterprise'=>$enterprise,

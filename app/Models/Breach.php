@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Breach extends Model
 {
@@ -77,7 +78,7 @@ class Breach extends Model
      * @return mixed
      */
     public function getByIds($ids){
-            return $this->select($this->select)->whereIn('id',$ids)->get();
+            return $this->select($this->select)->whereIn('id',$ids)->orderByRaw(DB::raw("FIND_IN_SET(id, '" . implode(',', $ids) . "'" . ')'))->get();
     }
 
 

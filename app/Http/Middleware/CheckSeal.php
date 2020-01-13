@@ -28,7 +28,7 @@ class CheckSeal{
         $charter = $charter->find($user_id);
 
         if($charter){
-            //'1' COMMENT '类型 1个人 2 公司'
+            //COMMENT '类型 1个人 2 公司'
             if($charter->charter_type == 1){
                 $access_entity->company_or_individual = $charter->name;
             }else{

@@ -21,5 +21,8 @@ class Lib_config{
 
     const LAWYER_WRITES_THE_PRICE = 100;
 
+    const PARTY_A  = '甲方';
+    const PARTY_B  = '乙方';
+
 
 }

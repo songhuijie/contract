@@ -110,6 +110,7 @@ class BreachController extends Controller
 
         $data = $this->breach->getByIds($array);
 
+
         $response_json->status = Lib_const_status::SUCCESS;
         $response_json->data = $data;
         return $this->response($response_json);

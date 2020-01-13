@@ -47,8 +47,13 @@ $api->version('v1', function ($api) {
 
             //用户认证
             $api->post('/certification/user','AuthenticationController@UserCertification');
-            //获取印章
-            $api->post('/seal/get','AuthenticationController@getSeal');
+
+            //模板
+            $api->post('/contract/template','ContractController@template');
+            //获取所有用户
+            $api->post('/contract/distribute/user','ContractController@userList');
+
+
 
             /**
              * 需要实名认证才能使用
@@ -63,8 +68,8 @@ $api->version('v1', function ($api) {
                  */
                 $api->group(['middleware'=>'CheckSeal'],function($api){
                     //合同
-                    //模板
-                    $api->post('/contract/template','ContractController@template');
+                    //获取印章
+                    $api->post('/seal/get','AuthenticationController@getSeal');
                     //创建合同
                     $api->post('/contract/creation','ContractController@ContractCreation');
                     //获取合同信息根据条件
@@ -72,8 +77,7 @@ $api->version('v1', function ($api) {
                     //签署合同
                     $api->post('/contract/sign','ContractController@sign');
 
-                    //获取所有用户
-                    $api->post('/contract/distribute/user','ContractController@userList');
+
                 });
 
 

@@ -20,6 +20,7 @@ class CreateContract extends Migration
             $table->integer('specific_user_id')->default(0)->comment('指定用户ID');
             $table->integer('template_id')->default(0)->comment('模板ID');
             $table->text('template_content')->nullable()->comment('模板编辑后内容');
+            $table->string('draft_information')->nullable()->comment('创建人或公司名称');
             $table->text('contract_title')->nullable()->comment('合同名称');
             $table->text('contract_demand')->nullable()->comment('需求描述');
             $table->integer('first_is_sign')->default(0)->comment('默认签署完毕 甲方 后期可更改');
