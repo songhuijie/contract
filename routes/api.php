@@ -78,6 +78,8 @@ $api->version('v1', function ($api) {
                     $api->post('/contract/sign','ContractController@sign');
                     //支付律师代写合同
                     $api->post('/contract/pay','ContractController@PayOrder');
+                    //律师代写完后等待确认合同
+                    $api->post('/contract/confirm','ContractController@Confirm');
 
 
                 });

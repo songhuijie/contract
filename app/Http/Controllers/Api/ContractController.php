@@ -130,6 +130,34 @@ class ContractController extends Controller {
         return $this->response($response_json);
     }
 
+    /**
+     * 律师代写后 确认合同
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function Confirm(Request $request){
+        $param = $request->all();
+        $fromErr = $this->validatorFrom([
+            'contract_id'=>'required',//合同ID
+        ],[
+            'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
+        ]);
+        if($fromErr){//输出表单验证错误信息
+            return $this->response($fromErr);
+        }
+
+        $access_entity = AccessEntity::getInstance();
+        $user_id = $access_entity->user_id;
+        $response_json = $this->initResponse();
+        $contract = $this->contract->getContractByGhostWrite($param['contract_id'],$user_id);
+        if($contract && $contract->status == 1){
+            $contract->update(['status'=>2]);
+            $response_json->status = Lib_const_status::SUCCESS;
+        }else{
+            $response_json->status = Lib_const_status::CONTRACT_CANNOT;
+        }
+        return $this->response($response_json);
+    }
 
     /**
      * 结算  合同订单

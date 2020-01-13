@@ -12,7 +12,9 @@ class Contract extends Model
     public $timestamps = false;
     protected $dateFormat = 'U';//使用时间戳方式添加
 
-    public $select = ['id', 'user_id', 'specific_user_id', 'template_id', 'template_content', 'is_sign', 'contract_type', 'status','create_time', 'updated_at'];
+    public $select = ['id', 'user_id', 'specific_user_id', 'template_id', 'template_content','contract_title', 'contract_demand', 'is_sign','contract_type', 'status','create_time', 'updated_at'];
+
+
 
     protected $primaryKey = 'id';
 
@@ -112,6 +114,17 @@ class Contract extends Model
     public function updateSign($contract_id,$sign){
         return $this->where(['id'=>$contract_id])->update(['is_sign'=>$sign]);
     }
+
+    /**
+     * 根据律师代写 合同订单
+     * @param $contract_id
+     * @param $user_id
+     * @return mixed
+     */
+    public function getContractByGhostWrite($contract_id,$user_id){
+        return $this->where(['id'=>$contract_id,'user_id'=>$user_id,'contract_type'=>2])->first();
+    }
+
 
     /**
      * 根据订单号 获取合同订单
