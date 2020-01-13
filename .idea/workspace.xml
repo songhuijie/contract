@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33dae8e9-96d1-4c1a-9dc8-f1dd7e1d0d76" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Common/Helpers/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Common/Helpers/function.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="490">
-              <caret line="187" lean-forward="true" selection-start-line="187" selection-end-line="187" />
+              <caret line="187" selection-start-line="187" selection-end-line="187" />
               <folding>
                 <element signature="e#511#663#0#PHP" />
                 <element signature="e#669#768#0#PHP" />
@@ -66,25 +66,25 @@
         <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_09_023759_create_contract.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="274">
-              <caret line="23" column="73" lean-forward="true" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="73" />
+              <caret line="23" column="73" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="73" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
+            <state relative-caret-position="316">
+              <caret line="62" column="43" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="function.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="function.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Common/Helpers/function.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+            <state relative-caret-position="289">
+              <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -264,13 +264,13 @@
         <option value="$PROJECT_DIR$/app/Models/Template.php" />
         <option value="$PROJECT_DIR$/app/Libraries/Lib_make.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" />
         <option value="$PROJECT_DIR$/config/logging.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ConfigController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_09_023759_create_contract.php" />
         <option value="$PROJECT_DIR$/storage/logs/laravel-2020-01-13.log" />
         <option value="$PROJECT_DIR$/app/Common/Helpers/function.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php" />
       </list>
     </option>
   </component>
@@ -633,12 +633,12 @@
       <workItem from="1578445190920" duration="29556000" />
       <workItem from="1578532669214" duration="27215000" />
       <workItem from="1578618178798" duration="20992000" />
-      <workItem from="1578877511640" duration="6718000" />
+      <workItem from="1578877511640" duration="6816000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158720000" />
+    <option name="totallyTimeSpent" value="158818000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -744,6 +744,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="42" selection-start-line="42" selection-end-line="44" selection-end-column="47" />
+          <folding>
+            <element signature="e#44#71#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1020,13 +1023,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel.log">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1053" />
@@ -1035,7 +1031,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="490">
-          <caret line="187" lean-forward="true" selection-start-line="187" selection-end-line="187" />
+          <caret line="187" selection-start-line="187" selection-end-line="187" />
           <folding>
             <element signature="e#511#663#0#PHP" />
             <element signature="e#669#768#0#PHP" />
@@ -1079,7 +1075,7 @@
     <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_09_023759_create_contract.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
-          <caret line="23" column="73" lean-forward="true" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="73" />
+          <caret line="23" column="73" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -1088,8 +1084,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Common/Helpers/function.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+        <state relative-caret-position="289">
+          <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="62" column="43" selection-start-line="62" selection-start-column="43" selection-end-line="62" selection-end-column="43" />
         </state>
       </provider>
     </entry>

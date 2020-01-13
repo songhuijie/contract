@@ -60,7 +60,7 @@ class UserController extends Controller
                 ];
             }else{
                 $openid = getOpenid($appid,$secret,$param['code']);
-                Log::channel('user_info')::info($openid);
+                Log::channel('user_info')->info($openid);
             }
         }
 
