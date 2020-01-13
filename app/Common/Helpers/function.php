@@ -253,7 +253,12 @@ function getAccess_token($appid,$secret){
     die();
 }
 
-
+/**
+ * 返回值
+ */
+function ReCode($code,$msg,$data,$count=0){
+    return ['code'=>$code,'msg'=>$msg,'data'=>$data,'count'=>$count];
+}
 /**
  * api数据接口
  */
@@ -294,8 +299,9 @@ function initiatingPayment($amountmoney,$ordernumber,$openid,$appid,$mch_id,$mer
     $data['sign'] = autograph($data,$mer_secret);
     $result = creatPay($data);
     $rest = xmlToArray($result);
+    \Illuminate\Support\Facades\Log::info(json_encode($rest));
     if(!isset($rest['prepay_id'])){
-        return ReCode(3,'获取prepay_id失败',$rest);
+        return false;
     }
     $prepay_id = $rest['prepay_id'];
     $parameters = array(

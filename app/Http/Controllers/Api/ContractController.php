@@ -166,8 +166,13 @@ class ContractController extends Controller {
                 $body        = "小程序下单";
                 $attach      = "用户下单";
                 $data = initiatingPayment($money,$order_number,$openid,$appid,$mch_id,$mch_secret,$notify_url,$body,$attach);
-                Log::channel('pay')->info(json_encode($data));
-                $response_json->status = Lib_const_status::SUCCESS;
+                if($data == false){
+                    Log::channel('error')->info(json_encode($data));
+                    $response_json->status = Lib_const_status::ORDER_PAYMENT_FAILED;
+                }else{
+                    Log::channel('pay')->info(json_encode($data));
+                    $response_json->status = Lib_const_status::SUCCESS;
+                }
             }else{
                 $response_json->status = Lib_const_status::ORDER_NOT_CONFIRMED;
             }
@@ -193,13 +198,9 @@ class ContractController extends Controller {
             Log::channel('order')->info('支付成功回调成功');
             if($arr['result_code'] == 'SUCCESS' && $arr['return_code'] == 'SUCCESS'){
                 $attach = json_decode($arr['attach'], true);
-
-
                 $money = $arr['total_fee']/100;
                 $uid = $attach['user_id'];
                 $order_number = $arr['out_trade_no'];
-
-
 
                 Log::channel('order')->info('支付成功回调成功');
 

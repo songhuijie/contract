@@ -28,6 +28,8 @@ class Lib_const_status{
     const NOT_YET_SEALED = 10005;
     //订单没有确认 或 已支付
     const ORDER_NOT_CONFIRMED = 10006;
+    //订单支付失败 联系客服
+    const ORDER_PAYMENT_FAILED = 10007;
 
     //通知不存在
     const NOTIFICATION_DOES_NOT_EXIST = 10012;

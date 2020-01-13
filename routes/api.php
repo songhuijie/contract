@@ -76,6 +76,8 @@ $api->version('v1', function ($api) {
                     $api->post('/contract/list','ContractController@getContract');
                     //签署合同
                     $api->post('/contract/sign','ContractController@sign');
+                    //支付律师代写合同
+                    $api->post('/contract/pay','ContractController@PayOrder');
 
 
                 });
