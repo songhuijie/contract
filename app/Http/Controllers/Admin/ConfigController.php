@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Libraries\Lib_make;
 use App\Models\Config;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -61,6 +62,7 @@ class ConfigController extends Controller
         //
         $data = $request->all();
         $int = $this->config->insert($data);
+        Lib_make::getConfig(false);
         if (!$int) return ajaxError('添加失败' );
         return ajaxSuccess();
     }
@@ -102,6 +104,7 @@ class ConfigController extends Controller
 
 
         $int = $config->update($all);
+        Lib_make::getConfig(false);
         if (!$int) return ajaxError('添加失败' );
         return ajaxSuccess();
     }
