@@ -31,6 +31,7 @@ class Lib_make{
             foreach($config_all as $k=>$v){
                 $config[$v->key] = $v->value;
             }
+            dd($config_all,$config);
             Redis::setex(Lib_redis::SplicingKey(Lib_redis::CONFIG),78200,json_encode($config));
             return $config;
         }
