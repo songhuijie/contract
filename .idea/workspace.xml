@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33dae8e9-96d1-4c1a-9dc8-f1dd7e1d0d76" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/BreachController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/BreachController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/logging.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/logging.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_09_023759_create_contract.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_09_023759_create_contract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Contract.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contract.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,64 +18,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AuthenticationController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AuthenticationController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
-              <folding>
-                <element signature="e#423#591#0#PHP" />
-                <element signature="e#598#697#0#PHP" />
-                <element signature="e#702#2324#0#PHP" />
-                <element signature="e#807#1253#0#PHP" />
-                <element signature="e#828#1043#0#PHP" />
-                <element signature="e#1044#1252#0#PHP" />
-                <element signature="e#1265#1346#0#PHP" />
-                <element signature="e#1647#2268#0#PHP" />
-                <element signature="e#1677#1926#0#PHP" />
-                <element signature="e#1824#1926#0#PHP" />
-                <element signature="e#1936#2268#0#PHP" />
-                <element signature="e#1954#2258#0#PHP" />
-                <element signature="e#2152#2258#0#PHP" />
-                <element signature="e#2331#2432#0#PHP" />
-                <element signature="e#2437#4412#0#PHP" />
-                <element signature="e#2526#3891#0#PHP" />
-                <element signature="e#2580#3205#0#PHP" />
-                <element signature="e#2601#2979#0#PHP" />
-                <element signature="e#2980#3204#0#PHP" />
-                <element signature="e#3219#3308#0#PHP" />
-                <element signature="e#3318#3891#0#PHP" />
-                <element signature="e#3347#3778#0#PHP" />
-                <element signature="e#3368#3552#0#PHP" />
-                <element signature="e#3553#3777#0#PHP" />
-                <element signature="e#3792#3881#0#PHP" />
-                <element signature="e#4136#4356#0#PHP" />
-                <element signature="e#4235#4356#0#PHP" />
-                <element signature="e#4418#4517#0#PHP" />
-                <element signature="e#4522#4936#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ContractController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="104" column="131" lean-forward="true" selection-start-line="104" selection-start-column="131" selection-end-line="104" selection-end-column="131" />
+            <state relative-caret-position="478">
+              <caret line="200" column="36" lean-forward="true" selection-start-line="200" selection-start-column="36" selection-end-line="200" selection-end-column="36" />
               <folding>
                 <element signature="e#669#768#0#PHP" />
                 <element signature="e#773#1282#0#PHP" />
                 <element signature="e#1289#1388#0#PHP" />
+                <element signature="e#1393#3466#0#PHP" />
                 <element signature="e#1727#2107#0#PHP" />
                 <element signature="e#1748#1954#0#PHP" />
                 <element signature="e#1955#2106#0#PHP" />
                 <element signature="e#2461#2795#0#PHP" />
                 <element signature="e#2482#2642#0#PHP" />
                 <element signature="e#2643#2794#0#PHP" />
-                <element signature="e#3211#3302#0#PHP" />
                 <element signature="e#3257#3312#0#PHP" />
-                <element signature="e#3494#3624#0#PHP" />
                 <element signature="e#3677#3783#0#PHP" />
                 <element signature="e#4839#4936#0#PHP" />
                 <element signature="e#5041#6327#0#PHP" />
@@ -95,6 +53,24 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Contract.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Models/Contract.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="787">
+              <caret line="125" column="12" selection-start-line="125" selection-start-column="12" selection-end-line="125" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/api.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="2020_01_09_023759_create_contract.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_09_023759_create_contract.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -107,8 +83,8 @@
       <file leaf-file-name="function.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Common/Helpers/function.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="275" column="37" lean-forward="true" selection-start-line="275" selection-start-column="37" selection-end-line="275" selection-end-column="37" />
+            <state relative-caret-position="667">
+              <caret line="307" column="47" lean-forward="true" selection-start-line="307" selection-start-column="47" selection-end-line="307" selection-end-column="47" />
               <folding>
                 <element signature="e#6#44#0#PHP" />
                 <element signature="n#isHTTPS#0;n#!!top" />
@@ -202,15 +178,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="649">
               <caret line="102" column="32" lean-forward="true" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -354,7 +321,6 @@
         <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/editUser.js" />
         <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/editRole.js" />
         <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/roles.js" />
-        <option value="$PROJECT_DIR$/app/Models/Contract.php" />
         <option value="$PROJECT_DIR$/storage/logs/laravel-2020-01-10.log" />
         <option value="$PROJECT_DIR$/app/Service/IdentityService.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
@@ -378,14 +344,15 @@
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Libraries/Lib_const_status.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/CheckSeal.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Libraries/Lib_config.php" />
         <option value="$PROJECT_DIR$/config/queue.php" />
         <option value="$PROJECT_DIR$/app/Models/Breach.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/BreachController.php" />
         <option value="$PROJECT_DIR$/config/logging.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_09_023759_create_contract.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" />
+        <option value="$PROJECT_DIR$/app/Models/Contract.php" />
       </list>
     </option>
   </component>
@@ -498,7 +465,6 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
@@ -748,15 +714,15 @@
       <workItem from="1578445190920" duration="29556000" />
       <workItem from="1578532669214" duration="27215000" />
       <workItem from="1578618178798" duration="20992000" />
-      <workItem from="1578877511640" duration="21558000" />
+      <workItem from="1578877511640" duration="22377000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173560000" />
+    <option name="totallyTimeSpent" value="174379000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="0" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -953,13 +919,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Contract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="101" column="20" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/OtherController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1184">
@@ -1033,16 +992,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="23" column="33" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="654">
-          <caret line="69" column="24" lean-forward="true" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
-          <folding>
-            <element signature="e#1627#1672#0#PHP" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1159,10 +1108,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_09_023759_create_contract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="29" column="40" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Common/Helpers/function.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="275" column="37" lean-forward="true" selection-start-line="275" selection-start-column="37" selection-end-line="275" selection-end-column="37" />
+        <state relative-caret-position="667">
+          <caret line="307" column="47" lean-forward="true" selection-start-line="307" selection-start-column="47" selection-end-line="307" selection-end-column="47" />
           <folding>
             <element signature="e#6#44#0#PHP" />
             <element signature="n#isHTTPS#0;n#!!top" />
@@ -1250,30 +1213,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_09_023759_create_contract.php">
+    <entry file="file://$PROJECT_DIR$/app/Models/Contract.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="29" column="40" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="40" />
+        <state relative-caret-position="787">
+          <caret line="125" column="12" selection-start-line="125" selection-start-column="12" selection-end-line="125" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="104" column="131" lean-forward="true" selection-start-line="104" selection-start-column="131" selection-end-line="104" selection-end-column="131" />
+        <state relative-caret-position="478">
+          <caret line="200" column="36" lean-forward="true" selection-start-line="200" selection-start-column="36" selection-end-line="200" selection-end-column="36" />
           <folding>
             <element signature="e#669#768#0#PHP" />
             <element signature="e#773#1282#0#PHP" />
             <element signature="e#1289#1388#0#PHP" />
+            <element signature="e#1393#3466#0#PHP" />
             <element signature="e#1727#2107#0#PHP" />
             <element signature="e#1748#1954#0#PHP" />
             <element signature="e#1955#2106#0#PHP" />
             <element signature="e#2461#2795#0#PHP" />
             <element signature="e#2482#2642#0#PHP" />
             <element signature="e#2643#2794#0#PHP" />
-            <element signature="e#3211#3302#0#PHP" />
             <element signature="e#3257#3312#0#PHP" />
-            <element signature="e#3494#3624#0#PHP" />
             <element signature="e#3677#3783#0#PHP" />
             <element signature="e#4839#4936#0#PHP" />
             <element signature="e#5041#6327#0#PHP" />

@@ -112,4 +112,22 @@ class Contract extends Model
     public function updateSign($contract_id,$sign){
         return $this->where(['id'=>$contract_id])->update(['is_sign'=>$sign]);
     }
+
+    /**
+     * 根据订单号 获取合同订单
+     * @param $order_number
+     * @return mixed
+     */
+    public function getContractByNumber($order_number){
+        return $this->where(['order_number'=>$order_number])->first();
+    }
+
+    /**
+     * 成功 支付
+     * @param $order_number
+     * @return mixed
+     */
+    public function updateStatus($order_number){
+        return $this->where(['order_number'=>$order_number])->update(['status'=>1]);
+    }
 }
