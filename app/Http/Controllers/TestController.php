@@ -19,6 +19,8 @@ class TestController extends Controller{
     public function test(){
 
 
+        $config = Lib_make::getConfig();
+        dd($config);
         $card = '51012519950626631';
         $bool = IdentityService::MatchIdentityInformation($card);
         dd($bool);
