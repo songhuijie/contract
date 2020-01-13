@@ -63,6 +63,8 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'rbac' => \App\Http\Middleware\Rbac::class,
         'CheckAccessToken' =>\App\Http\Middleware\CheckAccessToken::class,
+        'CheckAuthentication' =>\App\Http\Middleware\CheckAuthentication::class,
+        'CheckSeal' =>\App\Http\Middleware\CheckSeal::class,
     ];
 
     /**

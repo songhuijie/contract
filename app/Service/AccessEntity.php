@@ -20,6 +20,8 @@ class AccessEntity{
     public $access_token = '';
     public $user_nickname = '';//昵称
     public $user_img = '';//头像
+    public $is_authentication = 0;//是否实名认证
+    public $company_or_individual = '';//是否实名认证
     public $lang = null; //语言
     /**
      * 注册一个实例

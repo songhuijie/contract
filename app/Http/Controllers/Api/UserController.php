@@ -124,7 +124,6 @@ class UserController extends Controller
 
         $user_info = $this->user->getUserinfo($user_id);
 
-
         $user_info->certification;
         $user_info->certification_status = isset($user_info->certification->status)?$user_info->certification->status:0;
         $response_json = $this->initResponse();

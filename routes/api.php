@@ -43,26 +43,46 @@ $api->version('v1', function ($api) {
             //查看通知
             $api->post('/notice/check','OtherController@check');
 
-            //合同
-            //模板
-            $api->post('/contract/template','ContractController@template');
-            //创建合同
-            $api->post('/contract/creation','ContractController@ContractCreation');
-            //获取合同信息根据条件
-            $api->post('/contract/list','ContractController@getContract');
-            //签署合同
-            $api->post('/contract/sign','ContractController@sign');
-
-            //获取所有用户
-            $api->post('/contract/distribute/user','ContractController@userList');
 
 
             //用户认证
             $api->post('/certification/user','AuthenticationController@UserCertification');
             //获取印章
             $api->post('/seal/get','AuthenticationController@getSeal');
-            //创建印章
-            $api->post('/seal/create','AuthenticationController@CreateSeal');
+
+            /**
+             * 需要实名认证才能使用
+             */
+            $api->group(['middleware'=>'CheckAuthentication'],function($api){
+                //创建印章
+                $api->post('/seal/create','AuthenticationController@CreateSeal');
+
+
+                /**
+                 * 需要印章才能请求
+                 */
+                $api->group(['middleware'=>'CheckSeal'],function($api){
+                    //合同
+                    //模板
+                    $api->post('/contract/template','ContractController@template');
+                    //创建合同
+                    $api->post('/contract/creation','ContractController@ContractCreation');
+                    //获取合同信息根据条件
+                    $api->post('/contract/list','ContractController@getContract');
+                    //签署合同
+                    $api->post('/contract/sign','ContractController@sign');
+
+                    //获取所有用户
+                    $api->post('/contract/distribute/user','ContractController@userList');
+                });
+
+
+            });
+
+
+
+
+
 
 
 
