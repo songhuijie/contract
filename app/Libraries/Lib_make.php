@@ -21,6 +21,7 @@ class Lib_make{
 
         $config = Redis::get(Lib_redis::SplicingKey(Lib_redis::CONFIG));
 
+        dump($config);
         if($config){
             return json_decode($config,true);
         }else{
