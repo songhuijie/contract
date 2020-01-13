@@ -59,12 +59,13 @@ function ajaxError(string $errMsg = 'error', int $httpCode = 200)
 function getOpenid($appid,$secret,$code){
     $url = "https://api.weixin.qq.com/sns/jscode2session?appid={$appid}&secret={$secret}&js_code={$code}&grant_type=authorization_code";
     $data = curlGet($url);
-
+    \Illuminate\Support\Facades\Log::info($data);
     if($data){
         $result = json_decode($data,true);
         $url3 = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={$appid}&secret={$secret}";
         $result_two_json = curlGet($url3);
         $result_two = json_decode($result_two_json,true);
+        \Illuminate\Support\Facades\Log::info($result_two_json);
         $own_data = [
             'openid'=>$result['openid'],
             'access_token'=>$result_two['access_token'],

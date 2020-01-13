@@ -22,7 +22,8 @@ class CreateContract extends Migration
             $table->text('template_content')->nullable()->comment('模板编辑后内容');
             $table->text('contract_title')->nullable()->comment('合同名称');
             $table->text('contract_demand')->nullable()->comment('需求描述');
-            $table->integer('is_sign')->default(0)->comment('是否签署 0 未签署  1签署');
+            $table->integer('first_is_sign')->default(0)->comment('默认签署完毕 甲方 后期可更改');
+            $table->integer('is_sign')->default(0)->comment('指定签署方(乙) 是否签署 0 未签署  1签署');
             $table->integer('contract_type')->default(1)->comment('合同类型 1系统模板 2律师代写');
             $table->decimal('price',8,2)->default(0)->comment('律师代写价格');
             $table->integer('status')->default(0)->comment('0 待支付 1 支付成功');
