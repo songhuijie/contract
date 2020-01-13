@@ -24,9 +24,6 @@ class Lib_make{
             Redis::del(Lib_redis::SplicingKey(Lib_redis::CONFIG));
             self::getConfig();
         }else{
-
-
-
             if($config){
                 return json_decode($config,true);
             }else{
