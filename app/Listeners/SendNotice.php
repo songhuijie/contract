@@ -30,6 +30,20 @@ class SendNotice
         $user_id = $event->user_id;
         $message = $event->message;
 
-        dd($user_id,$message);
+        $date = $message['date'];
+        $enterprise = $message['enterprise'];
+        $signatory = $message['signatory'];
+
+        $title = $signatory.'已签字';
+        $content = "于{$date}同{$enterprise}拟定的合同{$signatory}已签字,发送至您的邮箱。请注意查收,及时回复！";
+
+        $notice = new \App\Models\Notice();
+
+        $notice_data = [
+            'user_id'=>$user_id,
+            'title'=>$title,
+            'content'=>$content,
+        ];
+        $notice->insert($notice_data);
     }
 }

@@ -94,7 +94,7 @@ return [
 
         'user_info' => [
             'driver' => 'daily',
-            'path' => storage_path('logs/user_info.log'),
+            'path' => storage_path('logs/userInfo.log'),
             'level' => 'debug',
             'permission'=>0777,
             'days' => 14,

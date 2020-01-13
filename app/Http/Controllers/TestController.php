@@ -19,6 +19,12 @@ class TestController extends Controller{
     public function test(){
 
 
+        $date = date('Y-m-d');
+        $company = '企业';
+        $sign = '甲方';
+        $message = "于{$date}同{$company}拟定的合同{$sign}已签字,发送至您的邮箱。请注意查收,及时回复！";
+
+        dd($message);
         $config = Lib_make::getConfig();
         dd($config);
         $card = '51012519950626631';

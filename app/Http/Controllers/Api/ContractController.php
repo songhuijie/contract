@@ -185,8 +185,14 @@ class ContractController extends Controller {
             $this->contract->updateSign($param['contract_id'],Lib_config::SIGN);
             //签署成功 通知
 
-
-            $message = '于2019年12月1日同XX企业拟定的合同甲方已签字 发送至您的邮箱，请注意查收 及时回复！';
+            $date = date('Y-m-d');
+            $enterprise = '企业';
+            $signatory = '乙方';
+            $message = [
+                'date'=>$date,
+                'enterprise'=>$enterprise,
+                'signatory'=>$signatory,
+            ];
             event(new Notice($contract->user_id,$message));
             $response_json->status = Lib_const_status::SUCCESS;
         }else{
