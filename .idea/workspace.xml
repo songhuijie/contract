@@ -19,17 +19,13 @@
       <file leaf-file-name="ContractController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="73" column="70" selection-start-line="73" selection-start-column="70" selection-end-line="73" selection-end-column="70" />
+            <state relative-caret-position="436">
+              <caret line="266" column="67" selection-start-line="266" selection-start-column="67" selection-end-line="266" selection-end-column="67" />
               <folding>
                 <element signature="e#585#777#0#PHP" />
                 <element signature="e#783#882#0#PHP" />
                 <element signature="e#887#1396#0#PHP" />
                 <element signature="e#1402#1503#0#PHP" />
-                <element signature="e#1612#1769#0#PHP" />
-                <element signature="e#1633#1689#0#PHP" />
-                <element signature="e#1690#1768#0#PHP" />
-                <element signature="e#1779#1860#0#PHP" />
                 <element signature="e#2148#2247#0#PHP" />
                 <element signature="e#2252#4953#0#PHP" />
                 <element signature="e#2495#4053#0#PHP" />
@@ -55,27 +51,15 @@
                 <element signature="e#5663#5940#0#PHP" />
                 <element signature="e#5853#5940#0#PHP" />
                 <element signature="e#5970#6073#0#PHP" />
-                <element signature="e#6078#8040#0#PHP" />
                 <element signature="e#6175#6332#0#PHP" />
                 <element signature="e#6196#6252#0#PHP" />
                 <element signature="e#6253#6331#0#PHP" />
                 <element signature="e#6342#6423#0#PHP" />
-                <element signature="e#6714#7985#0#PHP" />
-                <element signature="e#6759#7895#0#PHP" />
-                <element signature="e#7429#7782#0#PHP" />
-                <element signature="e#7620#7782#0#PHP" />
-                <element signature="e#7796#7895#0#PHP" />
-                <element signature="e#7906#7985#0#PHP" />
                 <element signature="e#8135#8236#0#PHP" />
-                <element signature="e#8165#8799#0#PHP" />
                 <element signature="e#8272#8429#0#PHP" />
                 <element signature="e#8293#8349#0#PHP" />
                 <element signature="e#8350#8428#0#PHP" />
                 <element signature="e#8608#8689#0#PHP" />
-                <element signature="e#8625#8672#0#PHP" />
-                <element signature="e#8843#9341#0#PHP" />
-                <element signature="e#9018#9318#0#PHP" />
-                <element signature="e#9231#9318#0#PHP" />
                 <element signature="e#9409#9473#0#PHP" />
                 <element signature="e#9526#9611#0#PHP" />
                 <element signature="e#9605#9649#0#PHP" />
@@ -778,12 +762,12 @@
       <workItem from="1578532669214" duration="27215000" />
       <workItem from="1578618178798" duration="20992000" />
       <workItem from="1578877511640" duration="25557000" />
-      <workItem from="1578963575013" duration="10789000" />
+      <workItem from="1578963575013" duration="10916000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188348000" />
+    <option name="totallyTimeSpent" value="188475000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1936" height="1056" extended-state="0" />
@@ -1320,17 +1304,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="73" column="70" selection-start-line="73" selection-start-column="70" selection-end-line="73" selection-end-column="70" />
+        <state relative-caret-position="436">
+          <caret line="266" column="67" selection-start-line="266" selection-start-column="67" selection-end-line="266" selection-end-column="67" />
           <folding>
             <element signature="e#585#777#0#PHP" />
             <element signature="e#783#882#0#PHP" />
             <element signature="e#887#1396#0#PHP" />
             <element signature="e#1402#1503#0#PHP" />
-            <element signature="e#1612#1769#0#PHP" />
-            <element signature="e#1633#1689#0#PHP" />
-            <element signature="e#1690#1768#0#PHP" />
-            <element signature="e#1779#1860#0#PHP" />
             <element signature="e#2148#2247#0#PHP" />
             <element signature="e#2252#4953#0#PHP" />
             <element signature="e#2495#4053#0#PHP" />
@@ -1356,27 +1336,15 @@
             <element signature="e#5663#5940#0#PHP" />
             <element signature="e#5853#5940#0#PHP" />
             <element signature="e#5970#6073#0#PHP" />
-            <element signature="e#6078#8040#0#PHP" />
             <element signature="e#6175#6332#0#PHP" />
             <element signature="e#6196#6252#0#PHP" />
             <element signature="e#6253#6331#0#PHP" />
             <element signature="e#6342#6423#0#PHP" />
-            <element signature="e#6714#7985#0#PHP" />
-            <element signature="e#6759#7895#0#PHP" />
-            <element signature="e#7429#7782#0#PHP" />
-            <element signature="e#7620#7782#0#PHP" />
-            <element signature="e#7796#7895#0#PHP" />
-            <element signature="e#7906#7985#0#PHP" />
             <element signature="e#8135#8236#0#PHP" />
-            <element signature="e#8165#8799#0#PHP" />
             <element signature="e#8272#8429#0#PHP" />
             <element signature="e#8293#8349#0#PHP" />
             <element signature="e#8350#8428#0#PHP" />
             <element signature="e#8608#8689#0#PHP" />
-            <element signature="e#8625#8672#0#PHP" />
-            <element signature="e#8843#9341#0#PHP" />
-            <element signature="e#9018#9318#0#PHP" />
-            <element signature="e#9231#9318#0#PHP" />
             <element signature="e#9409#9473#0#PHP" />
             <element signature="e#9526#9611#0#PHP" />
             <element signature="e#9605#9649#0#PHP" />

@@ -264,7 +264,7 @@ class ContractController extends Controller {
             case 1:
                 if($contract){
                     $contract->templateTitle;
-                    $contract->specificUserName;
+                    $contract->user_list = Lib_make::getUserList();
                     $response_json->status = Lib_const_status::SUCCESS;
                     $response_json->data = $contract;
                 }else{
