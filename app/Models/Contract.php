@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Model\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Contract extends Model
@@ -18,7 +19,7 @@ class Contract extends Model
 
     protected $primaryKey = 'id';
 
-    protected $fillable = ['is_sign','status'];
+    protected $fillable = ['template_content','contract_title', 'contract_demand','is_sign','status'];
 
     /**
      * 获取列表数据  后台获取
@@ -34,7 +35,7 @@ class Contract extends Model
         if ($where) $where = [['key', 'like', $where.'%']];
         $offset = ($page - 1) * $limit;
 
-        $admins = $this->where($where)->select($this->select)
+        $admins = $this->with('templateTitle')->where($where)->select($this->select)
             ->offset($offset)->limit($limit)->orderBy($sortfield, $order)->get()->toArray();
         $count = $this->where($where)->count();
         return [
@@ -98,6 +99,14 @@ class Contract extends Model
         return $this->hasOne(Template::class,'id','template_id');
     }
 
+    /**
+     * 单独查询时
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function specificUserName(){
+        return $this->hasOne(User::class,'id','specific_user_id')->select('name');
+    }
+
 
     /**
      * 根据合同ID 和用户ID  获取
@@ -107,6 +116,17 @@ class Contract extends Model
      */
     public function getByUserAndID($contract_id,$user_id){
         return $this->where(['id'=>$contract_id,'specific_user_id'=>$user_id,'contract_type'=>'1','is_sign'=>0])->first();
+    }
+
+
+    /**
+     * 修改 第二种情况
+     * @param $contract_id
+     * @param $user_id
+     * @return mixed
+     */
+    public function getByUseChange($contract_id,$user_id){
+        return $this->where(['id'=>$contract_id,'user_id'=>$user_id,'is_sign'=>0])->first();
     }
 
     /**

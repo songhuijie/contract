@@ -236,6 +236,66 @@ class ContractController extends Controller {
     }
 
 
+    /**
+     * 获取合同详情
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getContractDetail(Request $request){
+        $param = $request->all();
+
+        $fromErr = $this->validatorFrom([
+            'contract_id'=>'required',//合同ID
+            'type'=>'required|in:1,2,3',//1表示获取系统模板合同或代写合同  2表示修改系统模板内容 3表示修改代写合同内容
+        ],[
+            'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
+        ]);
+        if($fromErr){//输出表单验证错误信息
+            return $this->response($fromErr);
+        }
+
+
+        $access_entity = AccessEntity::getInstance();
+        $user_id = $access_entity->user_id;
+        $response_json = $this->initResponse();
+
+        $contract = $this->contract->getByUseChange($param['contract_id'],$user_id);
+        switch ($param['type']){
+            case 1:
+                if($contract){
+                    $contract->templateTitle;
+                    $contract->specificUserName;
+                    $response_json->status = Lib_const_status::SUCCESS;
+                    $response_json->data = $contract;
+                }else{
+                    $response_json->status = Lib_const_status::CONTRACT_CANNOT;
+                }
+                break;
+            case 2:
+                if($contract && $contract->contract_type == 1){
+                    $contract->update($param);
+                    $response_json->status = Lib_const_status::SUCCESS;
+                }else{
+                    $response_json->status = Lib_const_status::CONTRACT_CANNOT;
+                }
+                break;
+            case 3:
+                if($contract && $contract->contract_type == 2){
+                    $contract->update($param);
+                    $response_json->status = Lib_const_status::SUCCESS;
+                }else{
+                    $response_json->status = Lib_const_status::CONTRACT_CANNOT;
+                }
+                break;
+            default:
+                break;
+        }
+
+        return $this->response($response_json);
+
+    }
+
+
 
 
     /**

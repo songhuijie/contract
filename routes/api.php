@@ -76,6 +76,9 @@ $api->version('v1', function ($api) {
                     $api->post('/seal/get','AuthenticationController@getSeal');
                     //创建合同
                     $api->post('/contract/creation','ContractController@ContractCreation');
+
+                    //获取合同详细信息 或者修改
+                    $api->post('/contract/detail','ContractController@getContractDetail');
                     //获取合同信息根据条件
                     $api->post('/contract/list','ContractController@getContract');
                     //签署合同
