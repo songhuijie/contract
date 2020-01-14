@@ -11,7 +11,7 @@ class Refund extends Model
     protected $table = 'refund';
     public $timestamps = false;
     protected $dateFormat = 'U';//使用时间戳方式添加
-    public $select = ['user_id', 'price', 'order_number','status','created_at'];
+    public $select = ['id','user_id', 'price', 'order_number','status','created_at'];
 
     protected $primaryKey = 'id';
 

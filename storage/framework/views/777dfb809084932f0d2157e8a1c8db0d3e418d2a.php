@@ -1,6 +1,6 @@
-        @extends("admin.layout.modify")
+        
 
-@section("content")
+<?php $__env->startSection("content"); ?>
     <div id="wrapper" style="margin-top:20px;">
         <div id="page-wrapper">
             <form class="layui-form" >
@@ -13,10 +13,10 @@
                     </div>
                 </div>
 
-                @if(!empty($refund))
+                <?php if(!empty($refund)): ?>
                     <input type="text" id="mold" hidden  value="edit" >
-                    <input type="text" id="id" hidden value="{{$refund->id}}" >
-                @endif
+                    <input type="text" id="id" hidden value="<?php echo e($refund->id); ?>" >
+                <?php endif; ?>
 
                 <div class="layui-form-item">
                     <div class="layui-input-block">
@@ -26,14 +26,11 @@
                 </div>
             </form>
 
-
-
         </div>
 
 
     </div>
-
-
+    
      <script>
         $(document).ready(function() {
             $('#dataTables-example').DataTable({
@@ -56,7 +53,7 @@
                 elem: '#test2'
                 ,method: 'post'
                 ,multiple: true //是否允许多文件上传。设置 true即可开启。不支持ie8/9
-                ,url: '{{URL("file/img")}}' //上传接口
+                ,url: '<?php echo e(URL("file/img")); ?>' //上传接口
                 ,done: function(index, upload){
                     //获取当前触发上传的元素，一般用于 elem 绑定 class 的情况，注意：此乃 layui 2.1.0 新增
                     if(index.code!=0){
@@ -106,7 +103,7 @@
                         data:date,
                         type:"post",
                         datatype:"json",
-                        url:"{{url('admin/refund')}}",
+                        url:"<?php echo e(url('admin/refund')); ?>",
                         success:function(res){
                             console.log(res);
                             if(res.code==0){
@@ -131,4 +128,6 @@
             // .removeClass('layui-hide');
         });
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make("admin.layout.modify", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\phpstudy_pro\WWW\contract\resources\views/admin/refund/addRefund.blade.php ENDPATH**/ ?>

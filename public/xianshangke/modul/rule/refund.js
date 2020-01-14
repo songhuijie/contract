@@ -13,7 +13,8 @@
         ,limit: 10
         ,limits: [10, 20]
         ,cols: [[ //表头
-            {field: 'user_id', title: '用户ID', sort: true, fixed: 'left', align: 'left'}
+            {field: 'id', title: 'ID', sort: true, fixed: 'left', align: 'left'}
+            ,{field: 'user_id', title: '用户ID'}
             ,{title:'用户名',templet:"<div>{{d.user_name.name}}</div>"}
             ,{field: 'price', title: '订单价格'}
             ,{field: 'order_number', title: '订单号'}
@@ -61,22 +62,23 @@
             });
 
         } else if (layEvent == 'del') {
-            dialog.confirm('确认删除改退款申请么', function () {
-                var loadIndex = dialog.load('删除中，请稍候');
-                his.ajax({
-                    url: '/admin/refund/'+data.id
-                    ,type: 'delete'
-                    ,complete: function () {
-                        dialog.close(loadIndex);
-                    }
-                    ,error: function (msg) {
-                        dialog.error(msg);
-                    }
-                    ,success: function () {
-                        dialog.msg('删除成功');
-                        obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
-                    }
-                });
+            dialog.confirm('确认删除退款申请么', function () {
+                layer.msg('暂不支持该功能');
+                // var loadIndex = dialog.load('删除中，请稍候');
+                // his.ajax({
+                //     url: '/admin/refund/'+data.id
+                //     ,type: 'delete'
+                //     ,complete: function () {
+                //         dialog.close(loadIndex);
+                //     }
+                //     ,error: function (msg) {
+                //         dialog.error(msg);
+                //     }
+                //     ,success: function () {
+                //         dialog.msg('删除成功');
+                //         obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
+                //     }
+                // });
             })
 
         }
