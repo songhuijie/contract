@@ -71,7 +71,7 @@ class ContractController extends Controller {
         }
 
         $response_json = $this->initResponse();
-        $content = $this->template->find($param['template_id'],['content']);
+        $content = $this->template->find($param['template_id'],['title','content']);
         $response_json->status = Lib_const_status::SUCCESS;
         $response_json->data = $content;
         return $this->response($response_json);
