@@ -4,6 +4,7 @@
         ,his = layui.his
         ,$ = layui.$;
 
+
     table.render({
         elem: '#refund'
         ,url: '/admin/refund/list' //数据接口
@@ -12,7 +13,8 @@
         ,limit: 10
         ,limits: [10, 20]
         ,cols: [[ //表头
-            {field: 'user_id', title: '用户名', sort: true, fixed: 'left', align: 'left'}
+            {field: 'user_id', title: '用户ID', sort: true, fixed: 'left', align: 'left'}
+            ,{title:'用户名',templet:"<div>{{d.user_name.name}}</div>"}
             ,{field: 'price', title: '订单价格'}
             ,{field: 'order_number', title: '订单号'}
             ,{field:'status',title: '状态', width:100,align:'center',templet:function(d){
@@ -80,6 +82,7 @@
         }
 
     });
+
 
     function flushTable (cond, sortObj) {
         var query = {

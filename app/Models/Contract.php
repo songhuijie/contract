@@ -95,6 +95,10 @@ class Contract extends Model
         return $contract_data;
     }
 
+    /**
+     * 模板
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function templateTitle(){
         return $this->hasOne(Template::class,'id','template_id');
     }

@@ -14,6 +14,7 @@ use App\Libraries\Lib_const_status;
 use App\Libraries\Lib_make;
 use App\Model\User;
 use App\Models\Contract;
+use App\Models\Refund;
 use App\Models\Template;
 use App\Service\AccessEntity;
 use Illuminate\Http\Request;
@@ -26,11 +27,13 @@ class ContractController extends Controller {
     public $query;
     public $contract;
     public $user;
-    public function __construct(Template $template,Contract $contract,User $user)
+    public $refund;
+    public function __construct(Template $template,Contract $contract,User $user,Refund $refund)
     {
         $this->template = $template;
         $this->contract = $contract;
         $this->user = $user;
+        $this->refund = $refund;
     }
 
     /**
@@ -235,7 +238,6 @@ class ContractController extends Controller {
         return $this->response($response_json);
     }
 
-
     /**
      * 获取合同详情
      * @param Request $request
@@ -300,9 +302,6 @@ class ContractController extends Controller {
 
     }
 
-
-
-
     /**
      * 支付回调
      * @param Request $request
@@ -352,11 +351,18 @@ class ContractController extends Controller {
 
         $response_json = $this->initResponse();
         $contract = $this->contract->getContractByGhostWrite($param['contract_id'],$user_id);
+        if($contract && ($contract->status == 1 || $contract->status == 2)){
+            $refund_data = [
+                'user_id'=>$user_id,
+                'price'=>$contract->price,
+                'order_number'=>$contract->order_number,
+            ];
+            $this->refund->insert($refund_data);
+        }
 
         $response_json->status = Lib_const_status::SUCCESS;
         return $this->response($response_json);
     }
-
 
     /**
      * 根据条件获取 合同信息
@@ -389,7 +395,6 @@ class ContractController extends Controller {
         return $this->response($response_json);
 
     }
-
 
     /**
      * 签署

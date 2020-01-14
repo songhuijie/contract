@@ -16,11 +16,15 @@ class Refund extends Model
     protected $primaryKey = 'id';
 
     public $fillable = ['status'];
+
+
+
     /**
-     * 用户名
+     * 单独查询时
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function userName(){
-        $this->belongsTo(User::class,'id','user_id');
+    public function UserName(){
+        return $this->hasOne(User::class,'id','user_id');
     }
 
     public  function getRefund($param){
@@ -32,7 +36,7 @@ class Refund extends Model
         if ($where) $where = [['title', 'like', $where.'%']];
         $offset = ($page - 1) * $limit;
 
-        $admins = $this->with('userName')->where($where)->select($this->select)
+        $admins = $this->with(['UserName'])->where($where)->select($this->select)
             ->offset($offset)->limit($limit)->orderBy($sortfield, $order)->get()->toArray();
         $count = $this->where($where)->count();
         return [
