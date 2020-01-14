@@ -64,7 +64,7 @@ class Contract extends Model
                 $contract = $contract->where(function($query) use($user_id){
                     $query->where(['user_id'=>$user_id,'contract_type'=>1,'is_sign'=>0])
                         ->orWhere(['specific_user_id'=>$user_id,'contract_type'=>1,'is_sign'=>0])
-                        ->orWhere(['user_id'=>$user_id,'contract_type'=>2,'status'=>2,'is_sign'=>2]);
+                        ->orWhere(['user_id'=>$user_id,'contract_type'=>2,'status'=>2,'is_sign'=>0]);
                 });
 //                $contract =  $contract->where(['user_id'=>$param['user_id'],'is_sign'=>0])->orWhere(['specific_user_id'=>$param['user_id'],'is_sign'=>0]);
                 break;
