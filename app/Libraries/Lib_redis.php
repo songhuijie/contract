@@ -6,6 +6,8 @@
  * Time: 9:47
  */
 namespace App\Libraries;
+use Illuminate\Support\Facades\Redis;
+
 class Lib_redis{
 
 
@@ -19,4 +21,12 @@ class Lib_redis{
         return env('redis_key_prefix','contract').$key;
     }
 
+
+    /**
+     * 手机号验证
+     */
+    public static function vilidatoerSms($code){
+
+
+    }
 }

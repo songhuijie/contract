@@ -8,8 +8,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Libraries\Lib_config;
+use App\Libraries\Lib_const_status;
 use App\Libraries\Lib_make;
 use App\Libraries\Lib_redis;
+use App\Service\AliCloudService;
 use App\Service\IdentityService;
 use Illuminate\Support\Facades\Redis;
 
@@ -19,19 +22,30 @@ class TestController extends Controller{
     public function test(){
 
 
-        $json = '{
-	"code": 0,
-	"status": 0,
-	"data": {
-		"userList": {
-			"2": "jiedage123",
-			"3": "jiedage1234",
-			"4": "jie"
-		}
-	}
-}';
+        $json = '{"status":0,"msg":"ok","result":{"realname":"宋慧杰","idcard":"","list":[{"legalperson":null,"legalpersonidcard":null,"age":"35","sex":"女性","idcard":"4209021983****0482","caseid":null,"filingdate":"2019-02-27","caseno":"(2019)冀0534执恢57号","baseonno":"(2018)冀0534执710号","baseonorg":"清河县人民法院","court":"清河县人民法院","province":"河北","duty":"0","performance":"全部未履行","description":"违反财产报告制度","pubdate":"2019年09月23日"},{"legalperson":null,"legalpersonidcard":null,"age":"35","sex":"女性","idcard":"4209021983****0482","caseid":null,"filingdate":"2019-04-22","caseno":"(2019)冀0534执272号","baseonno":"(2018)冀0534民初1427号","baseonorg":"清河县人民法院","court":"清河县人民法院","province":"河北","duty":"0","performance":"全部未履行","description":"违反财产报告制度","pubdate":"2019年09月02日"},{"legalperson":null,"legalpersonidcard":null,"age":"21","sex":"女性","idcard":"4108261998****0529","caseid":null,"filingdate":"2019-04-08","caseno":"(2019)鄂0115执1508号","baseonno":"(2018)鄂0115民初3497号","baseonorg":"武汉市江夏区人民法院","court":"武汉市江夏区人民法院","province":"湖北","duty":"被告支付原告1700元及利息，诉讼费25元。由被告负担","performance":"全部未履行","description":"有履行能力而拒不履行生效法律文书确定义务","pubdate":"2019年04月10日"},{"legalperson":null,"legalpersonidcard":null,"age":"45","sex":"男性","idcard":"1326291969****0614","caseid":null,"filingdate":"2018-05-09","caseno":"(2018)冀0828执757号","baseonno":"(2015)围民初字第00784号","baseonorg":"围场满族蒙古族自治县人民法院","court":"围场满族蒙古族自治县人民法院","province":"河北","duty":"判决如下： 一、限于本判决生效后十日内，被告宋慧杰偿还原告围场农商行借款本金人民币1，277，042.91元，利息人民币499,181.29元，本息共计人民币1,776,224.20元（截止2015年1月13日），自2015年1月13日之后的利息按照原、被告双方合同约定的利率11.50‰上浮40%计算至债务实际履行完毕为止。被告苏桂成、胡秀朋、孙铁刚、王书学、张玉林、李勇华承担连带责任。 二、被告苏桂成、胡秀朋、孙铁刚、王书学、张玉林、李勇华承担保证责任后，有权向被告宋慧杰追偿。 如未按判决书指定期间履行给付金钱义务，应当依照《中华人民共和国民事诉讼法》第二百五十三条之规定，加倍支付迟延履行期间的债务利息。 案件受理费20230.00元，由被告承担。","performance":"全部未履行","description":"被执行人无正当理由拒不履行执行和解协议","pubdate":"2018年09月21日"}]}}';
 
-        
+        $jsontwo = [
+            "status" => "210",
+            "msg" => "没有信息",
+            "result" => "",
+        ];
+        $response_json = $this->initResponse();
+
+
+        $jsontwo = json_decode($json,true);
+        if($jsontwo['status'] == 0){
+            $response_json->status = Lib_const_status::SUCCESS;
+            $response_json->data = $jsontwo['result']['list'];
+        }elseif($jsontwo['status'] == 210){
+            $response_json->status = Lib_const_status::SUCCESS;
+        }else{
+            $response_json->status = Lib_const_status::SERVICE_ERROR;
+        }
+        return $this->response($response_json);
+//        $name = 'hahahheheheeheh';
+//        $id_card = '510125199506266310';
+//        $result = AliCloudService::market($name);
+//        dd(json_decode($result,true));
 
         dd(json_decode($json,true));
         $date = date('Y-m-d');

@@ -57,20 +57,43 @@ class Contract extends Model
         $offset = ($page - 1) * $limit;
 
         $contract = $this;
+        $user_id = $param['user_id'];
         switch ($param['status']){
             case 0:
                 //0 全部合同(未签署)
-                $user_id = $param['user_id'];
-                $contract = $contract->where(function($query) use($user_id){
-                    $query->where(['user_id'=>$user_id,'contract_type'=>1,'is_sign'=>0])
-                        ->orWhere(['specific_user_id'=>$user_id,'contract_type'=>1,'is_sign'=>0])
-                        ->orWhere(['user_id'=>$user_id,'contract_type'=>2,'status'=>2,'is_sign'=>0]);
-                });
+                $contract = $contract->where(['specific_user_id'=>$user_id,'contract_type'=>1,'is_sign'=>0])
+                    ->orwhere(function($q1) use($user_id){
+                        $q1->Where(['user_id'=>$user_id,'contract_type'=>1,'is_sign'=>0]);
+                    })->orwhere(function($q1) use($user_id){
+                        $q1->Where(['user_id'=>$user_id,'contract_type'=>2,'status'=>2,'is_sign'=>0]);
+                    });
+
+//                $contract = $contract->where([
+//                    ['specific_user_id','=', $user_id],
+//                    ['contract_type','=', 1],
+//                    ['is_sign','=', 0]
+//                ])->orWhere([
+//                    ['user_id','=', $user_id],
+//                    ['contract_type','=', 1],
+//                    ['is_sign','=', 0]
+//                ])->orWhere([
+//                    ['user_id','=', $user_id],
+//                    ['contract_type','=', 2],
+//                    ['status','=', 2],
+//                    ['is_sign','=', 0]
+//                ]);
+
+
 //                $contract =  $contract->where(['user_id'=>$param['user_id'],'is_sign'=>0])->orWhere(['specific_user_id'=>$param['user_id'],'is_sign'=>0]);
                 break;
             case 1:
                 //1 全部合同(签署)
-                $contract =  $contract->where(['user_id'=>$param['user_id'],'is_sign'=>1])->orWhere(['specific_user_id'=>$param['user_id'],'is_sign'=>1]);
+                $contract = $contract->where(function($query) use($user_id){
+                    $query->where(['user_id'=>$user_id,'contract_type'=>1,'is_sign'=>1])
+                        ->orWhere(['specific_user_id'=>$user_id,'contract_type'=>1,'is_sign'=>1])
+                        ->orWhere(['user_id'=>$user_id,'contract_type'=>2,'status'=>2,'is_sign'=>1]);
+                });
+//                $contract =  $contract->where(['user_id'=>$param['user_id'],'contract_type'=>1,'is_sign'=>1])->orWhere(['specific_user_id'=>$param['user_id'],'contract_type'=>1,'is_sign'=>1]);
                 break;
             case 2:
                 //2等待他人签署的
@@ -78,7 +101,12 @@ class Contract extends Model
                 break;
             case 3:
                 //3需要我签名的
-                $contract =  $contract->where(['specific_user_id'=>$param['user_id'],'contract_type'=>1,'is_sign'=>0])->orWhere(['specific_user_id'=>$param['user_id'],'contract_type'=>2,'is_sign'=>0,'status'=>2]);
+
+                $contract = $contract->where(function($query) use($user_id){
+                    $query->where(['specific_user_id'=>$user_id,'contract_type'=>1,'is_sign'=>0])
+                        ->orWhere(['specific_user_id'=>$user_id,'contract_type'=>2,'is_sign'=>0,'status'=>2]);
+                });
+//                $contract =  $contract->where(['specific_user_id'=>$param['user_id'],'contract_type'=>1,'is_sign'=>0])->orWhere(['specific_user_id'=>$param['user_id'],'contract_type'=>2,'is_sign'=>0,'status'=>2]);
                 break;
             case 4:
                 //4 我创建
