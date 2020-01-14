@@ -50,6 +50,8 @@ $api->version('v1', function ($api) {
 
             //模板
             $api->post('/contract/template','ContractController@template');
+            //模板
+            $api->post('/template/content','ContractController@templateContent');
             //获取所有用户
             $api->post('/contract/distribute/user','ContractController@userList');
 

@@ -73,6 +73,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             //通知
             Route::resource('notice', 'NoticeController');
             Route::post('notice/list','NoticeController@list');
+
+            //退款
+            Route::resource('refund', 'RefundController');
+            Route::post('refund/list','RefundController@list');
         });
     });
 

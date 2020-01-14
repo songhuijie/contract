@@ -54,6 +54,29 @@ class ContractController extends Controller {
 
     }
 
+    /**
+     * 获取模板信息
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function templateContent(Request $request){
+        $param = $request->all();
+        $fromErr = $this->validatorFrom([
+            'template_id'=>'required',//模板ID
+        ],[
+            'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
+        ]);
+        if($fromErr){//输出表单验证错误信息
+            return $this->response($fromErr);
+        }
+
+        $response_json = $this->initResponse();
+        $content = $this->template->find($param['template_id'],['content']);
+        $response_json->status = Lib_const_status::SUCCESS;
+        $response_json->data = $content;
+        return $this->response($response_json);
+    }
+
 
     /**
      * 创建合同
@@ -179,8 +202,8 @@ class ContractController extends Controller {
         $access_entity = AccessEntity::getInstance();
         $user_id = $access_entity->user_id;
         $response_json = $this->initResponse();
-        $contract = $this->contract->find($param['contract_id']);
-        if($contract && $contract->contract_type == 2){
+        $contract = $this->contract->getContractByGhostWrite($param['contract_id'],$user_id);
+        if($contract){
             //待支付
             if($contract->status == 2){
                 $openid = $this->user->find($user_id);
@@ -212,6 +235,30 @@ class ContractController extends Controller {
         return $this->response($response_json);
     }
 
+
+    /**
+     * 合同退款
+     */
+    public function ContractRefund(Request $request){
+        $param = $request->all();
+        $fromErr = $this->validatorFrom([
+            'contract_id'=>'required',//合同ID
+        ],[
+            'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
+        ]);
+        if($fromErr){//输出表单验证错误信息
+            return $this->response($fromErr);
+        }
+
+        $access_entity = AccessEntity::getInstance();
+        $user_id = $access_entity->user_id;
+
+        $response_json = $this->initResponse();
+        $contract = $this->contract->getContractByGhostWrite($param['contract_id'],$user_id);
+
+        $response_json->status = Lib_const_status::SUCCESS;
+        return $this->response($response_json);
+    }
 
     /**
      * 支付回调

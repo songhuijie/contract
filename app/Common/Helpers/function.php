@@ -330,13 +330,16 @@ function creatPay($data)
 
 // 小程序退款接口
 /**
- *@param $appid              小程序appid
- *@param $mchid              商户号
- *@param $out_trade_no       商户订单号
- *@param $out_refund_no      商户退款单号
- *@param $key_pem            证书路径
- *@param $cert_pem           证书路径
- *@param $mch_secret         支付密钥
+ * @param $appid              小程序appid
+ * @param $mchid              商户号
+ * @param $out_trade_no       商户订单号
+ * @param $out_refund_no      商户退款单号
+ * @param $key_pem            证书路径
+ * @param $cert_pem           证书路径
+ * @param $mch_secret         支付密钥
+ * @param $total_fee          购买时金额
+ * @param $refund_fee         退款金额
+ * @return mixed
  */
 function refund($appid,$mchid,$out_trade_no,$out_refund_no,$total_fee,$refund_fee,$mch_secret,$key_pem=null,$cert_pem=null){
     $data = [

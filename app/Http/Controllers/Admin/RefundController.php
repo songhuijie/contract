@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Charter;
+use App\Models\Refund;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class CharterController extends Controller
+class RefundController extends Controller
 {
 
-    public $charter;
-    public function __construct(Charter $charter)
+    public $refund;
+    public function __construct(Refund $refund)
     {
-        $this->charter = $charter;
+        $this->refund = $refund;
     }
 
     /**
@@ -23,7 +23,7 @@ class CharterController extends Controller
     public function index()
     {
         //
-        return view('admin.charter.index');
+        return view('admin.refund.index');
     }
 
     /**
@@ -33,9 +33,10 @@ class CharterController extends Controller
      */
     public function list(Request $request){
         $param = $request->all();
-        $breach = $this->charter->getCharter($param);
+        $breach = $this->refund->getRefund($param);
         return ajaxSuccess($breach['data'], $breach['count']);
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -60,10 +61,10 @@ class CharterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Charter  $charter
+     * @param  \App\Models\Refund  $refund
      * @return \Illuminate\Http\Response
      */
-    public function show(Charter $charter)
+    public function show(Refund $refund)
     {
         //
     }
@@ -71,34 +72,42 @@ class CharterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Charter  $charter
+     * @param  \App\Models\Refund  $refund
      * @return \Illuminate\Http\Response
      */
-    public function edit(Charter $charter)
+    public function edit(Refund $refund)
     {
         //
+        return view('admin.refund.addRefund',compact('refund'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Charter  $charter
+     * @param  \App\Models\Refund  $refund
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Charter $charter)
+    public function update(Request $request, Refund $refund)
     {
         //
+        $all = $request->all();
+        $int = $refund->update($all);
+        if (!$int) return ajaxError('添加失败' );
+        return ajaxSuccess();
     }
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Charter  $charter
-     * @return \Illuminate\Http\Response
+     * @param Refund $refund
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Exception
      */
-    public function destroy(Charter $charter)
+    public function destroy(Refund $refund)
     {
         //
+        $int = $refund->delete();
+        if (!$int) return ajaxError('添加失败' );
+        return ajaxSuccess();
     }
 }
