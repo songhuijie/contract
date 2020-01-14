@@ -12,6 +12,7 @@ use App\Libraries\Lib_config;
 use App\Libraries\Lib_const_status;
 use App\Libraries\Lib_make;
 use App\Models\Notice;
+use App\Models\Refund;
 use App\Service\AccessEntity;
 use Illuminate\Http\Request;
 
@@ -104,4 +105,20 @@ class OtherController extends Controller{
         return $this->response($response_json);
     }
 
+
+    /**
+     * 获取 律师代写费用
+     */
+    public function getPaymentAmount(){
+        $response_json = $this->initResponse();
+
+
+        $config = Lib_make::getConfig();
+
+        $data = isset($config['price'])?$config['price']:'';
+
+        $response_json->status = Lib_const_status::SUCCESS;
+        $response_json->data = $data;
+        return $this->response($response_json);
+    }
 }

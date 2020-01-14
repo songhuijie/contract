@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33dae8e9-96d1-4c1a-9dc8-f1dd7e1d0d76" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Common/Helpers/function.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Common/Helpers/function.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CharterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CharterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Template.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Template.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/OtherController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/OtherController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ContractController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ContractController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="652">
-              <caret line="75" column="40" lean-forward="true" selection-start-line="75" selection-start-column="40" selection-end-line="75" selection-end-column="40" />
+            <state relative-caret-position="-212">
+              <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
               <folding>
                 <element signature="e#585#777#0#PHP" />
                 <element signature="e#783#882#0#PHP" />
@@ -54,6 +50,7 @@
                 <element signature="e#4918#5165#0#PHP" />
                 <element signature="e#5078#5165#0#PHP" />
                 <element signature="e#5225#5328#0#PHP" />
+                <element signature="e#5333#7295#0#PHP" />
                 <element signature="e#5430#5587#0#PHP" />
                 <element signature="e#5451#5507#0#PHP" />
                 <element signature="e#5508#5586#0#PHP" />
@@ -98,6 +95,48 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="518">
+              <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OtherController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/OtherController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="679">
+              <caret line="111" column="36" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="36" />
+              <folding>
+                <element signature="e#879#978#0#PHP" />
+                <element signature="e#983#1625#0#PHP" />
+                <element signature="e#1631#1730#0#PHP" />
+                <element signature="e#1735#2657#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/admin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="64" column="18" lean-forward="true" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Template.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Template.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -107,51 +146,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="refund.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/xianshangke/modul/rule/refund.js">
+      <file leaf-file-name="api.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="596">
-              <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2020_01_14_012237_create_refund.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_14_012237_create_refund.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="21" column="85" selection-start-line="21" selection-start-column="85" selection-end-line="21" selection-end-column="85" />
-              <folding>
-                <element signature="e#7#45#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="breach.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/xianshangke/modul/rule/breach.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2804" />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RefundController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/RefundController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="35" column="37" lean-forward="true" selection-start-line="35" selection-start-column="37" selection-end-line="35" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Refund.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Models/Refund.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-              <folding>
-                <element signature="e#30#49#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="568">
+              <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -278,7 +277,6 @@
         <option value="$PROJECT_DIR$/app/Console/Commands/CreateRule.php" />
         <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/notice.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/NoticeController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/OtherController.php" />
         <option value="$PROJECT_DIR$/app/Models/Notice.php" />
         <option value="$PROJECT_DIR$/app/Libraries/Lib_redis.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/BreachController.php" />
@@ -314,7 +312,6 @@
         <option value="$PROJECT_DIR$/config/logging.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_09_023759_create_contract.php" />
         <option value="$PROJECT_DIR$/app/Libraries/Lib_const_status.php" />
-        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/app/Models/Contract.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/CharterController.php" />
         <option value="$PROJECT_DIR$/app/Common/Helpers/function.php" />
@@ -326,6 +323,8 @@
         <option value="$PROJECT_DIR$/storage/logs/laravel-2020-01-14.log" />
         <option value="$PROJECT_DIR$/app/Models/Template.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/OtherController.php" />
+        <option value="$PROJECT_DIR$/routes/api.php" />
       </list>
     </option>
   </component>
@@ -695,12 +694,12 @@
       <workItem from="1578532669214" duration="27215000" />
       <workItem from="1578618178798" duration="20992000" />
       <workItem from="1578877511640" duration="25557000" />
-      <workItem from="1578963575013" duration="3368000" />
+      <workItem from="1578963575013" duration="4080000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180927000" />
+    <option name="totallyTimeSpent" value="181639000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1936" height="1056" extended-state="0" />
@@ -780,13 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/OtherController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1184">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="623">
@@ -861,13 +853,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_redis.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -905,13 +890,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/apiclient_key.pem">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
-          <caret line="80" column="22" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="34" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_const_status.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1083,16 +1061,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="78" column="63" lean-forward="true" selection-start-line="78" selection-start-column="63" selection-end-line="78" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/xianshangke/modul/rule/contract.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2318" />
@@ -1187,10 +1155,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="64" column="18" lean-forward="true" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="75" column="40" lean-forward="true" selection-start-line="75" selection-start-column="40" selection-end-line="75" selection-end-column="40" />
+        <state relative-caret-position="-212">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
           <folding>
             <element signature="e#585#777#0#PHP" />
             <element signature="e#783#882#0#PHP" />
@@ -1219,6 +1201,7 @@
             <element signature="e#4918#5165#0#PHP" />
             <element signature="e#5078#5165#0#PHP" />
             <element signature="e#5225#5328#0#PHP" />
+            <element signature="e#5333#7295#0#PHP" />
             <element signature="e#5430#5587#0#PHP" />
             <element signature="e#5451#5507#0#PHP" />
             <element signature="e#5508#5586#0#PHP" />
@@ -1259,6 +1242,33 @@
             <element signature="e#11662#12134#0#PHP" />
             <element signature="e#11893#11976#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/OtherController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="111" column="36" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="36" />
+          <folding>
+            <element signature="e#879#978#0#PHP" />
+            <element signature="e#983#1625#0#PHP" />
+            <element signature="e#1631#1730#0#PHP" />
+            <element signature="e#1735#2657#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="40" column="30" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
         </state>
       </provider>
     </entry>

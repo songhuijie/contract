@@ -38,6 +38,8 @@ $api->version('v1', function ($api) {
 
             //关于我们
             $api->post('/about','OtherController@aboutUs');
+            //获取合同代写支付金额 (后台配置)
+            $api->post('/payment/amount','OtherController@getPaymentAmount');
             //通知信息
             $api->post('/notice/list','OtherController@notice');
             //查看通知
