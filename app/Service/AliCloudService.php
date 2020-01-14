@@ -7,6 +7,11 @@
  */
 namespace App\Service;
 
+use AlibabaCloud\Client\AlibabaCloud;
+use AlibabaCloud\Client\Exception\ClientException;
+use AlibabaCloud\Client\Exception\ServerException;
+use App\Libraries\Lib_make;
+
 class AliCloudService{
 
 
@@ -15,6 +20,9 @@ class AliCloudService{
     const APP_KEY = 203779624;
     const APP_SECRET = 'zbwypo772dfo0cr5vecv37gn7nxiscse';
     const APP_CODE = '1b8430199f174b49bdec7a07ef91b72d';
+
+    const SING_NAME = '巴人谷食品';
+    const TEMPLATE_CODE = 'SMS_181555580';//快递发送短信 模板
 
 
 
@@ -146,4 +154,36 @@ class AliCloudService{
         curl_close($curl);
         return $data;
     }
+
+
+    /**
+     * 获取配置
+     * @return array
+     */
+    public static function getKey(){
+        $config = Lib_make::getConfig();
+        $data = [
+            'sms_key'=>isset($config['sms_key'])?$config['sms_key']:'',
+            'sms_secret'=>isset($config['sms_secret'])?$config['sms_secret']:'',
+            'aly_app_key'=>isset($config['aly_app_key'])?$config['aly_app_key']:'',
+            'aly_app_secret'=>isset($config['aly_app_secret'])?$config['aly_app_secret']:'',
+            'aly_app_code'=>isset($config['aly_app_code'])?$config['aly_app_code']:'',
+        ];
+        return $data;
+    }
+
+    /**
+     * 初始化 阿里云
+     * @throws ClientException
+     */
+    public static function init(){
+        $keys = self::getKey();
+        AlibabaCloud::accessKeyClient($keys['sms_key'], $keys['sms_secret'])
+            ->regionId('cn-hangzhou')
+            ->asDefaultClient();
+    }
+
+
+
+
 }

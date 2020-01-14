@@ -9,6 +9,7 @@ use App\Libraries\Lib_make;
 use App\Models\Breach;
 use App\Models\Query;
 use App\Service\AccessEntity;
+use App\Service\AliCloudService;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -30,8 +31,9 @@ class BreachController extends Controller
      */
     public function query(Request $request){
 
-        $all = $request->all();
+        $param = $request->all();
         $fromErr = $this->validatorFrom([
+            'search'=>'required',
             'city'=>'required',
         ],[
             'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
@@ -44,23 +46,54 @@ class BreachController extends Controller
         $user_id = $access_entity->user_id;
         $response_json = $this->initResponse();
 
-        $all['page'] = isset($all['page']) ?$all['page'] :Lib_config::PAGE;
-        $all['limit'] = isset($all['limit']) ?$all['limit'] :Lib_config::LIMIT;
+        //可选	身份证号或组织机构代码
+        //必选	姓名或公司名称
+        if(isset($param['identity'])){
+            $result_json = AliCloudService::market($param['search'],$param['identity']);
+        }else{
+            $result_json = AliCloudService::market($param['search']);
+        }
 
-        $all['identity'] = isset($all['identity']) ?$all['identity'] : '';
-        $all['search'] = isset($all['search']) ?$all['search'] : '';
-        $all['city'] = $all['city'] == '全国' ?'':$all['city'];
+        $result = json_decode($result_json,true);
+        switch ($result['status']){
+            case 0:
+                $data = $result['result']['list'];
 
+                if($param['city'] != '全国'){
+                    $tempArr = array_column($data, null, 'province');
+                    $tmp = [];
+                    foreach($tempArr as $k=>$v){
+                        if($k == $param['city']){
+                            $tmp[] = $v;
+                        }
+                    }
+                    $data = $tmp;
+                }
+                foreach($data as &$v){
+                    if(!isset($v['realname'])){
+                        $v['realname'] = $param['search'];
+                    }
+                }
+                $response_json->status = Lib_const_status::SUCCESS;
+                $response_json->data = $data;
+                break;
+            case 210:
+                $response_json->status = Lib_const_status::SUCCESS;
+                break;
+            default:
+                $response_json->status = Lib_const_status::SERVICE_ERROR;
+                break;
+        }
 
-        $data = $this->breach->getBreach($all);
+//        $data = $this->breach->getBreach($all);
 
-        $array = (array) $data['data'];
-        $ids = array_column($array,'id');
+//        $array = (array) $data['data'];
+//        $ids = array_column($array,'id');
         //异步执行 保存历史
-        SearchHistory::dispatch($user_id,$ids);
+//        SearchHistory::dispatch($user_id,$ids);
 
-        $response_json->status = Lib_const_status::SUCCESS;
-        $response_json->data = $data['data'];
+
+
         return $this->response($response_json);
 
 
