@@ -20,7 +20,6 @@ $api->version('v1', function ($api) {
     $api->group(['prefix' => 'v1', 'Middleware' => 'CheckMiddle', 'namespace' => 'App\Http\Controllers\Api'], function ($api) {
         $api->post('/login','UserController@login');
         $api->any('/notify','ContractController@notify');
-
         // 登陆后 查看接口
         $api->group(['middleware'=>'CheckAccessToken'],function($api){
             //用户信息

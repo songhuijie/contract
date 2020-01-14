@@ -19,6 +19,21 @@ class TestController extends Controller{
     public function test(){
 
 
+        $json = '{
+	"code": 0,
+	"status": 0,
+	"data": {
+		"userList": {
+			"2": "jiedage123",
+			"3": "jiedage1234",
+			"4": "jie"
+		}
+	}
+}';
+
+        
+
+        dd(json_decode($json,true));
         $date = date('Y-m-d');
         $company = '企业';
         $sign = '甲方';
