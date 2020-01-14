@@ -60,7 +60,13 @@ class Contract extends Model
         switch ($param['status']){
             case 0:
                 //0 全部合同(未签署)
-                $contract =  $contract->where(['user_id'=>$param['user_id'],'is_sign'=>0])->orWhere(['specific_user_id'=>$param['user_id'],'is_sign'=>0]);
+                $user_id = $param['user_id'];
+                $contract = $contract->where(function($query) use($user_id){
+                    $query->where(['user_id'=>$user_id,'contract_type'=>1,'is_sign'=>0])
+                        ->orWhere(['specific_user_id'=>$user_id,'contract_type'=>1,'is_sign'=>0])
+                        ->orWhere(['user_id'=>$user_id,'contract_type'=>2,'is_sign'=>2]);
+                });
+//                $contract =  $contract->where(['user_id'=>$param['user_id'],'is_sign'=>0])->orWhere(['specific_user_id'=>$param['user_id'],'is_sign'=>0]);
                 break;
             case 1:
                 //1 全部合同(签署)
