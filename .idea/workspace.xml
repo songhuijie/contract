@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33dae8e9-96d1-4c1a-9dc8-f1dd7e1d0d76" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Contract.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ContractController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ContractController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="655">
-              <caret line="282" column="32" selection-start-line="282" selection-start-column="32" selection-end-line="282" selection-end-column="32" />
+            <state relative-caret-position="628">
+              <caret line="380" column="40" lean-forward="true" selection-start-line="380" selection-start-column="40" selection-end-line="380" selection-end-column="40" />
               <folding>
                 <element signature="e#585#777#0#PHP" />
                 <element signature="e#783#882#0#PHP" />
@@ -52,9 +50,6 @@
                 <element signature="e#9185#9263#0#PHP" />
                 <element signature="e#9274#9355#0#PHP" />
                 <element signature="e#9713#9819#0#PHP" />
-                <element signature="e#9824#10868#0#PHP" />
-                <element signature="e#9924#10211#0#PHP" />
-                <element signature="e#9945#10070#0#PHP" />
                 <element signature="e#10071#10210#0#PHP" />
                 <element signature="e#10222#10303#0#PHP" />
                 <element signature="e#10875#10972#0#PHP" />
@@ -201,11 +196,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Contract.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="2020_01_09_023759_create_contract.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_09_023759_create_contract.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="486">
+              <caret line="30" column="71" lean-forward="true" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Contract.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Models/Contract.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="424">
-              <caret line="127" column="34" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="34" />
+              <caret line="74" column="175" lean-forward="true" selection-start-line="74" selection-start-column="175" selection-end-line="74" selection-end-column="175" />
               <folding>
                 <element signature="e#30#49#0#PHP" expanded="true" />
                 <element signature="e#509#582#0#PHP" />
@@ -215,16 +219,6 @@
                 <element signature="e#981#1091#0#PHP" />
                 <element signature="e#1151#1223#0#PHP" />
                 <element signature="e#1236#1311#0#PHP" />
-                <element signature="e#1316#3206#0#PHP" />
-                <element signature="e#1605#3017#0#PHP" />
-                <element signature="e#1644#1859#0#PHP" />
-                <element signature="e#1872#2086#0#PHP" />
-                <element signature="e#2099#2267#0#PHP" />
-                <element signature="e#2280#2456#0#PHP" />
-                <element signature="e#2469#2621#0#PHP" />
-                <element signature="e#2634#2797#0#PHP" />
-                <element signature="e#2810#2963#0#PHP" />
-                <element signature="e#2976#3007#0#PHP" />
                 <element signature="e#3056#3107#0#PHP" />
                 <element signature="e#3056#3122#0#PHP" />
                 <element signature="e#3056#3151#0#PHP" />
@@ -234,73 +228,6 @@
                 <element signature="e#3747#3848#0#PHP" />
                 <element signature="e#4028#4108#0#PHP" />
                 <element signature="e#4247#4347#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="function.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Common/Helpers/function.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-55">
-              <caret line="277" column="9" selection-start-line="277" selection-start-column="9" selection-end-line="277" selection-end-column="9" />
-              <folding>
-                <element signature="e#6#44#0#PHP" />
-                <element signature="n#isHTTPS#0;n#!!top" />
-                <element signature="e#207#419#0#PHP" />
-                <element signature="e#275#345#0#PHP" />
-                <element signature="e#346#419#0#PHP" />
-                <element signature="e#441#458#0#PHP" />
-                <element signature="n#nowUrl#0;n#!!top" />
-                <element signature="e#1085#1182#0#PHP" />
-                <element signature="n#getOpenid#0;n#!!top" />
-                <element signature="e#1393#1830#0#PHP" />
-                <element signature="e#1688#1797#0#PHP" />
-                <element signature="e#1845#1924#0#PHP" />
-                <element signature="n#accessToken#0;n#!!top" />
-                <element signature="e#2213#2366#0#PHP" />
-                <element signature="n#QRcode#0;n#!!top" />
-                <element signature="e#2542#2627#0#PHP" />
-                <element signature="e#2817#2930#0#PHP" />
-                <element signature="n#smallQrcode#0;n#!!top" />
-                <element signature="e#3099#3188#0#PHP" />
-                <element signature="e#3377#3509#0#PHP" />
-                <element signature="n#createPoster#0;n#!!top" />
-                <element signature="e#3673#3831#0#PHP" />
-                <element signature="e#3852#4019#0#PHP" />
-                <element signature="e#4756#6061#0#PHP" />
-                <element signature="e#4794#6055#0#PHP" />
-                <element signature="e#5034#5197#0#PHP" />
-                <element signature="e#6077#6669#0#PHP" />
-                <element signature="e#6114#6663#0#PHP" />
-                <element signature="e#6685#6952#0#PHP" />
-                <element signature="e#6863#6952#0#PHP" />
-                <element signature="e#6957#7054#0#PHP" />
-                <element signature="n#getWChatOpenid#0;n#!!top" />
-                <element signature="e#7272#7355#0#PHP" />
-                <element signature="n#getUserInfo#0;n#!!top" />
-                <element signature="e#7564#7647#0#PHP" />
-                <element signature="n#getAccess_token#0;n#!!top" />
-                <element signature="e#7878#7961#0#PHP" />
-                <element signature="e#7976#7990#0#PHP" />
-                <element signature="n#ReCode#0;n#!!top" />
-                <element signature="e#8107#8125#0#PHP" />
-                <element signature="e#8126#8336#0#PHP" />
-                <element signature="e#8616#9035#0#PHP" />
-                <element signature="e#9342#9557#0#PHP" />
-                <element signature="e#9756#9771#0#PHP" />
-                <element signature="n#creatPay#0;n#!!top" />
-                <element signature="n#autograph#0;n#!!top" />
-                <element signature="n#createNonceStr#0;n#!!top" />
-                <element signature="n#arrayToXml#0;n#!!top" />
-                <element signature="n#xmlToArray#0;n#!!top" />
-                <element signature="n#httpCurlPost#0;n#!!top" />
-                <element signature="n#transferAccounts#0;n#!!top" />
-                <element signature="n#getIp#0;n#!!top" />
-                <element signature="n#array_unset_tt#0;n#!!top" />
-                <element signature="n#curlGet#0;n#!!top" />
-                <element signature="n#curlInfoPost#0;n#!!top" />
-                <element signature="n#curlPost#0;n#!!top" />
               </folding>
             </state>
           </provider>
@@ -432,8 +359,8 @@
         <option value="$PROJECT_DIR$/app/Libraries/Lib_redis.php" />
         <option value="$PROJECT_DIR$/app/Libraries/Lib_make.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
-        <option value="$PROJECT_DIR$/app/Models/Contract.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" />
+        <option value="$PROJECT_DIR$/app/Models/Contract.php" />
       </list>
     </option>
   </component>
@@ -803,12 +730,12 @@
       <workItem from="1578532669214" duration="27215000" />
       <workItem from="1578618178798" duration="20992000" />
       <workItem from="1578877511640" duration="25557000" />
-      <workItem from="1578963575013" duration="9685000" />
+      <workItem from="1578963575013" duration="10483000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187244000" />
+    <option name="totallyTimeSpent" value="188042000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1936" height="1056" extended-state="0" />
@@ -1125,13 +1052,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_09_023759_create_contract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="32" column="111" lean-forward="true" selection-start-line="32" selection-start-column="111" selection-end-line="32" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="295">
@@ -1317,46 +1237,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Contract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="127" column="34" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="34" />
-          <folding>
-            <element signature="e#30#49#0#PHP" expanded="true" />
-            <element signature="e#509#582#0#PHP" />
-            <element signature="e#587#1230#0#PHP" />
-            <element signature="e#981#1047#0#PHP" />
-            <element signature="e#981#1062#0#PHP" />
-            <element signature="e#981#1091#0#PHP" />
-            <element signature="e#1151#1223#0#PHP" />
-            <element signature="e#1236#1311#0#PHP" />
-            <element signature="e#1316#3206#0#PHP" />
-            <element signature="e#1605#3017#0#PHP" />
-            <element signature="e#1644#1859#0#PHP" />
-            <element signature="e#1872#2086#0#PHP" />
-            <element signature="e#2099#2267#0#PHP" />
-            <element signature="e#2280#2456#0#PHP" />
-            <element signature="e#2469#2621#0#PHP" />
-            <element signature="e#2634#2797#0#PHP" />
-            <element signature="e#2810#2963#0#PHP" />
-            <element signature="e#2976#3007#0#PHP" />
-            <element signature="e#3056#3107#0#PHP" />
-            <element signature="e#3056#3122#0#PHP" />
-            <element signature="e#3056#3151#0#PHP" />
-            <element signature="e#3213#3319#0#PHP" />
-            <element signature="e#3513#3604#0#PHP" />
-            <element signature="e#3609#3741#0#PHP" />
-            <element signature="e#3747#3848#0#PHP" />
-            <element signature="e#4028#4108#0#PHP" />
-            <element signature="e#4247#4347#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="655">
-          <caret line="282" column="32" selection-start-line="282" selection-start-column="32" selection-end-line="282" selection-end-column="32" />
+        <state relative-caret-position="628">
+          <caret line="380" column="40" lean-forward="true" selection-start-line="380" selection-start-column="40" selection-end-line="380" selection-end-column="40" />
           <folding>
             <element signature="e#585#777#0#PHP" />
             <element signature="e#783#882#0#PHP" />
@@ -1386,9 +1270,6 @@
             <element signature="e#9185#9263#0#PHP" />
             <element signature="e#9274#9355#0#PHP" />
             <element signature="e#9713#9819#0#PHP" />
-            <element signature="e#9824#10868#0#PHP" />
-            <element signature="e#9924#10211#0#PHP" />
-            <element signature="e#9945#10070#0#PHP" />
             <element signature="e#10071#10210#0#PHP" />
             <element signature="e#10222#10303#0#PHP" />
             <element signature="e#10875#10972#0#PHP" />
@@ -1403,6 +1284,39 @@
             <element signature="e#12332#12402#0#PHP" />
             <element signature="e#12407#12879#0#PHP" />
             <element signature="e#12638#12721#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_09_023759_create_contract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="30" column="71" lean-forward="true" selection-start-line="30" selection-start-column="71" selection-end-line="30" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Contract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="74" column="175" lean-forward="true" selection-start-line="74" selection-start-column="175" selection-end-line="74" selection-end-column="175" />
+          <folding>
+            <element signature="e#30#49#0#PHP" expanded="true" />
+            <element signature="e#509#582#0#PHP" />
+            <element signature="e#587#1230#0#PHP" />
+            <element signature="e#981#1047#0#PHP" />
+            <element signature="e#981#1062#0#PHP" />
+            <element signature="e#981#1091#0#PHP" />
+            <element signature="e#1151#1223#0#PHP" />
+            <element signature="e#1236#1311#0#PHP" />
+            <element signature="e#3056#3107#0#PHP" />
+            <element signature="e#3056#3122#0#PHP" />
+            <element signature="e#3056#3151#0#PHP" />
+            <element signature="e#3213#3319#0#PHP" />
+            <element signature="e#3513#3604#0#PHP" />
+            <element signature="e#3609#3741#0#PHP" />
+            <element signature="e#3747#3848#0#PHP" />
+            <element signature="e#4028#4108#0#PHP" />
+            <element signature="e#4247#4347#0#PHP" />
           </folding>
         </state>
       </provider>

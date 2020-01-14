@@ -72,7 +72,7 @@ class Contract extends Model
                 break;
             case 3:
                 //3需要我签名的
-                $contract =  $contract->where(['specific_user_id'=>$param['user_id'],'contract_type'=>1,'is_sign'=>0]);
+                $contract =  $contract->where(['specific_user_id'=>$param['user_id'],'is_sign'=>0])->orWhere(['specific_user_id'=>$param['user_id'],'is_sign'=>0,'status'=>2]);
                 break;
             case 4:
                 //4 我创建
