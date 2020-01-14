@@ -8,6 +8,14 @@ use App\Http\Controllers\Controller;
 
 class ContractController extends Controller
 {
+
+
+    public $contract;
+    public function __construct(Contract $contract)
+    {
+        $this->contract = $contract;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,6 +24,19 @@ class ContractController extends Controller
     public function index()
     {
         //
+        return view('admin.contract.index');
+    }
+
+
+    /**
+     * ajax 请求列表数据
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function list(Request $request){
+        $param = $request->all();
+        $config = $this->contract->getContract($param);
+        return ajaxSuccess($config['data'], $config['count']);
     }
 
     /**
@@ -27,6 +48,7 @@ class ContractController extends Controller
     {
         //
     }
+
 
     /**
      * Store a newly created resource in storage.

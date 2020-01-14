@@ -9,6 +9,7 @@ namespace App\Libraries;
 
 use App\Model\User;
 use App\Models\Config;
+use App\Models\Template;
 use Illuminate\Support\Facades\Redis;
 
 class Lib_make{
@@ -128,6 +129,33 @@ class Lib_make{
 
 
 
+    }
+
+    /**
+     * 获取模板信息
+     * @param bool $bool
+     * @return array|mixed
+     */
+    public static function getTemplate($bool = true){
+        $template_key = Lib_redis::SplicingKey(Lib_redis::TEMPLATE);
+        $template= Redis::get($template_key);
+        if($bool == false){
+            Redis::del($template_key);
+            self::getTemplate();
+        }else{
+            if($template){
+                return json_decode($template,true);
+            }else{
+                $template_model = new Template();
+                $template_all = $template_model->all();
+                $config = [];
+                foreach($template_all as $k=>$v){
+                    $config[$v->id] = $v->title;
+                }
+                Redis::setex($template_key,78200,json_encode($config));
+                return $config;
+            }
+        }
     }
 
 

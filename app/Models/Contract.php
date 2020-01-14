@@ -89,9 +89,13 @@ class Contract extends Model
                 break;
         }
 
-        $contract_data = $contract->select($this->select)
+        $contract_data = $contract->with('templateTitle')->select($this->select)
             ->offset($offset)->limit($limit)->orderBy($sortfield, $order)->get()->toArray();
         return $contract_data;
+    }
+
+    public function templateTitle(){
+        return $this->hasOne(Template::class,'id','template_id');
     }
 
 
@@ -136,11 +140,12 @@ class Contract extends Model
     }
 
     /**
-     * 成功 支付
+     * 更改律师代写订单状态
      * @param $order_number
+     * @param $status
      * @return mixed
      */
-    public function updateStatus($order_number){
-        return $this->where(['order_number'=>$order_number])->update(['status'=>3]);
+    public function updateStatus($order_number,$status){
+        return $this->where(['order_number'=>$order_number])->update(['status'=>$status]);
     }
 }

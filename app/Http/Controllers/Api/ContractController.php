@@ -173,8 +173,8 @@ class ContractController extends Controller {
         $user_id = $access_entity->user_id;
         $response_json = $this->initResponse();
         $contract = $this->contract->getContractByGhostWrite($param['contract_id'],$user_id);
-        if($contract && $contract->status == 1){
-            $contract->update(['status'=>2]);
+        if($contract && $contract->status == Lib_config::CONTRACT_IN_WRITING){
+            $contract->update(['status'=>Lib_config::CONTRACT_COMPLETE]);
             $response_json->status = Lib_const_status::SUCCESS;
         }else{
             $response_json->status = Lib_const_status::CONTRACT_CANNOT;
@@ -205,7 +205,7 @@ class ContractController extends Controller {
         $contract = $this->contract->getContractByGhostWrite($param['contract_id'],$user_id);
         if($contract){
             //待支付
-            if($contract->status == 2){
+            if($contract->status == Lib_config::CONTRACT_TO_BE_PAID){
                 $openid = $this->user->find($user_id);
                 $money = $contract->price;
                 $order_number =  $contract->order_number;
@@ -236,29 +236,7 @@ class ContractController extends Controller {
     }
 
 
-    /**
-     * 合同退款
-     */
-    public function ContractRefund(Request $request){
-        $param = $request->all();
-        $fromErr = $this->validatorFrom([
-            'contract_id'=>'required',//合同ID
-        ],[
-            'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
-        ]);
-        if($fromErr){//输出表单验证错误信息
-            return $this->response($fromErr);
-        }
 
-        $access_entity = AccessEntity::getInstance();
-        $user_id = $access_entity->user_id;
-
-        $response_json = $this->initResponse();
-        $contract = $this->contract->getContractByGhostWrite($param['contract_id'],$user_id);
-
-        $response_json->status = Lib_const_status::SUCCESS;
-        return $this->response($response_json);
-    }
 
     /**
      * 支付回调
@@ -281,12 +259,39 @@ class ContractController extends Controller {
 
                 $contract_order = $this->contract->getContractByNumber($order_number);
                 if($contract_order){
-                    $this->contract->updateStatus($order_number);
+                    $this->contract->updateStatus($order_number,Lib_config::CONTRACT_SUCCESSFUL_PAYMENT);
                 }
 
             }
         }
     }
+
+    /**
+     * 合同退款
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function ContractRefund(Request $request){
+        $param = $request->all();
+        $fromErr = $this->validatorFrom([
+            'contract_id'=>'required',//合同ID
+        ],[
+            'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
+        ]);
+        if($fromErr){//输出表单验证错误信息
+            return $this->response($fromErr);
+        }
+
+        $access_entity = AccessEntity::getInstance();
+        $user_id = $access_entity->user_id;
+
+        $response_json = $this->initResponse();
+        $contract = $this->contract->getContractByGhostWrite($param['contract_id'],$user_id);
+
+        $response_json->status = Lib_const_status::SUCCESS;
+        return $this->response($response_json);
+    }
+
 
     /**
      * 根据条件获取 合同信息

@@ -10,6 +10,7 @@ class Lib_redis{
 
 
     const CONFIG = ':config';
+    const TEMPLATE = ':template';
     const USER_LIST = ':user:list';
     const SEARCH_HISTORY = ':search:history';
 

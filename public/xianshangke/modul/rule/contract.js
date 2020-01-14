@@ -12,10 +12,17 @@
         ,limit: 10
         ,limits: [10, 20]
         ,cols: [[ //表头
+
             {field: 'id', title: 'ID', sort: true, fixed: 'left', align: 'left'}
-            ,{field: 'key', title: '配置Key名'}
-            ,{field: 'describe', title: '描述'}
-            ,{field: 'value', title: '配置key 值'}
+            ,{field: 'user_id', title: '用户ID'}
+            ,{field: 'specific_user_id', title: '指定用户ID'}
+            ,{field: 'template_id', title: '模板ID'}
+            ,{field: 'contract_title', title: '代写名称'}
+            ,{field: 'contract_demand', title: '代写需求'}
+            ,{field: 'is_sign', title: '签署'}
+            ,{field: 'contract_type', title: '模板ID'}
+            ,{field: 'status', title: '模板ID'}
+            ,{field: 'create_time', title: '合同创建时间'}
             ,{title: '操作', toolbar: '#op'}
         ]]
         ,response: {

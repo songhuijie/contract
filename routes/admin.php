@@ -58,6 +58,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
             Route::post('breach/list','BreachController@list');
 
 
+            //合同
+            Route::resource('contract', 'ContractController');
+            Route::post('contract/list','ContractController@list');
+
             //合同模板
             Route::resource('template', 'TemplateController');
             Route::post('template/list','TemplateController@list');

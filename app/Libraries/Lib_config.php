@@ -25,4 +25,11 @@ class Lib_config{
     const PARTY_B  = '乙方';
 
 
+    const CONTRACT_TO_BE_PAID  = 0;  //合同待支付
+    const CONTRACT_SUCCESSFUL_PAYMENT = 1; //合同支付成功
+    const CONTRACT_IN_WRITING = 2;  //律师编写中
+    const CONTRACT_COMPLETE = 3;   //确认完成
+
+
+
 }
