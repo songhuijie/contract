@@ -40,5 +40,17 @@
         <img src="{{d.identity_card_back}}">
         @endverbatim
     </script>
+
+    <script type="text/html" id="barDemo">
+        <a class="layui-btn layui-btn-xs" lay-event="view">查看详情</a>
+        @verbatim
+        {{#  if(d.status !=1){ }}
+        <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+        {{#  } }}
+
+        @endverbatim
+
+        {{--<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>--}}
+    </script>
     <script type="text/javascript" src="{{'/xianshangke/modul/rule/certification.js'}}"></script>
 @endsection

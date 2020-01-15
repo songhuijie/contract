@@ -40,6 +40,18 @@
         <img src="{{d.identity_card_back}}">
         
     </script>
+
+    <script type="text/html" id="barDemo">
+        <a class="layui-btn layui-btn-xs" lay-event="view">查看详情</a>
+        
+        {{#  if(d.status !=1){ }}
+        <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+        {{#  } }}
+
+        
+
+        
+    </script>
     <script type="text/javascript" src="<?php echo e('/xianshangke/modul/rule/certification.js'); ?>"></script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make("admin.layout.main", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\phpstudy_pro\WWW\contract\resources\views/admin/certification/index.blade.php ENDPATH**/ ?>

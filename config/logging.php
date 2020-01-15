@@ -92,6 +92,13 @@ return [
             'level' => 'debug',
         ],
 
+        'error' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/error.log'),
+            'level' => 'debug',
+            'permission'=>0777,
+            'days' => 14,
+        ],
         'user_info' => [
             'driver' => 'daily',
             'path' => storage_path('logs/userInfo.log'),

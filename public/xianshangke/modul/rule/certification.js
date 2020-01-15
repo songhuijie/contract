@@ -27,7 +27,7 @@
                     }
                 }}
             ,{field: 'updated_at', title: '时间'}
-            ,{title: '操作', toolbar: '#op'}
+            ,{title: '操作', toolbar: '#barDemo'}
         ]]
         ,response: {
             statusName: 'code'
@@ -47,8 +47,14 @@
         var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
         var tr = obj.tr;          //获得当前行 tr 的DOM对象
 
-        if (layEvent == 'active') {
-            
+        if (layEvent == 'view') {
+            var url = '/admin/certification/'+data.user_id;
+            layer.open({
+                title:"显示详细数据",
+                type: 2,
+                area: ['80%', '80%'],
+                content: url //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+            });
         } else if (layEvent == 'edit') {
             var url = '/admin/certification/'+data.user_id+'/edit';
             layer.open({

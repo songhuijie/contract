@@ -70,6 +70,7 @@ class CertificationController extends Controller
     public function show(Certification $certification)
     {
         //
+        return view('admin.certification.info',compact('certification'));
     }
 
     /**

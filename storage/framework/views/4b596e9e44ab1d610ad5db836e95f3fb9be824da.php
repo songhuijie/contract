@@ -8,13 +8,8 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">审核</label>
                     <div class="layui-input-block">
-                        <?php if(!empty($certification)): ?>
-                            <input type="radio" name="status" value="1" title="通过" <?php echo e($certification->status == 1 ?'checked':''); ?>>
-                            <input type="radio" name="status" value="2" title="拒绝" <?php echo e($certification->status == 2 ?'checked':''); ?>>
-                        <?php else: ?>
-                            <input type="radio" name="status" value="1" title="通过" checked>
-                            <input type="radio" name="status" value="2" title="拒绝" >
-                        <?php endif; ?>
+                        <input type="radio" name="status" value="1" title="通过" checked>
+                        <input type="radio" name="status" value="2" title="拒绝" >
                     </div>
                 </div>
 
