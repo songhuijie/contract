@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Libraries\Lib_make;
 use App\Models\Refund;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -92,6 +93,22 @@ class RefundController extends Controller
     {
         //
         $all = $request->all();
+
+
+        if($all['status'] == 2){
+            $config = Lib_make::getConfig();
+            $appid = $config['appid'];
+            $mchid = $config['mch_id'];
+            $out_trade_no = $refund->order_number;
+            $out_refund_no = $config['$out_refund_no'];
+            $total_fee = $refund->price;
+            $refund_fee = $refund->price;
+            $mch_secret = $config['mch_secret'];
+            $key_pem = $config['cert_pem'];
+            $cert_pem = $config['key_pem'];
+            $result = refund($appid,$mchid,$out_trade_no,$out_refund_no,$total_fee,$refund_fee,$mch_secret,$key_pem,$cert_pem);
+            dd($result);
+        }
         $int = $refund->update($all);
         if (!$int) return ajaxError('添加失败' );
         return ajaxSuccess();
