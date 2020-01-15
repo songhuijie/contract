@@ -21,8 +21,8 @@ class AliCloudService{
     const APP_SECRET = 'zbwypo772dfo0cr5vecv37gn7nxiscse';
     const APP_CODE = '1b8430199f174b49bdec7a07ef91b72d';
 
-    const SING_NAME = '巴人谷食品';
-    const TEMPLATE_CODE = 'SMS_181555580';//快递发送短信 模板
+    const SING_NAME = '契约合同';
+    const TEMPLATE_CODE = 'SMS_182665287';//发送短信 模板
 
 
 
@@ -184,6 +184,51 @@ class AliCloudService{
     }
 
 
+
+    /**
+     * 单条发送短信
+     * @param $phoneNumber
+     * @param null $code
+     * @param null $SignName
+     * @param null $TemplateCode
+     * @return array|bool
+     * @throws ClientException
+     */
+    public static function SendSms($phoneNumber,$code,$SignName = null,$TemplateCode = null){
+
+        if($SignName == null){
+            $SignName = self::SING_NAME;
+        }
+        if($TemplateCode == null){
+            $TemplateCode = self::TEMPLATE_CODE;
+        }
+        self::init();
+        try {
+            $result = AlibabaCloud::rpc()
+                ->product('Dysmsapi')
+                // ->scheme('https') // https | http
+                ->version('2017-05-25')
+                ->action('SendSms')
+                ->method('POST')
+                ->host('dysmsapi.aliyuncs.com')
+                ->options([
+                    'query' => [
+                        'RegionId' => "cn-hangzhou",
+                        'PhoneNumbers' => "$phoneNumber",
+                        'SignName' => "$SignName",
+                        'TemplateCode' => "$TemplateCode",
+                        'TemplateParam' => $code,
+                    ],
+                ])
+                ->request();
+
+            return $result->toArray();
+        } catch (ClientException $e) {
+            return false;
+        } catch (ServerException $e) {
+            return false;
+        }
+    }
 
 
 }

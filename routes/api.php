@@ -48,6 +48,9 @@ $api->version('v1', function ($api) {
 
             //用户认证
             $api->post('/certification/user','AuthenticationController@UserCertification');
+            //用户认证
+            $api->post('/send/verification/code','AuthenticationController@SendVerificationCode');
+
 
             //模板
             $api->post('/contract/template','ContractController@template');

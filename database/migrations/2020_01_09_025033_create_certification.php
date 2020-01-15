@@ -17,6 +17,7 @@ class CreateCertification extends Migration
         Schema::create('certification', function (Blueprint $table) {
             $table->bigIncrements('user_id');
             $table->string('name')->comment('身份证姓名');
+            $table->string('phone')->comment('手机号');
             $table->string('ID_card')->comment('身份证号');
             $table->string('identity_card_positive')->comment('身份证正面');
             $table->string('identity_card_back')->comment('身份证背面');

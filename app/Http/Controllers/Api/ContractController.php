@@ -226,13 +226,14 @@ class ContractController extends Controller {
                 }else{
                     Log::channel('pay')->info(json_encode($data));
                     $response_json->status = Lib_const_status::SUCCESS;
+                    $response_json->data = $data;
                 }
             }else{
                 $response_json->status = Lib_const_status::ORDER_NOT_CONFIRMED;
             }
 
         }else{
-            $response_json->status = Lib_const_status::SUCCESS;
+            $response_json->status = Lib_const_status::CONTRACT_CANNOT_NOT_PAY;
         }
 
         return $this->response($response_json);

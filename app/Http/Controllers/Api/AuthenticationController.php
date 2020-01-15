@@ -9,6 +9,7 @@ namespace  App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Libraries\Lib_const_status;
+use App\Libraries\Lib_redis;
 use App\Models\Certification;
 use App\Models\Charter;
 use App\Service\AccessEntity;
@@ -36,6 +37,8 @@ class AuthenticationController extends Controller{
         $fromErr = $this->validatorFrom([
             'name'=>'required',
             'ID_card'=>'required|identity',
+            'phone'=>'required|unique:certification',
+            'code'=>'required',
             'identity_card_positive'=>'required',
             'identity_card_back'=>'required',
             'status'=>'in:1,2',
@@ -49,6 +52,8 @@ class AuthenticationController extends Controller{
         if($fromErr){//输出表单验证错误信息
             return $this->response($fromErr);
         }
+
+
         $access_entity = AccessEntity::getInstance();
         $user_id = $access_entity->user_id;
         $status = $all['status']?$all['status']:1;
@@ -75,6 +80,34 @@ class AuthenticationController extends Controller{
 
         return $this->response($response_json);
 
+    }
+
+    /**
+     * 发送验证码
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function SendVerificationCode(Request $request){
+        $param = $request->all();
+        $fromErr = $this->validatorFrom([
+            'phone'=>'required|int|mobile',
+        ],[
+            'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
+            'int'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
+            'mobile'=>Lib_const_status::MOBILE_NUMBER_FORMAT_ERROR,
+        ]);
+
+        if($fromErr){//输出表单验证错误信息
+            return $this->response($fromErr);
+        }
+
+        $code = rand(100000,999999);
+        Lib_redis::sendVerificationCode($param['phone'],$code);
+
+        $response_json = $this->initResponse();
+        $response_json->status = Lib_const_status::SUCCESS;
+        $response_json->data = $code;
+        return $this->response($response_json);
     }
 
 

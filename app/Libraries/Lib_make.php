@@ -10,6 +10,7 @@ namespace App\Libraries;
 use App\Model\User;
 use App\Models\Config;
 use App\Models\Template;
+use App\Service\AliCloudService;
 use Illuminate\Support\Facades\Redis;
 
 class Lib_make{
@@ -158,5 +159,25 @@ class Lib_make{
         }
     }
 
+
+    /**
+     * 发送验证码
+     */
+    public function SendVerificationCode($phone){
+
+        $code = rand(100000,999999);
+        $code_array = ['code'=>123];
+        $bool = AliCloudService::SendSms($phone,json_encode($code_array));
+        if($bool == false){
+
+        }
+    }
+
+    /**
+     * 验证验证码
+     */
+    public function VerificationCode(){
+
+    }
 
 }
