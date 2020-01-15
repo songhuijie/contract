@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33dae8e9-96d1-4c1a-9dc8-f1dd7e1d0d76" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/xianshangke.iml" afterPath="$PROJECT_DIR$/.idea/xianshangke.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ContractController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ContractController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Libraries/Lib_const_status.php" afterPath="$PROJECT_DIR$/app/Libraries/Lib_const_status.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/contract/addContract.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/contract/addContract.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/contract/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/contract/index.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/contract/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="544">
+              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -79,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="addContract.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addContract.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/contract/addContract.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="18" column="71" lean-forward="true" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
+            <state relative-caret-position="512">
+              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -122,8 +117,8 @@
       <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/certification/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="48" column="17" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="48" selection-end-column="17" />
+            <state relative-caret-position="739">
+              <caret line="50" column="20" lean-forward="true" selection-start-line="45" selection-start-column="6" selection-end-line="50" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -257,9 +252,9 @@
         <option value="$PROJECT_DIR$/app/Models/Contract.php" />
         <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/contract.js" />
         <option value="$PROJECT_DIR$/app/Libraries/Lib_const_status.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/contract/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ContractController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/contract/addContract.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/contract/index.blade.php" />
       </list>
     </option>
   </component>
@@ -381,10 +376,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="269" />
-    <option name="y" value="97" />
+    <option name="x" value="264" />
     <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="height" value="1100" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -749,15 +743,15 @@
       <workItem from="1578877511640" duration="25557000" />
       <workItem from="1578963575013" duration="30479000" />
       <workItem from="1579050266390" duration="33635000" />
-      <workItem from="1579091551817" duration="1896000" />
+      <workItem from="1579091551817" duration="2157000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243569000" />
+    <option name="totallyTimeSpent" value="243830000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="269" y="97" width="1936" height="1056" extended-state="0" />
+    <frame x="264" y="0" width="1936" height="1100" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1152,22 +1146,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/contract/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/certification/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="48" column="17" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="48" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/certification/addCertification.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -1209,8 +1187,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/contract/addContract.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="71" lean-forward="true" selection-start-line="18" selection-start-column="71" selection-end-line="18" selection-end-column="71" />
+        <state relative-caret-position="512">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/certification/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="739">
+          <caret line="50" column="20" lean-forward="true" selection-start-line="45" selection-start-column="6" selection-end-line="50" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/contract/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
