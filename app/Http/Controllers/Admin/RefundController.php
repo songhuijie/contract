@@ -103,11 +103,9 @@ class RefundController extends Controller
             $total_fee = $refund->price;
             $refund_fee = $refund->price;
             $mch_secret = $config['mch_secret'];
-            $key_pem = $config['cert_pem'];
-            $cert_pem = $config['key_pem'];
-//            $result = refund($appid,$mchid,$out_trade_no,$out_refund_no,$total_fee,$refund_fee,$mch_secret,$key_pem,$cert_pem);
-            $result = initiatingRefund($out_trade_no,$total_fee,$refund_fee,$mchid,$appid,$mch_secret);
-
+            $key_pem = $config['key_pem'];
+            $cert_pem = $config['cert_pem'];
+            $result = initiatingRefund($out_trade_no,$total_fee,$refund_fee,$mchid,$appid,$mch_secret,$key_pem,$cert_pem);
             if($result['result_code'] == 'SUCCESS' && $result['return_code'] == 'SUCCESS'){
                 $int = $refund->update($all);
                 return ajaxSuccess();

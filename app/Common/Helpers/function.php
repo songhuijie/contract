@@ -370,10 +370,11 @@ function refund($appid,$mchid,$out_trade_no,$out_refund_no,$total_fee,$refund_fe
  * @param $mchid
  * @param $appid
  * @param $apiKey
- * @param $orderNo
+ * @param $key_pem
+ * @param $cert_pem
  * @return bool
  */
-function initiatingRefund($ordernumber,$total_fee, $refund_fee,$mchid,$appid,$apiKey)
+function initiatingRefund($ordernumber,$total_fee, $refund_fee,$mchid,$appid,$apiKey,$key_pem = null,$cert_pem = null)
 {
 
     $refundNo = 'refund_'.uniqid();
@@ -395,7 +396,7 @@ function initiatingRefund($ordernumber,$total_fee, $refund_fee,$mchid,$appid,$ap
         'refund_desc'=>'商品已售完',     //退款原因（选填）
     );
     $unified['sign'] = autograph($unified, $config['key']);
-    $responseXml = curl_file_post_contents('https://api.mch.weixin.qq.com/secapi/pay/refund', arrayToXml($unified));
+    $responseXml = curl_file_post_contents('https://api.mch.weixin.qq.com/secapi/pay/refund', arrayToXml($unified),$key_pem,$cert_pem);
 
     $unifiedOrder = xmlToArray($responseXml);
 
@@ -533,7 +534,7 @@ function  httpCurlPost($url,$xml,$key_pem=null,$cert_pem=null){
  * @param $post_data
  * @return mixed|string
  */
-function curl_file_post_contents($url, $post_data){
+function curl_file_post_contents($url, $post_data,$key_pem,$cert_pem){
     // header传送格式
     //初始化
     $curl = curl_init();
@@ -551,10 +552,10 @@ function curl_file_post_contents($url, $post_data){
     //第一种方法，cert 与 key 分别属于两个.pem文件 //  证书参数
     //默认格式为PEM，可以注释
     curl_setopt($curl,CURLOPT_SSLCERTTYPE,'PEM');
-    curl_setopt($curl,CURLOPT_SSLCERT, "/www/wwwroot/contract.xcooteam.cn/contract/cert/apiclient_cert.pem"); // 退款时需要用到商户的证书  这里写相对地址就可以了
+    curl_setopt($curl,CURLOPT_SSLCERT, $cert_pem?$cert_pem:"/www/wwwroot/contract.xcooteam.cn/contract/cert/apiclient_cert.pem"); // 退款时需要用到商户的证书  这里写相对地址就可以了
     //默认格式为PEM，可以注释
     curl_setopt($curl,CURLOPT_SSLKEYTYPE,'PEM');
-    curl_setopt($curl,CURLOPT_SSLKEY,"/www/wwwroot/contract.xcooteam.cn/contract/cert/apiclient_key.pem");   // 退款时需要用到商户的证书  这里写相对地址就可以了
+    curl_setopt($curl,CURLOPT_SSLKEY,$key_pem?$key_pem:"/www/wwwroot/contract.xcooteam.cn/contract/cert/apiclient_key.pem");   // 退款时需要用到商户的证书  这里写相对地址就可以了
     //第二种方式，两个文件合成一个.pem文件
     //    curl_setopt($ch,CURLOPT_SSLCERT,'./all.pem');
     //设置post数据
