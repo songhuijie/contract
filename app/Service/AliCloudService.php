@@ -11,6 +11,7 @@ use AlibabaCloud\Client\AlibabaCloud;
 use AlibabaCloud\Client\Exception\ClientException;
 use AlibabaCloud\Client\Exception\ServerException;
 use App\Libraries\Lib_make;
+use Illuminate\Support\Facades\Log;
 
 class AliCloudService{
 
@@ -124,7 +125,7 @@ class AliCloudService{
             }else{
                 $result_str = $rbody;
             }
-            printf("result is :\n %s\n", $result_str);
+            return $result_str;
         }else{
             printf("Http error code: %d\n", $httpCode);
             printf("Error msg in body: %s\n", $rbody);
@@ -233,8 +234,10 @@ class AliCloudService{
 
             return $result->toArray();
         } catch (ClientException $e) {
+            Log::channel('sms_error')->info($e->getMessage());
             return false;
         } catch (ServerException $e) {
+            Log::channel('sms_error')->info($e->getMessage());
             return false;
         }
     }

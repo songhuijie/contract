@@ -58,6 +58,8 @@ class Lib_const_status{
     const MOBILE_NUMBER_FORMAT_ERROR  = 20005;
     //短信发送失败
     const SMS_SENDING_FAILED  = 20006;
+    //手机号已绑定
+    const PHONE_NUMBER_IS_BOUND  = 20007;
 
 
     //印章已存在

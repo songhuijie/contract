@@ -106,6 +106,13 @@ return [
             'permission'=>0777,
             'days' => 14,
         ],
+        'sms_error' => [
+            'driver' => 'daily',
+            'path' => storage_path('logs/sms_error.log'),
+            'level' => 'debug',
+            'permission'=>0777,
+            'days' => 14,
+        ],
 
     ],
 

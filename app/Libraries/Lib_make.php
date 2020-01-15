@@ -168,13 +168,19 @@ class Lib_make{
      */
     public static function SendVerificationCode($phone){
 
-        $code = rand(100000,999999);
-        $code_array = ['code'=>123];
-        $bool = AliCloudService::SendSms($phone,json_encode($code_array));
-        if($bool == false){
-            return Lib_const_status::SMS_SENDING_FAILED;
+        $code = rand(100000,999999);//验证码
+        $code_array = ['code'=>$code];
+        $int = Lib_redis::sendVerificationCode($phone,$code);
+        if($int == Lib_const_status::SUCCESS){
+            $bool = AliCloudService::SendSms($phone,json_encode($code_array));//阿里云发送验证码
+            if($bool == false){
+                return Lib_const_status::SMS_SENDING_FAILED;
+            }else{
+                return Lib_const_status::SUCCESS;
+            }
+        }else{
+            return $int;
         }
-        return Lib_redis::sendVerificationCode($phone,$code);
     }
 
 

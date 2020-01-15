@@ -46,6 +46,7 @@ class AuthenticationController extends Controller{
         ],[
             'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
             'in'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
+            'unique'=>Lib_const_status::PHONE_NUMBER_IS_BOUND,
             'identity'=>Lib_const_status::ID_CARD_INFORMATION_ERROR,
         ]);
 
@@ -54,14 +55,21 @@ class AuthenticationController extends Controller{
             return $this->response($fromErr);
         }
 
+        $response_json = $this->initResponse();
+        $int = Lib_redis::VerificationCode($all['phone'],$all['code']);
+        if($int != 0){
+            $response_json->status = $int;
+            return $this->response($response_json);
+        }
 
         $access_entity = AccessEntity::getInstance();
         $user_id = $access_entity->user_id;
         $status = $all['status']?$all['status']:1;
         $certification = $this->certification->find($user_id);
 
-        $response_json = $this->initResponse();
-        unset($all['status']);
+
+
+        unset($all['status'],$all['code']);
         if($status == 2){
             if($certification){
                 $certification->update($all);
@@ -87,14 +95,15 @@ class AuthenticationController extends Controller{
      * 发送验证码
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
+     * @throws \AlibabaCloud\Client\Exception\ClientException
      */
     public function SendVerificationCode(Request $request){
         $param = $request->all();
         $fromErr = $this->validatorFrom([
-            'phone'=>'required|int|mobile',
+            'phone'=>'required|integer|mobile',
         ],[
             'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
-            'int'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
+            'integer'=>Lib_const_status::MOBILE_NUMBER_FORMAT_ERROR,
             'mobile'=>Lib_const_status::MOBILE_NUMBER_FORMAT_ERROR,
         ]);
 
@@ -103,7 +112,6 @@ class AuthenticationController extends Controller{
         }
 
         $int = Lib_make::SendVerificationCode($param['phone']);
-
 
         $response_json = $this->initResponse();
         $response_json->status = $int;
