@@ -356,7 +356,6 @@ function refund($appid,$mchid,$out_trade_no,$out_refund_no,$total_fee,$refund_fe
     $url = "https://api.mch.weixin.qq.com/secapi/pay/refund";
     $xml = arrayToXml($data);
     $rest = httpCurlPost($url,$xml,$key_pem,$cert_pem);
-    dump($rest);
     $result = xmlToArray($rest);
     return $result;
 }
