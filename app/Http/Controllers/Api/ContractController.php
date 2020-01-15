@@ -309,11 +309,11 @@ class ContractController extends Controller {
      */
     public function notify(Request $request){
         $value = file_get_contents("php://input"); //接收微信参数
-        Log::channel('order')->info($value);
+        Log::channel('pay')->info($value);
 
         if (!empty($value)) {
             $arr = xmlToArray($value);
-            Log::channel('order')->info('支付成功回调成功');
+            Log::channel('pay')->info('支付成功回调成功');
             if($arr['result_code'] == 'SUCCESS' && $arr['return_code'] == 'SUCCESS'){
                 $attach = json_decode($arr['attach'], true);
                 $money = $arr['total_fee']/100;

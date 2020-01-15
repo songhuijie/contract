@@ -1,35 +1,14 @@
 <?php $__env->startSection("content"); ?>
-    <div id="wrapper" style="margin-top:20px;">
-        <div id="page-wrapper">
-            <form class="layui-form" >
-
-                <div class="layui-form-item">
-                    <label class="layui-form-label">审核</label>
-                    <div class="layui-input-block">
-                        <input type="radio" name="status" value="1" title="通过" checked>
-                        <input type="radio" name="status" value="2" title="拒绝" >
-                    </div>
-                </div>
-
-
-
-                <?php if(!empty($certification)): ?>
-                    <input type="text" id="mold" hidden  value="edit" >
-                    <input type="text" id="id" hidden value="<?php echo e($certification->user_id); ?>" >
-                <?php endif; ?>
-
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit="" lay-filter="formDemo">立即提交</button>
-                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
-                    </div>
-                </div>
-            </form>
-
-
+    <div class="layui-container">
+        常规布局（以中型屏幕桌面为例）：
+        <div class="layui-row">
+            <div class="layui-col-md9">
+                你的内容 9/12
+            </div>
+            <div class="layui-col-md3">
+                你的内容 3/12
+            </div>
         </div>
-
-
     </div>
 
 <?php $__env->stopSection(); ?>
