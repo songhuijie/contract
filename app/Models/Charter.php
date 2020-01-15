@@ -15,7 +15,7 @@ class Charter extends Model
     protected $primaryKey = 'user_id';
 
     public function getCharterPicAttribute($value){
-        return env('URL','http://127.0.0.1:8000/').$value;
+        return config('app.url','http://127.0.0.1:8000/').$value;
     }
 
     public  function getCharter($param){

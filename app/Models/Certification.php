@@ -18,12 +18,12 @@ class Certification extends Model
 
     public function getIdentityCardPositiveAttribute($value){
 
-        return env('URL','http://127.0.0.1:8000/').$value;
+        return config('app.url').$value;
     }
 
     public function getIdentityCardBackAttribute($value){
 
-        return env('URL','http://127.0.0.1:8000/').$value;
+        return config('app.url').$value;
     }
 
 

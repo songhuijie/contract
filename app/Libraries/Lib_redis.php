@@ -31,7 +31,7 @@ class Lib_redis{
     const SUCCESSFUL_STATE_TIME = 600;
 
     public static function SplicingKey($key){
-        return env('redis_key_prefix','contract').$key;
+        return config('app.redis_key_prefix','contract').$key;
     }
 
 

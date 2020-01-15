@@ -123,6 +123,8 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    //后面定义的
+    'redis_key_prefix'=>env('REDIS_KEY_PREFIX','contract'),
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
