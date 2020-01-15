@@ -13,7 +13,7 @@ class Contract extends Model
     public $timestamps = false;
     protected $dateFormat = 'U';//使用时间戳方式添加
 
-    public $select = ['id', 'user_id', 'specific_user_id', 'template_id', 'template_content','contract_title', 'contract_demand', 'is_sign','contract_type', 'status','create_time', 'updated_at'];
+    public $select = ['id', 'user_id', 'specific_user_id', 'template_id', 'template_content','contract_title', 'contract_demand', 'is_sign','contract_type', 'status','create_time','price', 'updated_at'];
 
 
 
