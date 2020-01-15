@@ -346,10 +346,11 @@ function refund($appid,$mchid,$out_trade_no,$out_refund_no,$total_fee,$refund_fe
         'appid' =>$appid,
         'mch_id'=> $mchid,
         'nonce_str' => createNonceStr(), //随机字符串,
-        'transaction_id' => $out_trade_no,
+        'out_trade_no' => $out_trade_no,
         'out_refund_no'=>$out_refund_no,
         'total_fee' => intval($total_fee * 100),//订单总金额
         'refund_fee'=> intval($refund_fee * 100),//退款金额
+        'sign_type' => 'MD5',
     ];
     //签名
     $data['sign'] = autograph($data,$mch_secret);
