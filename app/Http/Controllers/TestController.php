@@ -28,6 +28,8 @@ class TestController extends Controller{
 //        $int = Lib_redis::sendVerificationCode($phone,$code);
 //
 //        dd($int,$code);
+
+        dd(env('URL'));
         $phone = 18080952663;
         $code = 256630;
 //        $int = Redis::get(Lib_redis::SplicingKey(Lib_redis::SUCCESSFUL.$phone));
