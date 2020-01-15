@@ -100,7 +100,6 @@ class RefundController extends Controller
             $appid = $config['appid'];
             $mchid = $config['mch_id'];
             $out_trade_no = $refund->order_number;
-            $out_refund_no = 'refund_'.uniqid();
             $total_fee = $refund->price;
             $refund_fee = $refund->price;
             $mch_secret = $config['mch_secret'];
@@ -108,7 +107,14 @@ class RefundController extends Controller
             $cert_pem = $config['key_pem'];
 //            $result = refund($appid,$mchid,$out_trade_no,$out_refund_no,$total_fee,$refund_fee,$mch_secret,$key_pem,$cert_pem);
             $result = initiatingRefund($out_trade_no,$total_fee,$refund_fee,$mchid,$appid,$mch_secret);
-            dd($result);
+
+            if($result['result_code'] == 'SUCCESS' && $result['return_code'] == 'SUCCESS'){
+                $int = $refund->update($all);
+                return ajaxSuccess();
+            }else{
+                return ajaxError('退款失败 联系管理员' );
+            }
+
         }
         $int = $refund->update($all);
         if (!$int) return ajaxError('添加失败' );
