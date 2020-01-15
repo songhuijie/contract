@@ -88,6 +88,7 @@ class AuthenticationController extends Controller{
         }else{
             if(!$certification){
                 $all['user_id'] = $user_id;
+                $all['status'] = 1;
                 $this->certification->insert($all);
                 $response_json->status = Lib_const_status::SUCCESS;
             }else{

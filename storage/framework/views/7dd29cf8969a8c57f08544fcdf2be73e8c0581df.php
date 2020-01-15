@@ -17,7 +17,14 @@
     </blockquote>
     <table id="charter" lay-filter="usertab"></table>
 
-    
+
+
+    <script type="text/html" id="charter_pic">
+        
+        <img src="{{d.charter_pic}}">
+        
+    </script>
+
     <script type="text/html" id="op">
         <a class="layui-btn layui-btn-xs edit_user" lay-event="edit">
             <i class="layui-icon">&#xe642;</i>

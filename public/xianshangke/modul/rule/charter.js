@@ -13,11 +13,24 @@
         ,limits: [10, 20]
         ,cols: [[ //表头
             {field: 'id', title: 'ID', sort: true, fixed: 'left', align: 'left'}
-            ,{field: 'key', title: '配置Key名'}
-            ,{field: 'describe', title: '描述'}
-            ,{field: 'value', title: '配置key 值'}
+            ,{field: 'user_id', title: '用户ID'}
+            ,{field: 'name', title: '用户名/法人姓名'}
+            ,{field: 'ID_card', title: '身份证号/法人身份证号'}
+            ,{field: 'company_name', title: '公司名称'}
+            ,{field: 'certificate_number', title: '证书编号'}
+            ,{field: 'official_seal_number', title: '公章编号'}
+            ,{field: 'business_license', title: '营业执照'}
+            ,{ title: '印章图片', width:100,align:'center', toolbar: '#charter_pic'}
+            ,{field:'charter_type',title: '个人/公司', width:100,align:'center',templet:function(d){
+                    if(d.charter_type==1){
+                        return '<a>个人</a>';
+                    }else{
+                        return '<a>公司</a>';
+                    }
+                }}
             ,{title: '操作', toolbar: '#op'}
         ]]
+
         ,response: {
             statusName: 'code'
             ,statusCode: 0

@@ -37,7 +37,7 @@
 
     <script type="text/html" id="identity_card_back">
         @verbatim
-        <img src="{{d.identity_card_back}}">
+        <img src="{{d.charter_pic}}">
         @endverbatim
     </script>
 
