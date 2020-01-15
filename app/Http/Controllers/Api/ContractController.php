@@ -284,7 +284,7 @@ class ContractController extends Controller {
                     $contract->update($param);
                     $response_json->status = Lib_const_status::SUCCESS;
                 }else{
-                    $response_json->status = Lib_const_status::CONTRACT_CANNOT;
+                    $response_json->status = Lib_const_status::CONTRACT_CANNOT_BE_MODIFIED;
                 }
                 break;
             case 3:
@@ -292,7 +292,7 @@ class ContractController extends Controller {
                     $contract->update($param);
                     $response_json->status = Lib_const_status::SUCCESS;
                 }else{
-                    $response_json->status = Lib_const_status::CONTRACT_CANNOT;
+                    $response_json->status = Lib_const_status::CONTRACT_CANNOT_BE_MODIFIED;
                 }
                 break;
             default:

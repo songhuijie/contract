@@ -37,6 +37,8 @@ class Lib_const_status{
     const CANNOT_SEND_TO_YOURSELF = 10013;
     //合同不存在或已被签署
     const CONTRACT_CANNOT = 10015;
+    //合同不能修改
+    const CONTRACT_CANNOT_BE_MODIFIED = 10017;
     //合同不存在 不能支付
     const CONTRACT_CANNOT_NOT_PAY = 10016;
 
