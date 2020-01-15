@@ -8,10 +8,9 @@
 
 
                 <div class="layui-form-item">
-                    <label class="layui-form-label">审核</label>
+                    <label class="layui-form-label">更改状态</label>
                     <div class="layui-input-block">
-                        <input type="radio" name="status" value="1" title="通过" checked>
-                        <input type="radio" name="status" value="2" title="拒绝" >
+                        <input type="radio" name="status" value="2" title="指定编写" checked>
                     </div>
                 </div>
 
