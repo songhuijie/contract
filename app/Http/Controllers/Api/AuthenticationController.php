@@ -9,6 +9,7 @@ namespace  App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Libraries\Lib_const_status;
+use App\Libraries\Lib_make;
 use App\Libraries\Lib_redis;
 use App\Models\Certification;
 use App\Models\Charter;
@@ -101,12 +102,11 @@ class AuthenticationController extends Controller{
             return $this->response($fromErr);
         }
 
-        $code = rand(100000,999999);
-        Lib_redis::sendVerificationCode($param['phone'],$code);
+        $int = Lib_make::SendVerificationCode($param['phone']);
+
 
         $response_json = $this->initResponse();
-        $response_json->status = Lib_const_status::SUCCESS;
-        $response_json->data = $code;
+        $response_json->status = $int;
         return $this->response($response_json);
     }
 

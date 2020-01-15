@@ -54,6 +54,8 @@ class Lib_const_status{
     const VERIFICATION_CODE_EXPIRED  = 20004;
     //手机号格式错误
     const MOBILE_NUMBER_FORMAT_ERROR  = 20005;
+    //短信发送失败
+    const SMS_SENDING_FAILED  = 20006;
 
 
     //印章已存在

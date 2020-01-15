@@ -162,22 +162,20 @@ class Lib_make{
 
     /**
      * 发送验证码
+     * @param $phone
+     * @return int
+     * @throws \AlibabaCloud\Client\Exception\ClientException
      */
-    public function SendVerificationCode($phone){
+    public static function SendVerificationCode($phone){
 
         $code = rand(100000,999999);
         $code_array = ['code'=>123];
         $bool = AliCloudService::SendSms($phone,json_encode($code_array));
         if($bool == false){
-
+            return Lib_const_status::SMS_SENDING_FAILED;
         }
+        return Lib_redis::sendVerificationCode($phone,$code);
     }
 
-    /**
-     * 验证验证码
-     */
-    public function VerificationCode(){
-
-    }
 
 }

@@ -145,8 +145,8 @@ class Contract extends Model
      * @param $user_id
      * @return mixed
      */
-    public function getByUseChange($contract_id,$user_id){
-        return $this->where(['id'=>$contract_id,'user_id'=>$user_id,'is_sign'=>0])->first();
+    public function getByUseChange($contract_id){
+        return $this->where(['id'=>$contract_id,'is_sign'=>0])->first();
     }
 
     /**

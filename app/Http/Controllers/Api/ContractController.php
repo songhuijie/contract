@@ -262,7 +262,7 @@ class ContractController extends Controller {
         $user_id = $access_entity->user_id;
         $response_json = $this->initResponse();
 
-        $contract = $this->contract->getByUseChange($param['contract_id'],$user_id);
+        $contract = $this->contract->getByUseChange($param['contract_id']);
         switch ($param['type']){
             case 1:
 

@@ -24,7 +24,21 @@ class AliCloudService{
     const SING_NAME = '契约合同';
     const TEMPLATE_CODE = 'SMS_182665287';//发送短信 模板
 
-
+    /**
+     * 获取配置
+     * @return array
+     */
+    public static function getKey(){
+        $config = Lib_make::getConfig();
+        $data = [
+            'sms_key'=>isset($config['sms_key'])?$config['sms_key']:'',
+            'sms_secret'=>isset($config['sms_secret'])?$config['sms_secret']:'',
+            'aly_app_key'=>isset($config['aly_app_key'])?$config['aly_app_key']:'',
+            'aly_app_secret'=>isset($config['aly_app_secret'])?$config['aly_app_secret']:'',
+            'aly_app_code'=>isset($config['aly_app_code'])?$config['aly_app_code']:'',
+        ];
+        return $data;
+    }
 
     /**
      * 身份验证
@@ -34,7 +48,12 @@ class AliCloudService{
      */
     public static function Identity($file_path){
         $url = self::IDENTITY_URL;
-        $appcode = self::APP_CODE;
+        $config = self::getKey();
+        if(isset($config['aly_app_code'])){
+            $appcode = $config['aly_app_code'];
+        }else{
+            $appcode = self::APP_CODE;
+        }
         $file = $file_path;
         //如果输入带有inputs, 设置为True，否则设为False
         $is_old_format = false;
@@ -125,8 +144,15 @@ class AliCloudService{
         $host = self::MARKET_URL;
         $path = "/creditblacklist/query";
         $method = "GET";
-        $appcode = self::APP_CODE;
+
         $headers = array();
+        $config = self::getKey();
+        if(isset($config['aly_app_code'])){
+            $appcode = $config['aly_app_code'];
+        }else{
+            $appcode = self::APP_CODE;
+        }
+
         array_push($headers, "Authorization:APPCODE " . $appcode);
 
         $realname = urlencode($realname);
@@ -152,23 +178,6 @@ class AliCloudService{
         }
         $data = curl_exec($curl);
         curl_close($curl);
-        return $data;
-    }
-
-
-    /**
-     * 获取配置
-     * @return array
-     */
-    public static function getKey(){
-        $config = Lib_make::getConfig();
-        $data = [
-            'sms_key'=>isset($config['sms_key'])?$config['sms_key']:'',
-            'sms_secret'=>isset($config['sms_secret'])?$config['sms_secret']:'',
-            'aly_app_key'=>isset($config['aly_app_key'])?$config['aly_app_key']:'',
-            'aly_app_secret'=>isset($config['aly_app_secret'])?$config['aly_app_secret']:'',
-            'aly_app_code'=>isset($config['aly_app_code'])?$config['aly_app_code']:'',
-        ];
         return $data;
     }
 
