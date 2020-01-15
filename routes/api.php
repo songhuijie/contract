@@ -29,7 +29,6 @@ $api->version('v1', function ($api) {
             //用户信息
             $api->post('/user_info','UserController@userInfo');
 
-
             //失信人查询
             $api->post('/breach/query','BreachController@query');
             //失信人查询
@@ -70,7 +69,14 @@ $api->version('v1', function ($api) {
             $api->group(['middleware'=>'CheckAuthentication'],function($api){
                 //创建印章
                 $api->post('/seal/create','AuthenticationController@CreateSeal');
+                $api->post('/get/user','ContractController@getUser');
 
+                //获取合同详细信息 或者修改
+                $api->post('/contract/detail','ContractController@getContractDetail');
+                //获取合同信息根据条件
+                $api->post('/contract/list','ContractController@getContract');
+                //支付律师代写合同
+                $api->post('/contract/pay','ContractController@PayOrder');
 
                 /**
                  * 需要印章才能请求
@@ -82,14 +88,10 @@ $api->version('v1', function ($api) {
                     //创建合同
                     $api->post('/contract/creation','ContractController@ContractCreation');
 
-                    //获取合同详细信息 或者修改
-                    $api->post('/contract/detail','ContractController@getContractDetail');
-                    //获取合同信息根据条件
-                    $api->post('/contract/list','ContractController@getContract');
+
+
                     //签署合同
                     $api->post('/contract/sign','ContractController@sign');
-                    //支付律师代写合同
-                    $api->post('/contract/pay','ContractController@PayOrder');
                     //律师代写完后等待确认合同
                     $api->post('/contract/confirm','ContractController@Confirm');
 

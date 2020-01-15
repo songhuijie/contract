@@ -12,6 +12,7 @@ class Certification extends Model
     public $timestamps = false;
     protected $dateFormat = 'U';//使用时间戳方式添加
     public $select = ['user_id', 'name', 'ID_card', 'identity_card_positive','identity_card_back','status','updated_at'];
+    public $select_search = ['user_id', 'name'];
 
 
     protected $fillable = ['name','ID_card', 'identity_card_positive','identity_card_back','status'];
@@ -51,5 +52,14 @@ class Certification extends Model
     //和身份信息表建立关系
     public function Information(){
         return $this->hasOne(IdentityInformation::class,'user_id','user_id');
+    }
+
+    /**
+     * 根据手机号 获取用户来发送合同
+     * @param $phone
+     * @return mixed
+     */
+    public function getUserIDbyPhone($phone){
+        return $this->select($this->select_search)->where('phone',$phone)->first();
     }
 }

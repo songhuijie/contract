@@ -29,10 +29,19 @@ class Contract extends Model
     public function getContract($param){
         $page = $param['page'];
         $limit = $param['limit'];
-        $where = $param['cond'] ?? [];
+        $cond= $param['cond'] ?? '';
+        $contract_type = $param['contract_type'] ?? '';
+
         $sortfield = $param['sortField'] ?? 'create_time';
         $order = $param['order'] ?? 'desc';
-        if ($where) $where = [['key', 'like', $where.'%']];
+        $where = [];
+        if ($cond)
+            $where[] = ['key', 'like', $cond.'%'];
+
+        if ($contract_type)
+            $where[] = ['contract_type', '=',$contract_type];
+
+
         $offset = ($page - 1) * $limit;
 
         $admins = $this->with('templateTitle')->where($where)->select($this->select)

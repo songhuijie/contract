@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Libraries\Lib_make;
 use App\Models\Contract;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -36,6 +37,24 @@ class ContractController extends Controller
     public function list(Request $request){
         $param = $request->all();
         $config = $this->contract->getContract($param);
+        $user_list = Lib_make::getUserList();
+        $template_list = Lib_make::getTemplate();
+
+        foreach($config['data'] as $k=>&$v){
+
+            $v['user_id'] = $user_list[$v['user_id']];
+            if($v['specific_user_id'] == 0){
+                $v['specific_user_id'] = '律师代写';
+            }else{
+                $v['specific_user_id'] = $user_list[$v['specific_user_id']];
+            }
+            if($v['template_id'] == 0){
+                $v['template_id'] = '律师代写';
+            }else{
+                $v['template_id']= $template_list[$v['template_id']];
+            }
+
+        }
         return ajaxSuccess($config['data'], $config['count']);
     }
 

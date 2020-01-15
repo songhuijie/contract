@@ -14,17 +14,38 @@
         ,cols: [[ //表头
 
             {field: 'id', title: 'ID', sort: true, fixed: 'left', align: 'left'}
-            ,{field: 'user_id', title: '用户ID'}
-            ,{field: 'specific_user_id', title: '指定用户ID'}
+            ,{field: 'user_id', title: '用户'}
+            ,{field: 'specific_user_id', title: '指定用户'}
             ,{field: 'template_id', title: '模板ID'}
             ,{field: 'contract_title', title: '代写名称'}
             ,{field: 'contract_demand', title: '代写需求'}
             ,{field: 'is_sign', title: '签署'}
-            ,{field: 'contract_type', title: '模板ID'}
-            ,{field: 'status', title: '模板ID'}
-            ,{field: 'create_time', title: '合同创建时间'}
+            ,{field:'contract_type',title: '合同类型', width:100,align:'center',templet:function(d){
+                    if(d.contract_type==1){
+                        return '<a>系统模板</a>';
+                    }else{
+                        return '<a>律师代写</a>';
+                    }
+            }}
+            ,{field:'status',title: '状态', width:100,align:'center',templet:function(d){
+                    if(d.status==0){
+                        return '<a>待支付</a>';
+                    }else if(d.status==1){
+                        return '<a>支付成功</a>';
+                    }else if(d.status==2){
+                        return '<a>编写中</a>';
+                    }else if(d.status==3){
+                        return '<a>待确认</a>';
+                    }else{
+                        return '<a>完成</a>';
+                    }
+            }}
+            ,{field:'create_time', title: '合同创建时间',templet:'<div>{{ layui.util.toDateString(d.create_time, "yyyy-MM-dd HH:mm:ss") }}</div>',minWidth:150}
+            ,{field: 'price', title: '代写价格'}
+            ,{field: 'updated_at', title: '更新时间'}
             ,{title: '操作', toolbar: '#op'}
         ]]
+
         ,response: {
             statusName: 'code'
             ,statusCode: 0
@@ -77,10 +98,11 @@
 
     });
 
-    function flushTable (cond, sortObj) {
+    function flushTable (cond,contract_type, sortObj) {
         var query = {
             where: {
-                cond: cond
+                cond: cond,
+                contract_type: contract_type
             }
             ,page: {
                 curr: 1
@@ -97,8 +119,11 @@
     // 搜索
     $('.search_btn').click(function () {
         var cond = $('.search_input').val();
-        flushTable(cond);
+        var contract_type =$("#contract_type option:selected").val();
+
+        flushTable(cond,contract_type);
     });
+
 
     // 排序
     table.on('sort(usertab)', function (obj) {

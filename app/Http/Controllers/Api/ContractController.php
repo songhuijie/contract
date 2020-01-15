@@ -13,6 +13,7 @@ use App\Libraries\Lib_config;
 use App\Libraries\Lib_const_status;
 use App\Libraries\Lib_make;
 use App\Model\User;
+use App\Models\Certification;
 use App\Models\Contract;
 use App\Models\Refund;
 use App\Models\Template;
@@ -28,12 +29,14 @@ class ContractController extends Controller {
     public $contract;
     public $user;
     public $refund;
-    public function __construct(Template $template,Contract $contract,User $user,Refund $refund)
+    public $certification;
+    public function __construct(Template $template,Contract $contract,User $user,Refund $refund,Certification $certification)
     {
         $this->template = $template;
         $this->contract = $contract;
         $this->user = $user;
         $this->refund = $refund;
+        $this->certification = $certification;
     }
 
     /**
@@ -455,6 +458,32 @@ class ContractController extends Controller {
         }
         $response_json->status = Lib_const_status::SUCCESS;
         $response_json->data = $user_list;
+        return $this->response($response_json);
+
+    }
+
+
+    /**
+     * 根据手机号获取用户信息
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getUser(Request $request){
+        $param = $request->all();
+        $fromErr = $this->validatorFrom([
+            'phone'=>'required|mobile',//
+        ],[
+            'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
+            'mobile'=>Lib_const_status::MOBILE_NUMBER_FORMAT_ERROR,
+        ]);
+        if($fromErr){//输出表单验证错误信息
+            return $this->response($fromErr);
+        }
+
+        $result = $this->certification->getUserIDbyPhone($param['phone']);
+        $response_json = $this->initResponse();
+        $response_json->status = Lib_const_status::SUCCESS;
+        $response_json->data = $result;
         return $this->response($response_json);
 
     }

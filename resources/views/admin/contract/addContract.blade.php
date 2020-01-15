@@ -5,19 +5,7 @@
         <div id="page-wrapper">
             <form class="layui-form" >
 
-                <div class="layui-form-item">
-                    <label class="layui-form-label">配置key</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="key" required  lay-verify="required"  placeholder="请输入配置key" autocomplete="off" class="layui-input" value="@if(!empty($config)){{$config->key}}@endif">
-                    </div>
-                </div>
 
-                <div class="layui-form-item">
-                    <label class="layui-form-label">描述</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="describe" required  lay-verify="required"  placeholder="请输入key描述(作用)" autocomplete="off" class="layui-input" value="@if(!empty($config)){{$config->describe}}@endif">
-                    </div>
-                </div>
 
                 <div class="layui-form-item">
                     <label class="layui-form-label">值</label>
