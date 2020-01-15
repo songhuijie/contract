@@ -29,6 +29,7 @@ class TestController extends Controller{
 //
 //        dd($int,$code);
 
+        return view('test');
         dd(config('app.url'));
         $phone = 18080952663;
         $code = 256630;
