@@ -2,65 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33dae8e9-96d1-4c1a-9dc8-f1dd7e1d0d76" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthenticationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthenticationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Libraries/Lib_const_status.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Libraries/Lib_const_status.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Libraries/Lib_make.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Libraries/Lib_make.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Libraries/Lib_redis.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Libraries/Lib_redis.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Service/AliCloudService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Service/AliCloudService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/logging.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/logging.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/01cc43aa388e24344e986f863e97b986ea419571.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/027c9a4fdaba562eff4b69af6a6047e7baa58115.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/03fa38d10b9eb267bb40004f88609e3e7746d41d.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/0dca3da115200b8da54dbb8e125ddb88aa8b3c0d.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/2005c3652eb360a0e8c4d0dbbccf7b8eb4e2a997.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/20bbc0c872d1789c291a3f6cc1459e35c794af77.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/22527555b5d244e49b68a9c446c6bbb068bda63f.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/25a24ed96b82d8e96ebb6aae871fc9611148fbfa.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/2d76109c812e01dd0673bdc1dcc8df3201552ceb.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/3c580f9d67ac6eb458338363c7a7636bcb8bb1d5.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/40dc822c930f72c8deb25f196a7ef765e95ff47e.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/419abc67086192437c078acabad648ab5446b43a.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/444841470cc59bab4bf348fe9ef2984ddf8272f4.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/4b596e9e44ab1d610ad5db836e95f3fb9be824da.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/4ee1a8d68535f1ea5661370bb6b82fe4b1d7b4b3.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/5ca0f32580ab6e2d0ab640d8c446d4eae09b1e56.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/5f8c138e2fafc26c5a7a6aa3d1a4d3d2e77e452f.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/63c552671911f3ebb84468c3e08b5451fc052d56.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/66a572960b97bbab303ed194bc46bc2b059d04f9.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/6aaa2d842b61d23cf0426eef00d46ed5bcde77e8.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/734b4c62b22e90b74c19920109c658d67df9af10.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/74a28613b44a61bdab5abe70083a58ad75eb0a2f.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/777dfb809084932f0d2157e8a1c8db0d3e418d2a.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/7dd29cf8969a8c57f08544fcdf2be73e8c0581df.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/860a8427dc1c71704ca61cd00973f03058e9d751.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/8b739eef7c75df0060c164ece630030c9e446ca3.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/976ff522937a009491ecb4215d94cc6da7816576.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/a0abe756d8e7d407736e5e60b87978465b2b5dec.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/a0ff6f7f803ec2c485c1dcd2617b703f3b35761d.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/a7d5b1109706010357a9c07ef54d951dd5a76438.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/aaeba456085bd6029764b076ba703d1850a19375.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/b111d3b9658afaebaa964c8c24865279831db7db.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/b12e6a70b58361e9a125bfde537f68bc2f8f80cd.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/be09c07ee42775131dc66e2f6fcc928c2221fd5e.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/c021b444d595c701a8be183e2284dbcf227aa2f2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/c7bc1cdd9709fec4cf794a80c7f03073eba4c2d2.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/c835fc9ab79bf531b818603ef28e40ae2d2b7ea9.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/ca27ba1b66e342c38f7da05d117b3de5a475d8f7.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/cb1ac6a9c91649ef3835ba04a5807e5713fe78d7.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/cb80128d96b3851b8ceab366c15db88bd1d0dd9d.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/d0f1cdbd024ba901d6b281813dd0f1329caa4833.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/d16bcaf8f3b77703370edcb3735c621cea8bdc4a.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/d2cbd5a01aaf82e61ac5dd6e3c4ecec8eb25edab.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/da32966feb047d5c79efbccb1eb9a8f0a6fec5cc.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/dd8f8636613b4390535389acce5bdaa010b4c159.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/e6147b2148d7c5cd98becaa3b8680c473fe4597c.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/f0567263f260ef60f7388d1e4743bb34b0df1a67.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/f0ca1646da4d6687d4d3f81ac333fa8cd95b3c60.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/f4a0d82610c587e6ef005b8b1a4884a521d08043.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/f97c2a6c1f0502b9feb45dea3cb01bcab925d8f0.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/febe5fbbee7b7a1925889d27f98e327988e7cba2.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -74,93 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ContractController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="294" column="90" selection-start-line="294" selection-start-column="90" selection-end-line="294" selection-end-column="90" />
-              <folding>
-                <element signature="e#628#868#0#PHP" />
-                <element signature="e#874#973#0#PHP" />
-                <element signature="e#978#1487#0#PHP" />
-                <element signature="e#1493#1594#0#PHP" />
-                <element signature="e#1599#2240#0#PHP" />
-                <element signature="e#1703#1860#0#PHP" />
-                <element signature="e#1724#1780#0#PHP" />
-                <element signature="e#1781#1859#0#PHP" />
-                <element signature="e#1870#1951#0#PHP" />
-                <element signature="e#2247#2346#0#PHP" />
-                <element signature="e#2351#5052#0#PHP" />
-                <element signature="e#2594#4152#0#PHP" />
-                <element signature="e#2685#3065#0#PHP" />
-                <element signature="e#2706#2912#0#PHP" />
-                <element signature="e#2913#3064#0#PHP" />
-                <element signature="e#3079#3168#0#PHP" />
-                <element signature="e#3182#3379#0#PHP" />
-                <element signature="e#3390#4152#0#PHP" />
-                <element signature="e#3419#3753#0#PHP" />
-                <element signature="e#3440#3600#0#PHP" />
-                <element signature="e#3601#3752#0#PHP" />
-                <element signature="e#3767#3856#0#PHP" />
-                <element signature="e#4427#4888#0#PHP" />
-                <element signature="e#4473#4528#0#PHP" />
-                <element signature="e#4679#4809#0#PHP" />
-                <element signature="e#5058#5163#0#PHP" />
-                <element signature="e#5168#6121#0#PHP" />
-                <element signature="e#5264#5421#0#PHP" />
-                <element signature="e#5285#5341#0#PHP" />
-                <element signature="e#5342#5420#0#PHP" />
-                <element signature="e#5431#5512#0#PHP" />
-                <element signature="e#5762#6067#0#PHP" />
-                <element signature="e#5980#6067#0#PHP" />
-                <element signature="e#6127#6230#0#PHP" />
-                <element signature="e#6235#8227#0#PHP" />
-                <element signature="e#6332#6489#0#PHP" />
-                <element signature="e#6353#6409#0#PHP" />
-                <element signature="e#6410#6488#0#PHP" />
-                <element signature="e#6499#6580#0#PHP" />
-                <element signature="e#8233#8334#0#PHP" />
-                <element signature="e#10452#10506#0#PHP" />
-                <element signature="e#10511#11410#0#PHP" />
-                <element signature="e#10667#11404#0#PHP" />
-                <element signature="e#10793#11394#0#PHP" />
-                <element signature="e#11235#11379#0#PHP" />
-                <element signature="e#11416#11515#0#PHP" />
-                <element signature="e#11520#12545#0#PHP" />
-                <element signature="e#11623#11780#0#PHP" />
-                <element signature="e#11644#11700#0#PHP" />
-                <element signature="e#11701#11779#0#PHP" />
-                <element signature="e#11790#11871#0#PHP" />
-                <element signature="e#12122#12430#0#PHP" />
-                <element signature="e#12218#12370#0#PHP" />
-                <element signature="e#12551#12657#0#PHP" />
-                <element signature="e#12662#13706#0#PHP" />
-                <element signature="e#12762#13049#0#PHP" />
-                <element signature="e#12783#12908#0#PHP" />
-                <element signature="e#12909#13048#0#PHP" />
-                <element signature="e#13060#13141#0#PHP" />
-                <element signature="e#13712#13809#0#PHP" />
-                <element signature="e#13814#15163#0#PHP" />
-                <element signature="e#13907#14121#0#PHP" />
-                <element signature="e#13928#14041#0#PHP" />
-                <element signature="e#14042#14120#0#PHP" />
-                <element signature="e#14132#14213#0#PHP" />
-                <element signature="e#14454#15109#0#PHP" />
-                <element signature="e#14757#14887#0#PHP" />
-                <element signature="e#15022#15109#0#PHP" />
-                <element signature="e#15169#15239#0#PHP" />
-                <element signature="e#15244#15716#0#PHP" />
-                <element signature="e#15475#15558#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Lib_const_status.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_const_status.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+            <state relative-caret-position="652">
+              <caret line="63" column="48" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -169,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AuthenticationController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="436">
-              <caret line="106" column="67" lean-forward="true" selection-start-line="106" selection-start-column="67" selection-end-line="106" selection-end-column="67" />
+              <caret line="106" column="67" selection-start-line="106" selection-start-column="67" selection-end-line="106" selection-end-column="67" />
               <folding>
                 <element signature="e#423#591#0#PHP" />
                 <element signature="e#598#697#0#PHP" />
@@ -195,22 +57,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AliCloudService.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AliCloudService.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Service/AliCloudService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="131" column="45" lean-forward="true" selection-start-line="131" selection-start-column="45" selection-end-line="131" selection-end-column="45" />
+            <state relative-caret-position="478">
+              <caret line="132" column="47" selection-start-line="132" selection-start-column="47" selection-end-line="132" selection-end-column="47" />
               <folding>
-                <element signature="e#750#1297#0#PHP" />
                 <element signature="e#704#958#0#PHP" />
                 <element signature="e#3888#4128#0#PHP" />
                 <element signature="e#4133#5322#0#PHP" />
@@ -223,11 +75,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="logging.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/logging.php">
+      <file leaf-file-name="2020_01_15_035940_create_identity_information.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_15_035940_create_identity_information.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="676">
-              <caret line="109" column="32" lean-forward="true" selection-start-line="109" selection-start-column="32" selection-end-line="109" selection-end-column="32" />
+            <state relative-caret-position="459">
+              <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+              <folding>
+                <element signature="e#6#44#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2020_01_09_025033_create_certification.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_09_025033_create_certification.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="22" column="67" lean-forward="true" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
+              <folding>
+                <element signature="e#7#45#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2020_01_14_012237_create_refund.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_14_012237_create_refund.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="22" selection-start-line="22" selection-end-line="23" selection-end-column="37" />
+              <folding>
+                <element signature="e#7#45#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -235,8 +114,8 @@
       <file leaf-file-name="TestController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+            <state relative-caret-position="451">
+              <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
               <folding>
                 <element signature="e#128#157#0#PHP" expanded="true" />
               </folding>
@@ -244,40 +123,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Lib_make.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_make.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="174" column="88" selection-start-line="174" selection-start-column="88" selection-end-line="174" selection-end-column="88" />
-              <folding>
-                <element signature="e#360#1123#0#PHP" />
-                <element signature="e#1130#1206#0#PHP" />
-                <element signature="e#1211#1716#0#PHP" />
-                <element signature="e#1722#1791#0#PHP" />
-                <element signature="e#1796#2630#0#PHP" />
-                <element signature="e#2636#2742#0#PHP" />
-                <element signature="e#2747#3442#0#PHP" />
-                <element signature="e#3448#3525#0#PHP" />
-                <element signature="e#3530#4294#0#PHP" />
-              </folding>
-            </state>
-          </provider>
+      <file leaf-file-name="1578905037223422.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/uploads/id_card/1578905037223422.jpg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/api.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="50" column="18" lean-forward="true" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
-            </state>
-          </provider>
+      <file leaf-file-name="1579060294447647.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/uploads/id_card/1579060294447647.jpg">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file leaf-file-name="Lib_redis.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_redis.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="355">
-              <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+              <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
               <folding>
                 <element signature="e#849#1359#0#PHP" />
                 <element signature="e#1365#1492#0#PHP" />
@@ -370,7 +230,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/editRole.js" />
         <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/roles.js" />
         <option value="$PROJECT_DIR$/storage/logs/laravel-2020-01-10.log" />
         <option value="$PROJECT_DIR$/app/Service/IdentityService.php" />
@@ -415,12 +274,13 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/config/logging.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
         <option value="$PROJECT_DIR$/app/Libraries/Lib_redis.php" />
-        <option value="$PROJECT_DIR$/app/Libraries/Lib_const_status.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/AuthenticationController.php" />
         <option value="$PROJECT_DIR$/app/Libraries/Lib_make.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
+        <option value="$PROJECT_DIR$/app/Libraries/Lib_const_status.php" />
         <option value="$PROJECT_DIR$/app/Service/AliCloudService.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_01_15_035940_create_identity_information.php" />
       </list>
     </option>
   </component>
@@ -695,6 +555,19 @@
               <item name="contract" type="b2602c69:ProjectViewProjectNode" />
               <item name="contract" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="contract" type="b2602c69:ProjectViewProjectNode" />
+              <item name="contract" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+              <item name="id_card" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="contract" type="b2602c69:ProjectViewProjectNode" />
+              <item name="contract" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="xianshangke" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -822,12 +695,12 @@
       <workItem from="1578618178798" duration="20992000" />
       <workItem from="1578877511640" duration="25557000" />
       <workItem from="1578963575013" duration="30479000" />
-      <workItem from="1579050266390" duration="9876000" />
+      <workItem from="1579050266390" duration="10718000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217914000" />
+    <option name="totallyTimeSpent" value="218756000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1936" height="1056" extended-state="0" />
@@ -866,27 +739,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="66" column="18" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/CheckAuthentication.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="35" column="89" lean-forward="true" selection-start-line="35" selection-start-column="89" selection-end-line="35" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/CheckSeal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="32" column="71" lean-forward="true" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Service/AccessEntity.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -961,13 +813,6 @@
     <entry file="file://$PROJECT_DIR$/public/xianshangke/modul/rule/breach.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2804" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_14_012237_create_refund.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="21" column="85" selection-start-line="21" selection-start-column="85" selection-end-line="21" selection-end-column="85" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/userInfo-2020-01-13.log">
@@ -1155,16 +1000,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_09_025033_create_certification.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="19" column="52" lean-forward="true" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
-          <folding>
-            <element signature="e#7#45#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/OtherController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -1317,14 +1152,7 @@
     <entry file="file://$PROJECT_DIR$/config/logging.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="676">
-          <caret line="109" column="32" lean-forward="true" selection-start-line="109" selection-start-column="32" selection-end-line="109" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_const_status.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+          <caret line="109" column="32" selection-start-line="109" selection-start-column="32" selection-end-line="109" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1349,7 +1177,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/AuthenticationController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
-          <caret line="106" column="67" lean-forward="true" selection-start-line="106" selection-start-column="67" selection-end-line="106" selection-end-column="67" />
+          <caret line="106" column="67" selection-start-line="106" selection-start-column="67" selection-end-line="106" selection-end-column="67" />
           <folding>
             <element signature="e#423#591#0#PHP" />
             <element signature="e#598#697#0#PHP" />
@@ -1374,20 +1202,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-          <folding>
-            <element signature="e#128#157#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_redis.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
-          <caret line="42" column="7" lean-forward="true" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
           <folding>
             <element signature="e#849#1359#0#PHP" />
             <element signature="e#1365#1492#0#PHP" />
@@ -1400,12 +1218,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/id_card/1578905037223422.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/uploads/id_card/1579060294447647.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
+          <folding>
+            <element signature="e#128#157#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_const_status.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="652">
+          <caret line="63" column="48" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Service/AliCloudService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="131" column="45" lean-forward="true" selection-start-line="131" selection-start-column="45" selection-end-line="131" selection-end-column="45" />
+        <state relative-caret-position="478">
+          <caret line="132" column="47" selection-start-line="132" selection-start-column="47" selection-end-line="132" selection-end-column="47" />
           <folding>
-            <element signature="e#750#1297#0#PHP" />
             <element signature="e#704#958#0#PHP" />
             <element signature="e#3888#4128#0#PHP" />
             <element signature="e#4133#5322#0#PHP" />
@@ -1413,6 +1253,36 @@
             <element signature="e#5993#6209#0#PHP" />
             <element signature="e#6217#6413#0#PHP" />
             <element signature="e#6763#7976#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_14_012237_create_refund.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="22" selection-start-line="22" selection-end-line="23" selection-end-column="37" />
+          <folding>
+            <element signature="e#7#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_09_025033_create_certification.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="22" column="67" lean-forward="true" selection-start-line="22" selection-start-column="67" selection-end-line="22" selection-end-column="67" />
+          <folding>
+            <element signature="e#7#45#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_01_15_035940_create_identity_information.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+          <folding>
+            <element signature="e#6#44#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -10,6 +10,7 @@ namespace App\Service;
 use AlibabaCloud\Client\AlibabaCloud;
 use AlibabaCloud\Client\Exception\ClientException;
 use AlibabaCloud\Client\Exception\ServerException;
+use App\Libraries\Lib_const_status;
 use App\Libraries\Lib_make;
 use Illuminate\Support\Facades\Log;
 
@@ -127,9 +128,10 @@ class AliCloudService{
             }
             return $result_str;
         }else{
-            printf("Http error code: %d\n", $httpCode);
-            printf("Error msg in body: %s\n", $rbody);
-            printf("header: %s\n", $rheader);
+//            printf("Http error code: %d\n", $httpCode);
+//            printf("Error msg in body: %s\n", $rbody);
+//            printf("header: %s\n", $rheader);
+            return Lib_const_status::IDENTITY_INFORMATION_IS_NOT_RECOGNIZED;
         }
     }
 

@@ -31,7 +31,9 @@ class TestController extends Controller{
         $phone = 18080952663;
         $code = 256630;
 //        $int = Redis::get(Lib_redis::SplicingKey(Lib_redis::SUCCESSFUL.$phone));
-        $int = Lib_redis::VerificationCode($phone,$code);
+        $path = public_path().'/'.'uploads/id_card/1578905037223422.jpg';
+
+        $int = AliCloudService::Identity($path);
         dd($int);
 
 

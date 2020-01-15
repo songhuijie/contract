@@ -60,6 +60,8 @@ class Lib_const_status{
     const SMS_SENDING_FAILED  = 20006;
     //手机号已绑定
     const PHONE_NUMBER_IS_BOUND  = 20007;
+    //身份信息无法识别
+    const IDENTITY_INFORMATION_IS_NOT_RECOGNIZED  = 20008;
 
 
     //印章已存在
