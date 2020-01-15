@@ -14,6 +14,7 @@ use App\Libraries\Lib_redis;
 use App\Models\Certification;
 use App\Models\Charter;
 use App\Service\AccessEntity;
+use App\Service\AliCloudService;
 use Illuminate\Http\Request;
 
 class AuthenticationController extends Controller{
@@ -64,6 +65,13 @@ class AuthenticationController extends Controller{
 
         $access_entity = AccessEntity::getInstance();
         $user_id = $access_entity->user_id;
+
+        $int = Lib_make::Identity($all['identity_card_positive'],$all['identity_card_back'],$user_id);
+        if($int != 0){
+            $response_json->status = $int;
+            return $this->response($response_json);
+        }
+
         $status = $all['status']?$all['status']:1;
         $certification = $this->certification->find($user_id);
 

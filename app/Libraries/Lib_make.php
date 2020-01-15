@@ -9,6 +9,7 @@ namespace App\Libraries;
 
 use App\Model\User;
 use App\Models\Config;
+use App\Models\IdentityInformation;
 use App\Models\Template;
 use App\Service\AliCloudService;
 use Illuminate\Support\Facades\Redis;
@@ -181,6 +182,40 @@ class Lib_make{
         }else{
             return $int;
         }
+    }
+
+
+    /**
+     * 身份验证
+     * @param $positive_path
+     * @param $back_path
+     * @param $user_id
+     * @return int
+     */
+    public static function Identity($positive_path,$back_path,$user_id){
+
+
+        $positive_path = public_path().'/'.$positive_path;
+        $positive_data = AliCloudService::Identity($positive_path);
+        if($positive_data == false){
+            return Lib_const_status::IDENTITY_POSITIVE_INFORMATION_IS_NOT_RECOGNIZED;
+        }
+
+        $back_path = public_path().'/'.$back_path;
+        $back_data = AliCloudService::Identity($back_path);
+        if($back_data == false){
+            return Lib_const_status::IDENTITY_BACK_INFORMATION_IS_NOT_RECOGNIZED;
+        }
+        $identityInformation_data = [
+            'user_id'=>$user_id,
+            'identity_card_positive'=>$positive_data,
+            'identity_card_back'=>$back_data,
+        ];
+        $identityInformation = new IdentityInformation();
+        $identityInformation->insert($identityInformation_data);
+        return Lib_const_status::SUCCESS;
+
+
     }
 
 

@@ -131,7 +131,7 @@ class AliCloudService{
 //            printf("Http error code: %d\n", $httpCode);
 //            printf("Error msg in body: %s\n", $rbody);
 //            printf("header: %s\n", $rheader);
-            return Lib_const_status::IDENTITY_INFORMATION_IS_NOT_RECOGNIZED;
+            return false;
         }
     }
 
