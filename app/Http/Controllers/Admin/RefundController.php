@@ -100,7 +100,7 @@ class RefundController extends Controller
             $appid = $config['appid'];
             $mchid = $config['mch_id'];
             $out_trade_no = $refund->order_number;
-            $out_refund_no = $refund->order_number;
+            $out_refund_no = 'refund_'.uniqid();
             $total_fee = $refund->price;
             $refund_fee = $refund->price;
             $mch_secret = $config['mch_secret'];
