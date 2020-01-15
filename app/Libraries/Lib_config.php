@@ -31,5 +31,9 @@ class Lib_config{
     const CONTRACT_COMPLETE = 3;   //确认完成
 
 
+    const NOTIFICATION_TYPE_SIGN = 1;
+    const NOTIFICATION_TYPE_IDENTITY = 2;
+
+
 
 }

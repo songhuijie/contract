@@ -21,11 +21,13 @@ class Notice
      */
     public $user_id;
     public $message;
-    public function __construct($user_id,$message)
+    public $type;
+    public function __construct($user_id,$message,$type)
     {
         //
         $this->user_id = $user_id;
         $this->message = $message;
+        $this->type = $type;
     }
 
     /**

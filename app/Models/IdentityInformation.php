@@ -14,4 +14,15 @@ class IdentityInformation extends Model
     public $select = ['user_id', 'identity_card_positive', 'identity_card_back'];
     protected $primaryKey = 'user_id';
 
+
+    public function getIdentityCardPositiveAttribute($value){
+
+        return json_decode($value,true);
+    }
+
+
+    public function getIdentityCardBackAttribute($value){
+
+        return json_decode($value,true);
+    }
 }

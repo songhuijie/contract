@@ -27,6 +27,7 @@ class Certification extends Model
     }
 
 
+
     protected $primaryKey = 'user_id';
 
     public  function getCertification($param){
@@ -45,5 +46,10 @@ class Certification extends Model
             'count' => $count,
             'data' => $admins
         ];
+    }
+
+    //和身份信息表建立关系
+    public function Information(){
+        return $this->hasOne(IdentityInformation::class,'user_id','user_id');
     }
 }

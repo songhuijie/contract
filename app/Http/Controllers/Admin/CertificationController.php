@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Events\Notice;
+use App\Libraries\Lib_config;
 use App\Models\Certification;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -70,7 +72,8 @@ class CertificationController extends Controller
     public function show(Certification $certification)
     {
         //
-        return view('admin.certification.info',compact('certification'));
+        $Information = $certification->Information;
+        return view('admin.certification.info',compact('Information'));
     }
 
     /**
@@ -97,7 +100,11 @@ class CertificationController extends Controller
         //
         $all = $request->all();
 
+        if($all['status'] == 1){
+            event(new Notice($certification->user_id,[],Lib_config::NOTIFICATION_TYPE_IDENTITY));
+        }
         $int = $certification->update($all);
+
         if (!$int) return ajaxError('更新失败' );
         return ajaxSuccess();
     }

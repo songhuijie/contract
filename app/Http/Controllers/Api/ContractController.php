@@ -148,7 +148,7 @@ class ContractController extends Controller {
                 'enterprise'=>$enterprise,
                 'signatory'=>$signatory,
             ];
-            event(new Notice($param['specific_user_id'],$message));
+            event(new Notice($param['specific_user_id'],$message,Lib_config::NOTIFICATION_TYPE_SIGN));
         }
 
         $response_json->status = Lib_const_status::SUCCESS;
@@ -430,7 +430,7 @@ class ContractController extends Controller {
                 'enterprise'=>$enterprise,
                 'signatory'=>$signatory,
             ];
-            event(new Notice($contract->user_id,$message));
+            event(new Notice($contract->user_id,$message,Lib_config::NOTIFICATION_TYPE_SIGN));
             $response_json->status = Lib_const_status::SUCCESS;
         }else{
             $response_json->status = Lib_const_status::CONTRACT_CANNOT;
