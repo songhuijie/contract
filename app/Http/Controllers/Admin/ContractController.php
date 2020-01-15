@@ -100,6 +100,7 @@ class ContractController extends Controller
     public function edit(Contract $contract)
     {
         //
+        return view('admin.contract.addContract',compact('contract'));
     }
 
     /**
@@ -112,6 +113,12 @@ class ContractController extends Controller
     public function update(Request $request, Contract $contract)
     {
         //
+        $all = $request->all();
+
+
+        $int = $contract->update($all);
+        if (!$int) return ajaxError('添加失败' );
+        return ajaxSuccess();
     }
 
     /**

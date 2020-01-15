@@ -8,15 +8,16 @@
 
 
                 <div class="layui-form-item">
-                    <label class="layui-form-label">值</label>
+                    <label class="layui-form-label">审核</label>
                     <div class="layui-input-block">
-                        <input type="text" name="value" required  lay-verify="required"  placeholder="请输入配置key的值" autocomplete="off" class="layui-input" value="@if(!empty($config)){{$config->value}}@endif">
+                        <input type="radio" name="status" value="1" title="通过" checked>
+                        <input type="radio" name="status" value="2" title="拒绝" >
                     </div>
                 </div>
 
-                @if(!empty($config))
+                @if(!empty($contract))
                     <input type="text" id="mold" hidden  value="edit" >
-                    <input type="text" id="id" hidden value="{{$config->id}}" >
+                    <input type="text" id="id" hidden value="{{$contract->id}}" >
                 @endif
 
                 <div class="layui-form-item">
