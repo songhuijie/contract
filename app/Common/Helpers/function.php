@@ -361,6 +361,78 @@ function refund($appid,$mchid,$out_trade_no,$out_refund_no,$total_fee,$refund_fe
     return $result;
 }
 
+
+/**
+ * 小程序退款
+ * @param $ordernumber
+ * @param $total_fee
+ * @param $refund_fee
+ * @param $mchid
+ * @param $appid
+ * @param $apiKey
+ * @param $orderNo
+ * @return bool
+ */
+function initiatingRefund($ordernumber,$total_fee, $refund_fee,$mchid,$appid,$apiKey)
+{
+
+    $refundNo = 'refund_'.uniqid();
+    $config = array(
+        'mch_id' => $mchid,
+        'appid' => $appid,
+        'key' => $apiKey,
+    );
+    $unified = array(
+        'appid' => $config['appid'],
+        'mch_id' => $config['mch_id'],
+        'nonce_str' => createNonceStr(),
+        'total_fee' => intval($total_fee * 100),       //订单金额    单位 转为分
+        'refund_fee' => intval($refund_fee * 100),       //退款金额 单位 转为分
+        'sign_type' => 'MD5',           //签名类型 支持HMAC-SHA256和MD5，默认为MD5
+        // 'transaction_id'=>$ordernumber,               //微信订单号
+        'out_trade_no'=>$ordernumber,        //商户订单号
+        'out_refund_no'=>$refundNo,        //商户退款单号
+        'refund_desc'=>'商品已售完',     //退款原因（选填）
+    );
+    $unified['sign'] = autograph($unified, $config['key']);
+    $responseXml = curl_file_post_contents('https://api.mch.weixin.qq.com/secapi/pay/refund', arrayToXml($unified));
+
+    $unifiedOrder = xmlToArray($responseXml);
+
+    // $unifiedOrder = simplexml_load_string($responseXml, 'SimpleXMLElement', LIBXML_NOCDATA);
+    if ($unifiedOrder === false) {
+        return false;
+    }
+    if ($unifiedOrder['return_code'] != 'SUCCESS') {
+        return false;
+    }
+
+    return $unifiedOrder;
+
+}
+
+/**
+ * Native支付
+ */
+function nativeWechat($appid,$mch_id,$body,$out_trade_no,$total_fee,$spbill_create_ip,$notify_url,$mer_secret,$attach){
+    $url = 'https://api.mch.weixin.qq.com/pay/unifiedorder';
+    $data = [
+        'appid'=>$appid,  /**公众账号ID*/
+        'mch_id'=>$mch_id, /**商户号*/
+        'nonce_str'=>createNonceStr(), /**随机字符串*/
+        'body'=>$body,   /**商品描述*/
+        'out_trade_no'=>$out_trade_no, /**商户订单号	*/
+        'total_fee'=>intval($total_fee * 100), /**标价金额*/
+        'spbill_create_ip'=>$spbill_create_ip,
+        'notify_url'=>$notify_url,
+        'trade_type'=>'NATIVE',
+        'attach'=>$attach
+    ];
+    $data['sign'] = autograph($data,$mer_secret);
+    $result = curlPost($url,arrayToXml($data));
+    return $result;
+}
+
 /**
  * @param $data
  * @return string
@@ -453,6 +525,53 @@ function  httpCurlPost($url,$xml,$key_pem=null,$cert_pem=null){
     //关闭URL请求
     curl_close($ch);
     return $tmpInfo;    //返回json对象
+}
+
+/**
+ * 退款调用
+ * @param $url
+ * @param $post_data
+ * @return mixed|string
+ */
+function curl_file_post_contents($url, $post_data){
+    // header传送格式
+    //初始化
+    $curl = curl_init();
+    $header[] = "Content-type: text/xml";//定义content-type为xml
+    //设置抓取的url
+    curl_setopt($curl, CURLOPT_URL, $url);
+    //设置头文件的信息作为数据流输出
+    curl_setopt($curl, CURLOPT_HEADER, 0);
+    //定义请求类型
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
+    //设置获取的信息以文件流的形式返回，而不是直接输出。
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    //设置post方式提交
+    curl_setopt($curl, CURLOPT_POST, 1);
+    //第一种方法，cert 与 key 分别属于两个.pem文件 //  证书参数
+    //默认格式为PEM，可以注释
+    curl_setopt($curl,CURLOPT_SSLCERTTYPE,'PEM');
+    curl_setopt($curl,CURLOPT_SSLCERT, "/www/wwwroot/contract.xcooteam.cn/contract/cert/apiclient_cert.pem"); // 退款时需要用到商户的证书  这里写相对地址就可以了
+    //默认格式为PEM，可以注释
+    curl_setopt($curl,CURLOPT_SSLKEYTYPE,'PEM');
+    curl_setopt($curl,CURLOPT_SSLKEY,"/www/wwwroot/contract.xcooteam.cn/contract/cert/apiclient_key.pem");   // 退款时需要用到商户的证书  这里写相对地址就可以了
+    //第二种方式，两个文件合成一个.pem文件
+    //    curl_setopt($ch,CURLOPT_SSLCERT,'./all.pem');
+    //设置post数据
+
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $post_data);
+    //执行命令
+    $data = curl_exec($curl);
+    //显示获得的数据
+    if ($data)
+    {
+        curl_close($curl);  //关闭URL请求
+        return $data;
+    }else{
+        $res = curl_error($curl);
+        curl_close($curl);//关闭URL请求
+        return $res;
+    }
 }
 
 /**
