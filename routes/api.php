@@ -18,6 +18,10 @@ $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
 
     $api->group(['prefix' => 'v1', 'Middleware' => 'CheckMiddle', 'namespace' => 'App\Http\Controllers\Api'], function ($api) {
+
+        //获取合同代写支付金额 (后台配置)
+        $api->post('/get/config','OtherController@getConfig');
+
         $api->post('/login','UserController@login');
         $api->any('/notify','ContractController@notify');
         // 登陆后 查看接口
@@ -37,8 +41,7 @@ $api->version('v1', function ($api) {
 
             //关于我们
             $api->post('/about','OtherController@aboutUs');
-            //获取合同代写支付金额 (后台配置)
-            $api->post('/payment/amount','OtherController@getPaymentAmount');
+
             //通知信息
             $api->post('/notice/list','OtherController@notice');
             //查看通知

@@ -103,6 +103,10 @@ class ConfigController extends Controller
         $all = $request->all();
 
 
+        if($all['key'] == 'rotation'){
+            unset($all['file']);
+            $all['value'] = json_encode($all['value']);
+        }
         $int = $config->update($all);
         Lib_make::getConfig(false);
         if (!$int) return ajaxError('添加失败' );

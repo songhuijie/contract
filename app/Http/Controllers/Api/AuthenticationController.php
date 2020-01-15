@@ -66,7 +66,7 @@ class AuthenticationController extends Controller{
         $access_entity = AccessEntity::getInstance();
         $user_id = $access_entity->user_id;
 
-        $int = Lib_make::Identity($all['identity_card_positive'],$all['identity_card_back'],$user_id);
+        $int = Lib_make::Identity($all['identity_card_positive'],$all['identity_card_back'],$user_id,$all['name'],$all['ID_card']);
         if($int != 0){
             $response_json->status = $int;
             return $this->response($response_json);

@@ -12,8 +12,7 @@
         ,limit: 10
         ,limits: [10, 20]
         ,cols: [[ //表头
-            {field: 'id', title: 'ID', sort: true, fixed: 'left', align: 'left'}
-            ,{field: 'user_id', title: '用户ID'}
+            {field: 'user_id', title: '用户ID', sort: true, fixed: 'left', align: 'left'}
             ,{field: 'name', title: '用户名/法人姓名'}
             ,{field: 'ID_card', title: '身份证号/法人身份证号'}
             ,{field: 'company_name', title: '公司名称'}
@@ -28,7 +27,7 @@
                         return '<a>公司</a>';
                     }
                 }}
-            ,{title: '操作', toolbar: '#op'}
+            // ,{title: '操作', toolbar: '#op'}
         ]]
 
         ,response: {
@@ -122,5 +121,9 @@
             content: url //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
         });
     });
-
+    $("body").on("click","img",function(e){
+        layer.photos({
+            photos: { "data": [{"src": e.target.src}] }
+        });
+    });
 });

@@ -17,12 +17,53 @@
                     </div>
                 </div>
 
-                <div class="layui-form-item">
-                    <label class="layui-form-label">值</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="value" required  lay-verify="required"  placeholder="请输入配置key的值" autocomplete="off" class="layui-input" value="<?php if(!empty($config)): ?><?php echo e($config->value); ?><?php endif; ?>">
+                <?php if(!empty($config)): ?>
+                    <?php switch($config->key):
+                        case ('aboutUs'): ?>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">值</label>
+                                <div class="layui-input-block">
+                                    <textarea name="value" id="qaContent" lay-verify="content"><?php if(!empty($config)): ?><?php echo e($config->value); ?> <?php endif; ?></textarea>
+                                </div>
+                            </div>
+                        <?php break; ?>
+                        <?php case ('rotation'): ?>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">轮播图json格式</label>
+                            <button type="button" class="layui-btn" id="test2">
+                                <i class="layui-icon">&#xe67c;</i>上传图片
+                            </button>
+                            <div id="img">
+                                <?php if(!empty($config)): ?>
+                                    <?php $__currentLoopData = json_decode($config->value,true); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <input type="text" value="<?php echo e($key); ?>" hidden name="value[]">
+                                        <img  src="/<?php echo e($key); ?>"    width="20%" title="点击删除">
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                <?php else: ?>
+                                <!-- <input type="text" value="" hidden name="img[]"> -->
+                                    <img   src=""  >
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <?php break; ?>
+                        <?php default: ?>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">值</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="value" required  lay-verify="required"  placeholder="请输入配置key的值" autocomplete="off" class="layui-input" value="<?php if(!empty($config)): ?><?php echo e($config->value); ?><?php endif; ?>">
+                                </div>
+                            </div>
+                        <?php break; ?>
+                    <?php endswitch; ?>
+                <?php else: ?>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">值</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="value" required  lay-verify="required"  placeholder="请输入配置key的值" autocomplete="off" class="layui-input" value="<?php if(!empty($config)): ?><?php echo e($config->value); ?><?php endif; ?>">
+                        </div>
                     </div>
-                </div>
+                <?php endif; ?>
+
 
 
 
@@ -46,16 +87,25 @@
 
 
     </div>
+    <script>
+        //单击图片删除图片 【注册全局函数】
+        $('#img').on('click','img',function(){
+            console.log($(this));
+            $(this).prev().remove();
+            $(this).remove();
+        });
+    </script>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection("js"); ?>
     <script>
+
         $(document).ready(function() {
             $('#dataTables-example').DataTable({
                 responsive: true
             });
         });
 
-        layui.use(['util','form','laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'slider'], function(){
+        layui.use(['util','form','laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'slider','layedit'], function(){
             var laydate = layui.laydate //日期
                 ,laypage = layui.laypage //分页
                 ,layer = layui.layer //弹层
@@ -64,6 +114,7 @@
                 ,upload = layui.upload //上传
                 ,element = layui.element //元素操作
                 ,slider = layui.slider //滑块
+            var layedit = layui.layedit;
             var form = layui.form;
 //执行实例 多图上传
             upload.render({
@@ -77,9 +128,23 @@
                         layer.msg("上传错误",{icon:5});
                     }else{
                         layer.msg("上传成功",{icon:6});
-                        img="../"+index.data;
-                        $("#img2").append('<img src="'+img+'" name="img[]" width="20%"><input type="text" value="'+index.data+'" hidden name="rotation[]">')
+                        img="/"+index.data;
+                        $("#img").append('<input type="text" value="'+index.data+'" hidden name="value[]"><img src="'+img+'" name="value[]" width="20%">')
                     }
+                }
+            });
+
+            layedit.set({
+                uploadImage: {
+                    url: '/layer/upload' //接口url
+                    ,type: 'post' //默认post
+                    ,multiple: true
+                }
+            });
+            var editIndex = layedit.build('qaContent'); // 建立编辑器
+            form.verify({
+                content:function () {
+                    layedit.sync(editIndex);
                 }
             });
             //监听提交
@@ -144,6 +209,9 @@
             // lay('#footer').html(layui.laytpl(footerTpl).render({}))
             // .removeClass('layui-hide');
         });
+    </script>
+    <script>
+
     </script>
 <?php $__env->stopSection(); ?>
 

@@ -109,13 +109,25 @@ class OtherController extends Controller{
     /**
      * 获取 律师代写费用
      */
-    public function getPaymentAmount(){
+    public function getConfig(){
         $response_json = $this->initResponse();
 
 
         $config = Lib_make::getConfig();
+        $price = isset($config['price'])?$config['price']:'';
+        $rotation = [];
+        if(isset($config['rotation'])){
 
-        $data = isset($config['price'])?$config['price']:'';
+            foreach(json_decode($config['rotation'],true) as $k=>$v){
+                $rotation[] = config('app.url').$v;
+            }
+        }
+
+        $data= [
+            'price'=>$price,
+            'rotation'=>$rotation,
+        ];
+
 
         $response_json->status = Lib_const_status::SUCCESS;
         $response_json->data = $data;

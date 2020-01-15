@@ -64,6 +64,8 @@ class Lib_const_status{
     const IDENTITY_POSITIVE_INFORMATION_IS_NOT_RECOGNIZED  = 20008;
     //身份背面信息无法识别
     const IDENTITY_BACK_INFORMATION_IS_NOT_RECOGNIZED  = 20009;
+    //身份信息不符
+    const IDENTITY_INFORMATION_DOES_NOT_MATCH  = 20010;
 
 
     //印章已存在

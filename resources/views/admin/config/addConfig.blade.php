@@ -19,12 +19,53 @@
                     </div>
                 </div>
 
-                <div class="layui-form-item">
-                    <label class="layui-form-label">值</label>
-                    <div class="layui-input-block">
-                        <input type="text" name="value" required  lay-verify="required"  placeholder="请输入配置key的值" autocomplete="off" class="layui-input" value="@if(!empty($config)){{$config->value}}@endif">
+                @if(!empty($config))
+                    @switch($config->key)
+                        @case('aboutUs')
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">值</label>
+                                <div class="layui-input-block">
+                                    <textarea name="value" id="qaContent" lay-verify="content">@if(!empty($config)){{$config->value}} @endif</textarea>
+                                </div>
+                            </div>
+                        @break
+                        @case('rotation')
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">轮播图json格式</label>
+                            <button type="button" class="layui-btn" id="test2">
+                                <i class="layui-icon">&#xe67c;</i>上传图片
+                            </button>
+                            <div id="img">
+                                @if(!empty($config))
+                                    @foreach(json_decode($config->value,true) as $key)
+                                        <input type="text" value="{{$key}}" hidden name="value[]">
+                                        <img  src="/{{$key}}"    width="20%" title="点击删除">
+                                    @endforeach
+                                @else
+                                <!-- <input type="text" value="" hidden name="img[]"> -->
+                                    <img   src=""  >
+                                @endif
+                            </div>
+                        </div>
+                        @break
+                        @default
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">值</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="value" required  lay-verify="required"  placeholder="请输入配置key的值" autocomplete="off" class="layui-input" value="@if(!empty($config)){{$config->value}}@endif">
+                                </div>
+                            </div>
+                        @break
+                    @endswitch
+                @else
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">值</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="value" required  lay-verify="required"  placeholder="请输入配置key的值" autocomplete="off" class="layui-input" value="@if(!empty($config)){{$config->value}}@endif">
+                        </div>
                     </div>
-                </div>
+                @endif
+
 
 
 
@@ -48,16 +89,25 @@
 
 
     </div>
+    <script>
+        //单击图片删除图片 【注册全局函数】
+        $('#img').on('click','img',function(){
+            console.log($(this));
+            $(this).prev().remove();
+            $(this).remove();
+        });
+    </script>
 @endsection
 @section("js")
     <script>
+
         $(document).ready(function() {
             $('#dataTables-example').DataTable({
                 responsive: true
             });
         });
 
-        layui.use(['util','form','laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'slider'], function(){
+        layui.use(['util','form','laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'element', 'slider','layedit'], function(){
             var laydate = layui.laydate //日期
                 ,laypage = layui.laypage //分页
                 ,layer = layui.layer //弹层
@@ -66,6 +116,7 @@
                 ,upload = layui.upload //上传
                 ,element = layui.element //元素操作
                 ,slider = layui.slider //滑块
+            var layedit = layui.layedit;
             var form = layui.form;
 //执行实例 多图上传
             upload.render({
@@ -79,9 +130,23 @@
                         layer.msg("上传错误",{icon:5});
                     }else{
                         layer.msg("上传成功",{icon:6});
-                        img="../"+index.data;
-                        $("#img2").append('<img src="'+img+'" name="img[]" width="20%"><input type="text" value="'+index.data+'" hidden name="rotation[]">')
+                        img="/"+index.data;
+                        $("#img").append('<input type="text" value="'+index.data+'" hidden name="value[]"><img src="'+img+'" name="value[]" width="20%">')
                     }
+                }
+            });
+
+            layedit.set({
+                uploadImage: {
+                    url: '/layer/upload' //接口url
+                    ,type: 'post' //默认post
+                    ,multiple: true
+                }
+            });
+            var editIndex = layedit.build('qaContent'); // 建立编辑器
+            form.verify({
+                content:function () {
+                    layedit.sync(editIndex);
                 }
             });
             //监听提交
@@ -146,6 +211,9 @@
             // lay('#footer').html(layui.laytpl(footerTpl).render({}))
             // .removeClass('layui-hide');
         });
+    </script>
+    <script>
+
     </script>
 @endsection
 

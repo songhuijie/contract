@@ -190,15 +190,31 @@ class Lib_make{
      * @param $positive_path
      * @param $back_path
      * @param $user_id
+     * @param $name
+     * @param $ID_card
      * @return int
      */
-    public static function Identity($positive_path,$back_path,$user_id){
+    public static function Identity($positive_path,$back_path,$user_id,$name,$ID_card){
 
+        $verification_name = false;
+        $verification_ID_card = false;
 
         $positive_path = public_path().'/'.$positive_path;
         $positive_data = AliCloudService::Identity($positive_path);
         if($positive_data == false){
             return Lib_const_status::IDENTITY_POSITIVE_INFORMATION_IS_NOT_RECOGNIZED;
+        }
+        $verification_data = json_decode($positive_data,true);
+
+        if(isset($verification_data['name']) && $verification_data['name'] == $name){
+            $verification_name = true;
+        }
+        if(isset($verification_data['num']) && $verification_data['num'] == $ID_card){
+            $verification_ID_card = true;
+        }
+
+        if($verification_name == false || $verification_ID_card == false){
+            return Lib_const_status::IDENTITY_INFORMATION_DOES_NOT_MATCH;
         }
 
         $back_path = public_path().'/'.$back_path;
