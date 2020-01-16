@@ -147,7 +147,7 @@ class AuthenticationController extends Controller{
                 'official_seal_number'=>'required',
                 'business_license'=>'required',
                 'charter_pic'=>'required',
-                'charter_type'=>'in:1,2',
+                'charter_type'=>'required|in:1,2',
             ],[
                 'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
                 'in'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
@@ -161,7 +161,7 @@ class AuthenticationController extends Controller{
                 'name'=>'required',
                 'ID_card'=>'required|identity',
                 'charter_pic'=>'required',
-                'charter_type'=>'in:1,2',
+                'charter_type'=>'required|in:1,2',
             ],[
                 'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
                 'in'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
