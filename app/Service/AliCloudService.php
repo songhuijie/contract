@@ -160,9 +160,9 @@ class AliCloudService{
 
         $realname = urlencode($realname);
         if($idcard){
-            $querys = "realname=$realname";
-        }else{
             $querys = "idcard=$idcard&realname=$realname";
+        }else{
+            $querys = "realname=$realname";
         }
         $bodys = "";
         $url = $host . $path . "?" . $querys;

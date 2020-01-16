@@ -29,6 +29,11 @@ class TestController extends Controller{
 //
 //        dd($int,$code);
 
+        $name = '宋慧杰';
+        $id_card = '510125199506266310';
+
+        $data = AliCloudService::market($name,$id_card);
+        dd($data);
         return view('test');
         dd(config('app.url'));
         $phone = 18080952663;
