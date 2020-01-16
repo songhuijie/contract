@@ -67,7 +67,7 @@ class AliCloudService{
             );
         }else{
             $config = array(
-                "side" => "face/back"
+                "side" => "back"
             );
         }
 
@@ -105,7 +105,9 @@ class AliCloudService{
             if(count($config) > 0){
                 $request["configure"] = json_encode($config);
             }
+
             $body = json_encode($request);
+
         }
         $method = "POST";
         $curl = curl_init();
@@ -142,6 +144,9 @@ class AliCloudService{
             return false;
         }
     }
+
+
+
 
     /**
      * 失信查询

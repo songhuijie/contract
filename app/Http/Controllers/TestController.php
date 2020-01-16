@@ -32,8 +32,22 @@ class TestController extends Controller{
         $name = '詹海洋';
         $id_card = '';
 
-        $data = AliCloudService::market($name,$id_card);
-        dd($data);
+        $back_path = 'uploads/id_card/1579157123398209.jpg';
+        $back_path = public_path().'/'.$back_path;
+
+//        $config = array(
+//            "side" => "face/back"
+//        );
+//        $configure['configure'] = $config;
+//        $configure['img'] = 'ssssssss';
+//        $body = $configure;
+//        dd(json_encode($config),json_encode($configure),json_encode($body));
+
+
+        $back_data = AliCloudService::Identity($back_path,false);
+//        $data = AliCloudService::market($name,$id_card);
+        dd($back_data);
+//        dd($data);
         return view('test');
         dd(config('app.url'));
         $phone = 18080952663;
