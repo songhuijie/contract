@@ -218,7 +218,7 @@ class Lib_make{
         }
 
         $back_path = public_path().'/'.$back_path;
-        $back_data = AliCloudService::Identity($back_path);
+        $back_data = AliCloudService::Identity($back_path,false);
         if($back_data == false){
             return Lib_const_status::IDENTITY_BACK_INFORMATION_IS_NOT_RECOGNIZED;
         }

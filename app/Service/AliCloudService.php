@@ -47,8 +47,9 @@ class AliCloudService{
      * 印刷文字识别-身份证识别/OCR文字识别（新年特惠，限时3折）
      * https://market.aliyun.com/products/57124001/cmapi010401.html?spm=5176.10695662.1996646101.searchclickresult.5d26733eytxS5W&aly_as=ebMDG592#sku=yuncode440100000
      * @param $file_path
+     * @param $bool //默认查正面  false 查反面
      */
-    public static function Identity($file_path){
+    public static function Identity($file_path,$bool=true){
         $url = self::IDENTITY_URL;
         $config = self::getKey();
         if(isset($config['aly_app_code'])){
@@ -60,9 +61,16 @@ class AliCloudService{
         //如果输入带有inputs, 设置为True，否则设为False
         $is_old_format = false;
         //如果没有configure字段，config设为空
-        $config = array(
-            "side" => "face"
-        );
+        if($bool == true){
+            $config = array(
+                "side" => "face"
+            );
+        }else{
+            $config = array(
+                "side" => "face/back"
+            );
+        }
+
         //$config = array()
 
 
@@ -159,7 +167,7 @@ class AliCloudService{
         array_push($headers, "Authorization:APPCODE " . $appcode);
 
         $realname = urlencode($realname);
-        if($idcard){
+        if(!empty($idcard)){
             $querys = "idcard=$idcard&realname=$realname";
         }else{
             $querys = "realname=$realname";

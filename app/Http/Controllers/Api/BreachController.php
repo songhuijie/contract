@@ -35,7 +35,6 @@ class BreachController extends Controller
         $fromErr = $this->validatorFrom([
             'search'=>'required',
             'city'=>'required',
-            'identity'=>'integer',
         ],[
             'required'=>Lib_const_status::ERROR_REQUEST_PARAMETER,
         ]);
