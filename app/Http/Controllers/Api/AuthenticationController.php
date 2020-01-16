@@ -138,6 +138,11 @@ class AuthenticationController extends Controller{
 
 
         $all = $request->all();
+        $response_json = $this->initResponse();
+        if(!isset($all['charter_type'])){
+            $response_json->status = Lib_const_status::ERROR_REQUEST_PARAMETER;
+            return $this->response($response_json);
+        }
         if($all['charter_type'] == 2){
             $fromErr = $this->validatorFrom([
                 'name'=>'required',
@@ -176,7 +181,6 @@ class AuthenticationController extends Controller{
         $user_id = $access_entity->user_id;
 
         $all['user_id'] = $user_id;
-        $response_json = $this->initResponse();
 
         $charter = $this->charter->find($user_id);
         if($charter){
