@@ -24,10 +24,13 @@ class Notice extends Model
     public function getNotice($param){
         $page = $param['page'];
         $limit = $param['limit'];
-        $where = $param['cond'] ?? [];
+        $cond = $param['cond'] ?? [];
+        $user_id = $param['user_id'] ?? [];
         $sortfield = $param['sortField'] ?? 'created_at';
         $order = $param['order'] ?? 'desc';
-        if ($where) $where = [['key', 'like', $where.'%']];
+        $where = [];
+        if ($cond) $where[] = ['key', 'like', $cond.'%'];
+        if ($user_id) $where[] = ['user_id', '=',$user_id];
         $offset = ($page - 1) * $limit;
 
         $admins = $this->where($where)->select($this->select)
