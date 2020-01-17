@@ -84,7 +84,7 @@ class User extends Model
         if ($where) $where = [['name', 'like', $where.'%']];
         $offset = ($page - 1) * $limit;
 
-        $admins = $this->with(['certification','charter'])->where($where)->select($this->select_info)
+        $admins = $this->with(['certification:user_id,status,identity_card_positive,identity_card_back','charter:user_id,charter_pic'])->where($where)->select($this->select_info)
             ->offset($offset)->limit($limit)->orderBy($sortfield, $order)->get()->toArray();
         $count = $this->where($where)->count();
         return [

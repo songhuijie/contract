@@ -22,12 +22,19 @@
                     }else if(d.certification.status == 0){
                         return '<a>尚未实名认证</a>';
                     }else if(d.certification.status == 1){
-                        return '<a>认证成功</a>';
+                        return '<div><img src='+d.certification.identity_card_positive+'><img src='+d.certification.identity_card_back+'></div>';
                     }else{
                         return '<a>尚未实名认证</a>';
                     }
             }}
-            ,{title: '操作', toolbar: '#op'}
+            ,{title:'是否有印章',templet:function(d){
+                    if(d.charter== null){
+                        return '<a>没有印章</a>';
+                    }else{
+                        return '<div><img src='+d.charter.charter_pic+'></div>';
+                    }
+                }}
+            // ,{title: '操作', toolbar: '#op'}
         ]]
 
         ,response: {
@@ -124,5 +131,9 @@
         //     content: url //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
         // });
     });
-
+    $(".main-content").on("click","img",function(e){
+        layer.photos({
+            photos: { "data": [{"src": e.target.src}] }
+        });
+    });
 });

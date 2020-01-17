@@ -6,7 +6,7 @@
 
     table.render({
         elem: '#contract'
-        ,url: '/admin/contract/list' //数据接口
+        ,url: '/admin/contract/list?contract_type=1' //数据接口
         ,method: 'post'
         ,page: true //开启分页
         ,limit: 10
