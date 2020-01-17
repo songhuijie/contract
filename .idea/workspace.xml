@@ -28,8 +28,8 @@
       <file leaf-file-name="Contract.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Contract.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="159" column="20" selection-start-line="159" selection-start-column="20" selection-end-line="159" selection-end-column="20" />
+            <state relative-caret-position="397">
+              <caret line="22" column="106" selection-start-line="22" selection-start-column="99" selection-end-line="22" selection-end-column="106" />
               <folding>
                 <element signature="e#30#49#0#PHP" expanded="true" />
               </folding>
@@ -58,8 +58,8 @@
       <file leaf-file-name="ContractController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="281" column="46" lean-forward="true" selection-start-line="281" selection-start-column="46" selection-end-line="281" selection-end-column="46" />
+            <state relative-caret-position="441">
+              <caret line="289" column="19" lean-forward="true" selection-start-line="289" selection-start-column="19" selection-end-line="289" selection-end-column="19" />
               <folding>
                 <element signature="e#685#1001#0#PHP" />
                 <element signature="e#1007#1106#0#PHP" />
@@ -101,10 +101,6 @@
                 <element signature="e#8201#8300#0#PHP" />
                 <element signature="e#8311#8406#0#PHP" />
                 <element signature="e#8467#8568#0#PHP" />
-                <element signature="e#10273#10653#0#PHP" />
-                <element signature="e#10297#10630#0#PHP" />
-                <element signature="e#10515#10630#0#PHP" />
-                <element signature="e#10666#10697#0#PHP" />
                 <element signature="e#10769#10823#0#PHP" />
                 <element signature="e#10828#11723#0#PHP" />
                 <element signature="e#10982#11717#0#PHP" />
@@ -636,12 +632,12 @@
       <workItem from="1579050266390" duration="33635000" />
       <workItem from="1579091551817" duration="2303000" />
       <workItem from="1579154278578" duration="7094000" />
-      <workItem from="1579223407459" duration="17201000" />
+      <workItem from="1579223407459" duration="17784000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="268271000" />
+    <option name="totallyTimeSpent" value="268854000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -1038,8 +1034,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/Contract.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="159" column="20" selection-start-line="159" selection-start-column="20" selection-end-line="159" selection-end-column="20" />
+        <state relative-caret-position="397">
+          <caret line="22" column="106" selection-start-line="22" selection-start-column="99" selection-end-line="22" selection-end-column="106" />
           <folding>
             <element signature="e#30#49#0#PHP" expanded="true" />
           </folding>
@@ -1048,8 +1044,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="281" column="46" lean-forward="true" selection-start-line="281" selection-start-column="46" selection-end-line="281" selection-end-column="46" />
+        <state relative-caret-position="441">
+          <caret line="289" column="19" lean-forward="true" selection-start-line="289" selection-start-column="19" selection-end-line="289" selection-end-column="19" />
           <folding>
             <element signature="e#685#1001#0#PHP" />
             <element signature="e#1007#1106#0#PHP" />
@@ -1091,10 +1087,6 @@
             <element signature="e#8201#8300#0#PHP" />
             <element signature="e#8311#8406#0#PHP" />
             <element signature="e#8467#8568#0#PHP" />
-            <element signature="e#10273#10653#0#PHP" />
-            <element signature="e#10297#10630#0#PHP" />
-            <element signature="e#10515#10630#0#PHP" />
-            <element signature="e#10666#10697#0#PHP" />
             <element signature="e#10769#10823#0#PHP" />
             <element signature="e#10828#11723#0#PHP" />
             <element signature="e#10982#11717#0#PHP" />

@@ -279,6 +279,8 @@ class ContractController extends Controller {
                 break;
             case 2:
                 if($contract && $contract->contract_type == 1){
+                    $param['first_is_sign'] = 0;
+                    $param['is_sign'] = 0;
                     $contract->update($param);
                     $response_json->status = Lib_const_status::SUCCESS;
                 }else{
