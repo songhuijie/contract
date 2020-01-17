@@ -24,6 +24,10 @@ class Lib_config{
     const PARTY_A  = '甲方';
     const PARTY_B  = '乙方';
 
+    //签字需要更新的字段
+    const PARTY_A_TYPE = 'first_is_sign';
+    const PARTY_B_TYPE = 'is_sign';
+
 
     const CONTRACT_TO_BE_PAID  = 0;  //合同待支付
     const CONTRACT_SUCCESSFUL_PAYMENT = 1; //合同支付成功

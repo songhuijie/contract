@@ -139,20 +139,21 @@ class ContractController extends Controller {
         $param['create_time'] = time();
         $param['draft_information'] = $draft_information;
         $contract_id = $this->contract->insertGetId($param);
-        if($param['contract_type'] == 1){
-            /**
-             * 发送合同签署通知  创建合同甲方默认签署
-             */
-            $date = date('Y-m-d');
-            $enterprise = $draft_information;
-            $signatory = Lib_config::PARTY_A;
-            $message = [
-                'date'=>$date,
-                'enterprise'=>$enterprise,
-                'signatory'=>$signatory,
-            ];
-            event(new Notice($param['specific_user_id'],$message,Lib_config::NOTIFICATION_TYPE_SIGN));
-        }
+        //取消 创建合同推送消息
+//        if($param['contract_type'] == 1){
+//            /**
+//             * 发送合同签署通知  创建合同甲方默认签署
+//             */
+//            $date = date('Y-m-d');
+//            $enterprise = $draft_information;
+//            $signatory = Lib_config::PARTY_A;
+//            $message = [
+//                'date'=>$date,
+//                'enterprise'=>$enterprise,
+//                'signatory'=>$signatory,
+//            ];
+//            event(new Notice($param['specific_user_id'],$message,Lib_config::NOTIFICATION_TYPE_SIGN));
+//        }
 
         $response_json->status = Lib_const_status::SUCCESS;
         $response_json->data->id = $contract_id;
@@ -416,18 +417,37 @@ class ContractController extends Controller {
 
         $contract = $this->contract->getByUserAndID($param['contract_id'],$user_id);
         if($contract){
-            $this->contract->updateSign($param['contract_id'],Lib_config::SIGN);
-            //签署成功 通知
 
-            $date = date('Y-m-d',$contract->create_time);
-            $enterprise = $contract->draft_information;
-            $signatory = Lib_config::PARTY_B;;
-            $message = [
-                'date'=>$date,
-                'enterprise'=>$enterprise,
-                'signatory'=>$signatory,
-            ];
-            event(new Notice($contract->user_id,$message,Lib_config::NOTIFICATION_TYPE_SIGN));
+            //判断是否是甲方签字
+            if($contract->contract_type == 2){
+                $this->contract->updateSignGhostWrite($param['contract_id'],Lib_config::SIGN);
+            }else{
+                $date = date('Y-m-d',$contract->create_time);
+                $enterprise = $contract->draft_information;
+
+                if($contract->user_id == $user_id){
+                    //乙方未签字  甲方没法签字
+                    if($contract->is_sign != 1){
+                        $response_json->status = Lib_const_status::CONTRACT_FAILS_TO_SIGN;
+                        return $this->response($response_json);
+                    }
+                    $signatory = Lib_config::PARTY_A;
+                    $push_id = $contract->specific_user_id;
+                    $type = Lib_config::PARTY_A_TYPE;
+                }else{
+                    $signatory = Lib_config::PARTY_B;
+                    $push_id = $contract->user_id;
+                    $type = Lib_config::PARTY_B_TYPE;
+                }
+                $message = [
+                    'date'=>$date,
+                    'enterprise'=>$enterprise,
+                    'signatory'=>$signatory,
+                ];
+                event(new Notice($push_id,$message,Lib_config::NOTIFICATION_TYPE_SIGN));
+                $this->contract->updateSign($param['contract_id'],Lib_config::SIGN,$type);
+            }
+            //签署成功 通知
             $response_json->status = Lib_const_status::SUCCESS;
         }else{
             $response_json->status = Lib_const_status::CONTRACT_CANNOT;

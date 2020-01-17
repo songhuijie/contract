@@ -41,6 +41,8 @@ class Lib_const_status{
     const CONTRACT_CANNOT_BE_MODIFIED = 10017;
     //合同不存在 不能支付
     const CONTRACT_CANNOT_NOT_PAY = 10016;
+    //乙方未签字
+    const CONTRACT_FAILS_TO_SIGN = 10018;
 
     //用户已认证
     const USER_ALREADY_CERTIFICATION = 20000;

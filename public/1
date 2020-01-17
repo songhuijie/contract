@@ -1,1 +1,1 @@
-NO_REAL_NAME_AUTHENTICATION_YET
+select * from `xsk_contract` where `is_sign` != 0 and `first_is_sign` != 0 and (`specific_user_id` = 2 and `contract_type` = 1) or ((`user_id` = 2 and `contract_type` = 1 )) or ((`user_id` = 2 and `contract_type` = 2 and `is_sign` = 0))

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Model\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Contract extends Model
 {
@@ -13,13 +14,13 @@ class Contract extends Model
     public $timestamps = false;
     protected $dateFormat = 'U';//使用时间戳方式添加
 
-    public $select = ['id', 'user_id', 'specific_user_id', 'template_id', 'template_content','contract_title', 'contract_demand', 'is_sign','contract_type', 'status','create_time','price', 'updated_at'];
+    public $select = ['id', 'user_id', 'specific_user_id', 'template_id', 'template_content','contract_title', 'contract_demand', 'first_is_sign', 'is_sign','contract_type', 'status','create_time','price', 'updated_at'];
 
 
 
     protected $primaryKey = 'id';
 
-    protected $fillable = ['template_content','contract_title', 'contract_demand','is_sign','status'];
+    protected $fillable = ['template_content','contract_title', 'contract_demand','first_is_sign','is_sign','status'];
 
     /**
      * 获取列表数据  后台获取
@@ -70,21 +71,17 @@ class Contract extends Model
         switch ($param['status']){
             case 0:
                 //0 全部合同(未签署)
-                $contract = $contract->where(['specific_user_id'=>$user_id,'contract_type'=>1,'is_sign'=>0])
-                    ->orwhere(function($q1) use($user_id){
-                        $q1->Where(['user_id'=>$user_id,'contract_type'=>1,'is_sign'=>0]);
-                    })->orwhere(function($q1) use($user_id){
-                        $q1->Where(['user_id'=>$user_id,'contract_type'=>2,'status'=>3,'is_sign'=>0]);
-                    });
+
+                $contract = $contract->whereRaw('(`is_sign` != 1 or `first_is_sign` != 1) and (`specific_user_id` = ? or `user_id` = ?) ', [$user_id,$user_id]);
                 break;
             case 1:
                 //1 全部合同(签署)
 
-                $contract = $contract->where(['user_id'=>$user_id,'contract_type'=>1,'is_sign'=>1])
-                    ->orwhere(function($q1) use($user_id){
-                        $q1->Where(['specific_user_id'=>$user_id,'contract_type'=>1,'is_sign'=>1]);
-                    })->orwhere(function($q1) use($user_id){
-                        $q1->Where(['user_id'=>$user_id,'contract_type'=>2,'status'=>2,'is_sign'=>1]);
+                $contract = $contract->where(['user_id'=>$user_id,'contract_type'=>1,'is_sign'=>1,'first_is_sign'=>1])
+                    ->orwhere(function($query) use($user_id){
+                        $query->where(['specific_user_id'=>$user_id,'contract_type'=>1,'is_sign'=>1,'first_is_sign'=>1]);
+                    })->orwhere(function($query) use($user_id){
+                        $query->where(['user_id'=>$user_id,'contract_type'=>2,'status'=>4,'is_sign'=>1]);
                     });
                 break;
             case 2:
@@ -144,7 +141,13 @@ class Contract extends Model
      * @return mixed
      */
     public function getByUserAndID($contract_id,$user_id){
-        return $this->where(['id'=>$contract_id,'specific_user_id'=>$user_id,'contract_type'=>'1','is_sign'=>0])->first();
+        $contract =$this->where(['id'=>$contract_id,'specific_user_id'=>$user_id,'contract_type'=>1,'is_sign'=>0])
+            ->orwhere(function($query) use($contract_id,$user_id){
+                $query->Where(['id'=>$contract_id,'user_id'=>$user_id,'contract_type'=>1,'first_is_sign'=>0]);
+            })->orwhere(function($query) use($contract_id,$user_id){
+                $query->Where(['id'=>$contract_id,'user_id'=>$user_id,'contract_type'=>2,'status'=>3,'is_sign'=>0]);
+            });
+        return $contract->first();
     }
 
 
@@ -164,8 +167,18 @@ class Contract extends Model
      * @param $sign
      * @return mixed
      */
-    public function updateSign($contract_id,$sign){
-        return $this->where(['id'=>$contract_id])->update(['is_sign'=>$sign]);
+    public function updateSign($contract_id,$sign,$type){
+        return $this->where(['id'=>$contract_id])->update([$type=>$sign]);
+    }
+
+    /**
+     * 代写订单签署
+     * @param $contract_id
+     * @param $sign
+     * @return mixed
+     */
+    public function updateSignGhostWrite($contract_id,$sign){
+        return $this->where(['id'=>$contract_id])->update(['user_id'=>$sign,'specific_user_id'=>$sign]);
     }
 
     /**
