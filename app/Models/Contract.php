@@ -112,7 +112,7 @@ class Contract extends Model
                 break;
         }
 
-        $contract_data = $contract->with(['templateTitle','partyACharter','partyBCharter'])->select($this->select)
+        $contract_data = $contract->with(['templateTitle','partyACharter:user_id,charter_pic','partyBCharter:user_id,charter_pic'])->select($this->select)
             ->offset($offset)->limit($limit)->orderBy($sortfield, $order)->get()->toArray();
         return $contract_data;
     }
@@ -129,14 +129,14 @@ class Contract extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function partyACharter(){
-        return $this->hasOne(Charter::class,'user_id','user_id')->select('user_id','charter_pic');
+        return $this->hasOne(Charter::class,'user_id','user_id');
     }
     /**
      * 乙方签署的合同章
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function partyBCharter(){
-        return $this->hasOne(Charter::class,'user_id','specific_user_id')->select('user_id','charter_pic');
+        return $this->hasOne(Charter::class,'user_id','specific_user_id');
     }
 
     /**
