@@ -129,7 +129,7 @@
         // });
     });
 
-    $("body").on("click","img",function(e){
+    $(".main-content").on("click","img",function(e){
         layer.photos({
             photos: { "data": [{"src": e.target.src}] }
         });

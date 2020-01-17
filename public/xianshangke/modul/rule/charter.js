@@ -121,7 +121,7 @@
             content: url //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
         });
     });
-    $("body").on("click","img",function(e){
+    $(".main-content").on("click","img",function(e){
         layer.photos({
             photos: { "data": [{"src": e.target.src}] }
         });

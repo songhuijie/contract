@@ -95,21 +95,8 @@ $api->version('v1', function ($api) {
                     //律师代写完后等待确认合同
                     $api->post('/contract/confirm','ContractController@Confirm');
 
-
                 });
-
-
             });
-
-
-
-
-
-
-
-
-
-
         });
 
     });
