@@ -268,14 +268,8 @@ class ContractController extends Controller {
         $contract = $this->contract->getByUseChange($param['contract_id']);
         switch ($param['type']){
             case 1:
-
-                $user_list = Lib_make::getUserList();
-                 if(isset($user_list[$user_id])){
-                     unset($user_list[$user_id]);
-                 }
                 if($contract){
                     $contract->templateTitle;
-                    $contract->user_list = $user_list ;
                     $response_json->status = Lib_const_status::SUCCESS;
                     $response_json->data = $contract;
                 }else{

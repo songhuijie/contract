@@ -35,6 +35,7 @@ class TestController extends Controller{
             '工作时间48小时内完成',
             '七天内根据客户要求无限次修改,由资深律师为您提供代写服务，有效防范法律风险',
         ];
+        dd(date('Y-m-d H:i:s'));
         dd(json_encode($a));
         $name = '詹海洋';
         $id_card = '';

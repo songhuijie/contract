@@ -27,14 +27,18 @@
 
     
     <script type="text/html" id="op">
-        <a class="layui-btn layui-btn-xs edit_user" lay-event="edit">
-            <i class="layui-icon">&#xe642;</i>
-            编辑
-        </a>
-        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">
-            <i class="layui-icon"></i>
-            删除
-        </a>
+
+        
+        {{#  if(d.contract_type == 2 && d.status == 1){ }}
+        <a class="layui-btn layui-btn-xs" lay-event="edit"><i class="layui-icon">&#xe642;</i>编辑</a>
+        {{#  } }}
+
+        
+
+        
+            
+            
+        
     </script>
     <script type="text/javascript" src="<?php echo e('/xianshangke/modul/rule/contract.js'); ?>"></script>
 <?php $__env->stopSection(); ?>
