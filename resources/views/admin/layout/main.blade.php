@@ -35,6 +35,9 @@
         .layui-table-body {
             overflow: hidden;
         }
+        .list li img{
+            top: -2px !important;
+        }
     </style>
     @yield('css')
     @yield('js')

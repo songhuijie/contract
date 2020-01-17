@@ -35,6 +35,9 @@
         .layui-table-body {
             overflow: hidden;
         }
+        .list li img{
+            top: -2px !important;
+        }
     </style>
     <?php echo $__env->yieldContent('css'); ?>
     <?php echo $__env->yieldContent('js'); ?>
