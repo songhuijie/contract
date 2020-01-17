@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="33dae8e9-96d1-4c1a-9dc8-f1dd7e1d0d76" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Libraries/Lib_config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Libraries/Lib_config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Libraries/Lib_const_status.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Libraries/Lib_const_status.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Contract.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contract.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/1" beforeDir="false" afterPath="$PROJECT_DIR$/public/1" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,8 +28,8 @@
       <file leaf-file-name="Contract.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Contract.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="174" column="13" selection-start-line="174" selection-start-column="13" selection-end-line="174" selection-end-column="13" />
+            <state relative-caret-position="289">
+              <caret line="159" column="20" selection-start-line="159" selection-start-column="20" selection-end-line="159" selection-end-column="20" />
               <folding>
                 <element signature="e#30#49#0#PHP" expanded="true" />
               </folding>
@@ -59,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContractController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ContractController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="435" column="44" selection-start-line="435" selection-start-column="44" selection-end-line="435" selection-end-column="44" />
+            <state relative-caret-position="387">
+              <caret line="281" column="46" lean-forward="true" selection-start-line="281" selection-start-column="46" selection-end-line="281" selection-end-column="46" />
               <folding>
                 <element signature="e#685#1001#0#PHP" />
                 <element signature="e#1007#1106#0#PHP" />
@@ -105,8 +101,9 @@
                 <element signature="e#8201#8300#0#PHP" />
                 <element signature="e#8311#8406#0#PHP" />
                 <element signature="e#8467#8568#0#PHP" />
-                <element signature="e#9904#10237#0#PHP" />
+                <element signature="e#10273#10653#0#PHP" />
                 <element signature="e#10297#10630#0#PHP" />
+                <element signature="e#10515#10630#0#PHP" />
                 <element signature="e#10666#10697#0#PHP" />
                 <element signature="e#10769#10823#0#PHP" />
                 <element signature="e#10828#11723#0#PHP" />
@@ -143,11 +140,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Lib_config.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Lib_config.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+            <state relative-caret-position="517">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="laravel-2020-01-17.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2020-01-17.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="95" lean-forward="true" selection-start-column="52" selection-end-column="95" />
             </state>
           </provider>
         </entry>
@@ -179,11 +185,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -195,7 +196,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>companyName</find>
       <find>drawText</find>
       <find>EvenCompEllipse</find>
       <find>$out_refund_no</find>
@@ -219,12 +219,13 @@
       <find>&quot;click&quot;,&quot;img&quot;</find>
       <find>getConfig</find>
       <find>contract/detail</find>
-      <find>getContractDetail</find>
       <find>10015</find>
       <find>CONTRACT_CANNOT</find>
       <find>10004</find>
       <find>10017</find>
       <find>CONTRACT_CANNOT_BE_MODIFIED</find>
+      <find>detail</find>
+      <find>getContractDetail</find>
     </findStrings>
     <replaceStrings>
       <replace>.png&quot;) ?&gt;</replace>
@@ -306,16 +307,16 @@
         <option value="$PROJECT_DIR$/app/Models/User.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/MemberController.php" />
         <option value="$PROJECT_DIR$/public/xianshangke/modul/rule/member.js" />
-        <option value="$PROJECT_DIR$/storage/logs/laravel-2020-01-17.log" />
         <option value="$PROJECT_DIR$/resources/views/admin/config/addConfig.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/ConfigController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Api/OtherController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
         <option value="$PROJECT_DIR$/public/1" />
         <option value="$PROJECT_DIR$/app/Models/Contract.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" />
         <option value="$PROJECT_DIR$/app/Libraries/Lib_const_status.php" />
         <option value="$PROJECT_DIR$/app/Libraries/Lib_config.php" />
+        <option value="$PROJECT_DIR$/storage/logs/laravel-2020-01-17.log" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php" />
       </list>
     </option>
   </component>
@@ -635,12 +636,12 @@
       <workItem from="1579050266390" duration="33635000" />
       <workItem from="1579091551817" duration="2303000" />
       <workItem from="1579154278578" duration="7094000" />
-      <workItem from="1579223407459" duration="15852000" />
+      <workItem from="1579223407459" duration="17201000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266922000" />
+    <option name="totallyTimeSpent" value="268271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -652,7 +653,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32897604" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2585288" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24733475" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -929,9 +930,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2020-01-17.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/config/addConfig.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
@@ -982,13 +980,6 @@
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="74" column="83" selection-start-line="74" selection-start-column="66" selection-end-line="74" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/logging.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="679">
@@ -1017,16 +1008,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Contract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="174" column="13" selection-start-line="174" selection-start-column="13" selection-end-line="174" selection-end-column="13" />
-          <folding>
-            <element signature="e#30#49#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_const_status.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
@@ -1034,10 +1015,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2020-01-17.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="95" lean-forward="true" selection-start-column="52" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="74" column="83" selection-start-line="74" selection-start-column="66" selection-end-line="74" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Contract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="159" column="20" selection-start-line="159" selection-start-column="20" selection-end-line="159" selection-end-column="20" />
+          <folding>
+            <element signature="e#30#49#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Api/ContractController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="435" column="44" selection-start-line="435" selection-start-column="44" selection-end-line="435" selection-end-column="44" />
+        <state relative-caret-position="387">
+          <caret line="281" column="46" lean-forward="true" selection-start-line="281" selection-start-column="46" selection-end-line="281" selection-end-column="46" />
           <folding>
             <element signature="e#685#1001#0#PHP" />
             <element signature="e#1007#1106#0#PHP" />
@@ -1079,8 +1091,9 @@
             <element signature="e#8201#8300#0#PHP" />
             <element signature="e#8311#8406#0#PHP" />
             <element signature="e#8467#8568#0#PHP" />
-            <element signature="e#9904#10237#0#PHP" />
+            <element signature="e#10273#10653#0#PHP" />
             <element signature="e#10297#10630#0#PHP" />
+            <element signature="e#10515#10630#0#PHP" />
             <element signature="e#10666#10697#0#PHP" />
             <element signature="e#10769#10823#0#PHP" />
             <element signature="e#10828#11723#0#PHP" />
@@ -1113,13 +1126,6 @@
             <element signature="e#16353#16499#0#PHP" />
             <element signature="e#16510#16591#0#PHP" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Libraries/Lib_config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
         </state>
       </provider>
     </entry>

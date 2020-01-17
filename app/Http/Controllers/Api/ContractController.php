@@ -278,7 +278,7 @@ class ContractController extends Controller {
                 }
                 break;
             case 2:
-                if($contract && $contract->contract_type == 1 && $contract->user_id == $user_id){
+                if($contract && $contract->contract_type == 1){
                     $contract->update($param);
                     $response_json->status = Lib_const_status::SUCCESS;
                 }else{
