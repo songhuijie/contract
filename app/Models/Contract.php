@@ -112,7 +112,7 @@ class Contract extends Model
                 break;
         }
 
-        $contract_data = $contract->with(['templateTitle','partyACharter:user_id,charter_pic','partyBCharter:user_id,charter_pic'])->select($this->select)
+        $contract_data = $contract->with(['templateTitle'])->select($this->select)
             ->offset($offset)->limit($limit)->orderBy($sortfield, $order)->get()->toArray();
         return $contract_data;
     }
@@ -172,7 +172,7 @@ class Contract extends Model
      * @return mixed
      */
     public function getByUseChange($contract_id){
-        return $this->where(['id'=>$contract_id])->first();
+        return $this->with(['partyACharter:user_id,charter_pic','partyBCharter:user_id,charter_pic'])->where(['id'=>$contract_id])->first();
     }
 
     /**
