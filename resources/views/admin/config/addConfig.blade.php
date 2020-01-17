@@ -48,6 +48,15 @@
                             </div>
                         </div>
                         @break
+                        @case('attorney_instructions')
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">值</label>
+                                <div class="layui-input-block">
+                                    <textarea name="value" placeholder="请输入内容" class="layui-textarea">@if(!empty($config)){{implode("\n",json_decode($config->value,true))}}@endif</textarea>
+                                    {{--<input type="text" name="value" required  lay-verify="required"  placeholder="请输入配置key的值" autocomplete="off" class="layui-input" value="">--}}
+                                </div>
+                            </div>
+                        @break
                         @default
                             <div class="layui-form-item">
                                 <label class="layui-form-label">值</label>

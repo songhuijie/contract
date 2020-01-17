@@ -117,15 +117,19 @@ class OtherController extends Controller{
         $price = isset($config['price'])?$config['price']:'';
         $rotation = [];
         if(isset($config['rotation'])){
-
             foreach(json_decode($config['rotation'],true) as $k=>$v){
                 $rotation[] = config('app.url').$v;
             }
+        }
+        $attorney_instructions = [];
+        if(isset($config['attorney_instructions'])){
+            $attorney_instructions = json_decode($config['attorney_instructions'],true);
         }
 
         $data= [
             'price'=>$price,
             'rotation'=>$rotation,
+            'instructions'=>$attorney_instructions,
         ];
 
 

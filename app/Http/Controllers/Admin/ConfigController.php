@@ -107,6 +107,9 @@ class ConfigController extends Controller
             unset($all['file']);
             $all['value'] = json_encode($all['value']);
         }
+        if($all['key'] == 'attorney_instructions'){
+            $all['value'] = json_encode(explode("\n",$all['value']));
+        }
         $int = $config->update($all);
         Lib_make::getConfig(false);
         if (!$int) return ajaxError('添加失败' );

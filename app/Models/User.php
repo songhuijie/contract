@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use App\Models\Certification;
+use App\Models\Charter;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 class User extends Model
@@ -83,7 +84,7 @@ class User extends Model
         if ($where) $where = [['name', 'like', $where.'%']];
         $offset = ($page - 1) * $limit;
 
-        $admins = $this->where($where)->select($this->select_info)
+        $admins = $this->with(['certification','charter'])->where($where)->select($this->select_info)
             ->offset($offset)->limit($limit)->orderBy($sortfield, $order)->get()->toArray();
         $count = $this->where($where)->count();
         return [
@@ -97,5 +98,12 @@ class User extends Model
      */
     public function certification(){
         return $this->hasOne(Certification::class,'user_id','id');
+    }
+
+    /**
+     * 和印章表建立关系
+     */
+    public function charter(){
+        return $this->hasOne(Charter::class,'user_id','id');
     }
 }

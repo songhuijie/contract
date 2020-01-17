@@ -16,6 +16,17 @@
             ,{field: 'name', title: '用户名'}
             ,{field: 'email', title: '邮箱'}
             ,{field: 'user_openid', title: '用户open_id'}
+            ,{title:'是否实名认证',templet:function(d){
+                    if(d.certification== null){
+                        return '<a>尚未实名认证</a>';
+                    }else if(d.certification.status == 0){
+                        return '<a>尚未实名认证</a>';
+                    }else if(d.certification.status == 1){
+                        return '<a>认证成功</a>';
+                    }else{
+                        return '<a>尚未实名认证</a>';
+                    }
+            }}
             ,{title: '操作', toolbar: '#op'}
         ]]
 

@@ -46,6 +46,15 @@
                             </div>
                         </div>
                         <?php break; ?>
+                        <?php case ('attorney_instructions'): ?>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label">值</label>
+                                <div class="layui-input-block">
+                                    <textarea name="value" placeholder="请输入内容" class="layui-textarea"><?php if(!empty($config)): ?><?php echo e(implode("\n",json_decode($config->value,true))); ?><?php endif; ?></textarea>
+                                    
+                                </div>
+                            </div>
+                        <?php break; ?>
                         <?php default: ?>
                             <div class="layui-form-item">
                                 <label class="layui-form-label">值</label>
